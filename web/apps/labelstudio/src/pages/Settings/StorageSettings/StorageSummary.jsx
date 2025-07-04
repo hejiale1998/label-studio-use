@@ -20,15 +20,15 @@ export const StorageSummary = ({ target, storage, className, storageTypes = [] }
       : 0;
 
   // help text for tasks and annotations
-  const tasks_added_help = `${last_sync_count} new tasks added during the last sync.`;
+  const tasks_added_help = `${last_sync_count} 个新任务在最后一次同步中添加。`;
   const tasks_total_help = [
-    `${tasks_existed} tasks that have been found and already synced will not be added to the project again.`,
-    `${tasks_existed + last_sync_count} tasks have been added in total for this storage.`,
+    `${tasks_existed} 个任务已被发现并已同步，不会再次添加到项目中。`,
+    `${tasks_existed + last_sync_count} 个任务已添加到该项目中。`,
   ].join("\n");
-  const annotations_help = `${last_sync_count} annotations successfully saved during the last sync.`;
+  const annotations_help = `${last_sync_count} 个注释在最后一次同步中成功保存。`;
   const total_annotations_help =
     typeof storage.meta?.total_annotations !== "undefined"
-      ? `${storage.meta.total_annotations} total annotations seen in the project at the sync moment.`
+      ? `${storage.meta.total_annotations} 个注释在同步时刻项目中可见。`
       : "";
 
   const handleButtonClick = () => {
@@ -74,7 +74,7 @@ export const StorageSummary = ({ target, storage, className, storageTypes = [] }
   return (
     <div className={className}>
       <DescriptionList>
-        <DescriptionList.Item term="Type">
+        <DescriptionList.Item term="类型">
           {(storageTypes ?? []).find((s) => s.name === storage.type)?.title ?? storage.type}
         </DescriptionList.Item>
 
@@ -87,46 +87,50 @@ export const StorageSummary = ({ target, storage, className, storageTypes = [] }
         </Oneof>
 
         <DescriptionList.Item
-          term="Status"
+          term="状态"
           help={[
-            "Initialized: storage was added, but never synced; sufficient for starting URI link resolving",
-            "Queued: sync job is in the queue, but not yet started",
-            "In progress: sync job is running",
-            "Failed: sync job stopped, some errors occurred",
-            "Completed: sync job completed successfully",
+            "已初始化：存储已添加，但从未同步；可用于启动 URI 链接解析",
+            "已排队：同步任务已进入队列，但尚未开始",
+            "进行中：同步任务正在运行",
+            "失败：同步任务已停止，发生错误",
+            "已完成：同步任务已成功完成",
           ].join("\n")}
         >
           {storageStatus === "Failed" ? (
             <span style={{ cursor: "pointer", borderBottom: "1px dashed gray" }} onClick={handleButtonClick}>
-              Failed
+              失败
             </span>
           ) : (
+            storageStatus === "Initialized" ? "已初始化" :
+            storageStatus === "Queued" ? "已排队" :
+            storageStatus === "In progress" ? "进行中" :
+            storageStatus === "Completed" ? "已完成" :
             storageStatus
           )}
         </DescriptionList.Item>
 
         {target === "export" ? (
-          <DescriptionList.Item term="Annotations" help={`${annotations_help}\n${total_annotations_help}`}>
+          <DescriptionList.Item term="标注" help={`${annotations_help}\n${total_annotations_help}`}>
             <Tooltip title={annotations_help}>
               <span>{last_sync_count}</span>
             </Tooltip>
             <Tooltip title={total_annotations_help}>
-              <span> ({total_annotations} total)</span>
+              <span>（共 {total_annotations} 条）</span>
             </Tooltip>
           </DescriptionList.Item>
         ) : (
-          <DescriptionList.Item term="Tasks" help={`${tasks_added_help}\n${tasks_total_help}`}>
+          <DescriptionList.Item term="任务" help={`${tasks_added_help}\n${tasks_total_help}`}>
             <Tooltip title={`${tasks_added_help}\n${tasks_total_help}`} style={{ whiteSpace: "pre-wrap" }}>
               <span>{last_sync_count + tasks_existed}</span>
             </Tooltip>
             <Tooltip title={tasks_added_help}>
-              <span> ({last_sync_count} new)</span>
+              <span>（新增 {last_sync_count} 条）</span>
             </Tooltip>
           </DescriptionList.Item>
         )}
 
-        <DescriptionList.Item term="Last Sync">
-          {storage.last_sync ? format(new Date(storage.last_sync), "MMMM dd, yyyy ∙ HH:mm:ss") : "Not synced yet"}
+        <DescriptionList.Item term="上次同步">
+          {storage.last_sync ? format(new Date(storage.last_sync), "yyyy年MM月dd日 ∙ HH:mm:ss") : "尚未同步"}
         </DescriptionList.Item>
       </DescriptionList>
     </div>

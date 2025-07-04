@@ -387,7 +387,7 @@ export const ImportPage = ({
                               target="_blank"
                               rel="noopener noreferrer"
                               className="inline-flex items-center"
-                              aria-label="Learn more about video format support (opens in a new tab)"
+                              aria-label="了解视频格式支持（在新标签页打开）"
                             >
                               <IconInfoOutline className="w-4 h-4 text-primary-content hover:text-primary-content-hover" />
                             </a>
@@ -413,7 +413,7 @@ export const ImportPage = ({
                             href="https://labelstud.io/guide/storage.html"
                             target="_blank"
                             rel="noopener noreferrer"
-                            aria-label="Cloud Storage documentation (opens in a new tab)"
+                            aria-label="云存储文档（在新标签页打开）"
                           >
                             Cloud Storage
                           </a>{" "}
@@ -422,7 +422,7 @@ export const ImportPage = ({
                             href="https://labelstud.io/guide/tasks.html#Import-data-from-the-Label-Studio-UI"
                             target="_blank"
                             rel="noopener noreferrer"
-                            aria-label="Upload limitations documentation (opens in a new tab)"
+                            aria-label="上传限制文档（在新标签页打开）"
                           >
                             upload limitations
                           </a>
@@ -434,7 +434,7 @@ export const ImportPage = ({
                             href="https://labelstud.io/templates/multi-page-document-annotation"
                             target="_blank"
                             rel="noopener noreferrer"
-                            aria-label="Multi-image labeling documentation (opens in a new tab)"
+                            aria-label="多图像标注文档（在新标签页打开）"
                           >
                             multi-image labeling
                           </a>

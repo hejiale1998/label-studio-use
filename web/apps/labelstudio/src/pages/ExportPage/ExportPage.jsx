@@ -108,7 +108,7 @@ export const ExportPage = () => {
 
         history.replace(`${path}${search !== "?" ? search : ""}`);
       }}
-      title="Export data"
+      title="导出数据"
       style={{ width: 720 }}
       closeOnClickOutside={false}
       allowClose={!downloading}
@@ -180,7 +180,7 @@ const FormatInfo = ({ availableFormats, selected, onClick }) => {
         <br />
         Please let us know in{" "}
         <a className="no-go" href="https://slack.labelstud.io/?source=product-export" target="_blank" rel="noreferrer">
-          Slack
+          加入 Slack 社区获取帮助
         </a>{" "}
         or submit an issue to the{" "}
         <a

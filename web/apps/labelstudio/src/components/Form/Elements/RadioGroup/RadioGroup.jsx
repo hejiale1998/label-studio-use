@@ -92,7 +92,7 @@ const RadioButton = ({ value, disabled, children, label, description, ...props }
   return (
     <Elem name="button" mod={{ checked, disabled }} onClickCapture={clickHandler}>
       {isSimple ? (
-        <Label placement="right" text={label} description={description}>
+        <Label placement="right" text={label && label === 'Random' ? '随机' : label === 'Sequential' ? '顺序' : label} description={description && description === 'Tasks are ordered by Task ID' ? '任务按ID顺序排列' : description === 'Tasks are chosen with uniform random' ? '任务随机选择' : description}>
           <input
             type="radio"
             value={value}

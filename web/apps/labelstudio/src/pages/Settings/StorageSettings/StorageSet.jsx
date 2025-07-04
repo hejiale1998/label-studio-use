@@ -31,9 +31,9 @@ export const StorageSet = ({ title, target, rootClass, buttonLabel }) => {
 
   const showStorageFormModal = useCallback(
     (storage) => {
-      const action = storage ? "Edit" : "Add";
-      const actionTarget = target === "export" ? "Target" : "Source";
-      const title = `${action} ${actionTarget} Storage`;
+      const action = storage ? "编辑" : "添加";
+      const actionTarget = target === "export" ? "目标" : "源";
+      const title = `${action}${actionTarget}存储`;
 
       const modalRef = modal({
         title,
@@ -80,8 +80,8 @@ export const StorageSet = ({ title, target, rootClass, buttonLabel }) => {
   const onDeleteStorage = useCallback(
     async (storage) => {
       confirm({
-        title: "Deleting storage",
-        body: "This action cannot be undone. Are you sure?",
+        title: "删除存储",
+        body: "此操作不可撤销，确定要删除吗？",
         buttonLook: "destructive",
         onOk: async () => {
           const response = await api.callApi("deleteStorage", {

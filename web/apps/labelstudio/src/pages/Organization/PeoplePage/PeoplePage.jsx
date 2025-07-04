@@ -132,5 +132,5 @@ export const PeoplePage = () => {
   );
 };
 
-PeoplePage.title = "People";
+PeoplePage.title = "成员";
 PeoplePage.path = "/";

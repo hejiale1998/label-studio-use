@@ -15,7 +15,7 @@ const linkAtom = atomWithQuery(() => ({
     // called only once when the component is rendered on page reload
     // will also be reset when called `refetch()` on the Reset button
     const result = await API.invoke("resetInviteLink");
-    return location.origin + result.invite_url;
+    return location.origin + (result.invite_url || result.url || "");
   },
 }));
 
@@ -28,7 +28,7 @@ export function InviteLink({
   onOpened?: () => void;
   onClosed?: () => void;
 }) {
-  const modalRef = useRef<Modal>();
+  const modalRef = useRef<Modal | null>(null);
   useEffect(() => {
     if (modalRef.current && opened) {
       modalRef.current?.show?.();
@@ -40,7 +40,7 @@ export function InviteLink({
   return (
     <Modal
       ref={modalRef}
-      title="Invite people"
+      title="邀请成员"
       opened={opened}
       bareFooter={true}
       body={<InvitationModal />}
@@ -56,11 +56,10 @@ const InvitationModal = () => {
   const { data: link } = useAtomValue(linkAtom);
   return (
     <Block name="invite">
-      <Input value={link} style={{ width: "100%" }} readOnly />
+      <Input value={link} style={{ width: "100%" }} readOnly label="邀请链接" description="复制此链接邀请成员加入" className="invite-link-input" footer={null} validate={undefined} required={false} skip={false} labelProps={undefined} ghost={false} tooltip={undefined} tooltipIcon={undefined} />
 
-      <Description style={{ marginTop: 16 }}>
-        Invite people to join your Label Studio instance. People that you invite have full access to all of your
-        projects.{" "}
+      <Description className="invite-desc" style={{ marginTop: 16 }}>
+        邀请成员加入您的 Label Studio 实例。被邀请成员将拥有您所有项目的完全访问权限。
         <a
           href="https://labelstud.io/guide/signup.html"
           target="_blank"
@@ -69,9 +68,9 @@ const InvitationModal = () => {
             __lsa("docs.organization.add_people.learn_more", { href: "https://labelstud.io/guide/signup.html" })
           }
         >
-          Learn more
+          了解更多
         </a>
-        .
+        。
       </Description>
     </Block>
   );
@@ -84,14 +83,10 @@ const InvitationFooter = () => {
   return (
     <Space spread>
       <Space>
-        <Button variant="secondary" style={{ width: 170 }} onClick={() => refetch()}>
-          Reset Link
-        </Button>
+        <Button style={{ width: 170 }} onClick={() => refetch()}>重置链接</Button>
       </Space>
       <Space>
-        <Button look="primary" style={{ width: 170 }} onClick={() => copyText(link!)}>
-          {copied ? "Copied!" : "Copy link"}
-        </Button>
+        <Button style={{ width: 170 }} onClick={() => copyText(link!)}>{copied ? "已复制！" : "复制链接"}</Button>
       </Space>
     </Space>
   );
