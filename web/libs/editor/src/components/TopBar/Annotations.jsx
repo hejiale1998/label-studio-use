@@ -180,7 +180,7 @@ const CreateAnnotation = observer(({ annotationStore, onClick }) => {
         <Elem name="userpic" tag={Userpic} mod={{ prediction: true }}>
           <IconPlusCircle />
         </Elem>
-        Create Annotation
+        创建标注
       </Space>
     </Elem>
   );

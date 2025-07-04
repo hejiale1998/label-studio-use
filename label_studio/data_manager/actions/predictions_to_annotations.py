@@ -102,13 +102,12 @@ actions = [
     {
         'entry_point': predictions_to_annotations,
         'permission': all_permissions.tasks_change,
-        'title': 'Create Annotations From Predictions',
+        'title': '从预测创建标注',
         'order': 91,
         'dialog': {
-            'title': 'Create Annotations From Predictions',
-            'text': 'Create annotations from predictions using selected predictions set '
-            'for each selected task. '
-            'Your account will be assigned as an owner to those annotations. ',
+            'title': '从预测创建标注',
+            'text': '使用选定的预测集为每个选定的任务创建标注。 '
+            '您的账户将被分配为这些标注的所有者。 ',
             'type': 'confirm',
             'form': predictions_to_annotations_form,
         },
