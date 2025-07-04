@@ -66,13 +66,13 @@ export const PeopleList = ({ onSelect, selectedUser, defaultSelected }) => {
               <Elem name="header">
                 <Elem name="column" mix="avatar" />
                 <Elem name="column" mix="email">
-                  Email
+                  邮箱
                 </Elem>
                 <Elem name="column" mix="name">
-                  Name
+                  姓名
                 </Elem>
                 <Elem name="column" mix="last-activity">
-                  Last Activity
+                  最近活跃
                 </Elem>
               </Elem>
               <Elem name="body">
