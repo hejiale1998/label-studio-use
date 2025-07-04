@@ -17,14 +17,14 @@ export const ViewToggle = viewInjector(
         {...rest}
         style={{ "--button-padding": "0 var(--spacing-tighter)" }}
       >
-        <Tooltip title="List view">
+        <Tooltip title="列表视图">
           <div>
             <RadioGroup.Button value="list">
               <IconList />
             </RadioGroup.Button>
           </div>
         </Tooltip>
-        <Tooltip title="Grid view">
+        <Tooltip title="网格视图">
           <div>
             <RadioGroup.Button value="grid">
               <IconGrid />
