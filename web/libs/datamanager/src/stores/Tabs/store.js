@@ -195,7 +195,7 @@ export const TabStore = types
         ...(existingTab ?? viewSnapshot ?? {}),
       };
       const lastView = self.views[self.views.length - 1];
-      const newTitle = snapshot.title ?? `New Tab ${self.views.length + 1}`;
+      const newTitle = snapshot.title ?? `新标签页 ${self.views.length + 1}`;
       const newID = snapshot.id ?? (lastView?.id ? lastView.id + 1 : 0);
 
       const defaultHiddenColumns = self.defaultHidden
@@ -258,7 +258,7 @@ export const TabStore = types
     createDefaultView: flow(function* () {
       self.views.push({
         id: 0,
-        title: "Default",
+        title: "默认的",
         hiddenColumns: self.defaultHidden,
       });
 

@@ -26,7 +26,7 @@ export const WithForm: Story = {
     trigger: <Button>Open Form</Button>,
     children: (
       <div className="p-4 w-80">
-        <h4 className="mb-4 font-medium">Settings</h4>
+        <h4 className="mb-4 font-medium">设置</h4>
         <div className="space-y-4">
           <div>
             <label className="text-sm font-medium">Name</label>

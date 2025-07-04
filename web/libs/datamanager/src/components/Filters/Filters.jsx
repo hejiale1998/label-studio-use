@@ -66,20 +66,20 @@ export const Filters = injector(({ views, currentView, filters }) => {
             />
           ))
         ) : (
-          <Elem name="empty">No filters applied</Elem>
+          <Elem name="empty">未应用任何筛选条件</Elem>
         )}
       </Elem>
       <Elem name="actions">
         <Button type="primary" size="small" onClick={() => currentView.createFilter()} icon={<IconPlus />}>
-          Add {filters.length ? "Another Filter" : "Filter"}
+          {filters.length ? "添加另一个筛选条件" : "添加筛选条件"}
         </Button>
 
         {!sidebarEnabled ? (
-          <Tooltip title="Pin to sidebar">
+          <Tooltip title="固定到侧边栏">
             <Button
               type="link"
               size="small"
-              about="Pin to sidebar"
+              about="固定到侧边栏"
               onClick={() => views.expandFilters()}
               style={{ display: "inline-flex", alignItems: "center", padding: 0, width: "var(--button-height)" }}
               icon={<Icon icon={IconChevronRight} size={18} />}

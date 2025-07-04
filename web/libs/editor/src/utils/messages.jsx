@@ -4,42 +4,42 @@ const URL_CORS_DOCS = "https://labelstud.io/guide/storage.html#Troubleshoot-CORS
 const URL_TAGS_DOCS = "https://labelstud.io/tags";
 
 export default {
-  DONE: "Done!",
-  NO_COMP_LEFT: "No more annotations",
-  NO_NEXT_TASK: "No More Tasks Left in Queue",
-  NO_ACCESS: "You don't have access to this task",
+  DONE: "完成！",
+  NO_COMP_LEFT: "没有更多标注了",
+  NO_NEXT_TASK: "队列中没有更多任务",
+  NO_ACCESS: "你没有权限访问此任务",
 
-  CONFIRM_TO_DELETE_ALL_REGIONS: "Please confirm you want to delete all labeled regions",
+  CONFIRM_TO_DELETE_ALL_REGIONS: "请确认是否要删除所有已标注区域",
 
   // Tree validation messages
   ERR_REQUIRED: ({ modelName, field }) => {
-    return `Attribute <b>${field}</b> is required for <b>${modelName}</b>`;
+    return `标签 <b>${modelName}</b> 的属性 <b>${field}</b> 为必填项`;
   },
 
   ERR_UNKNOWN_TAG: ({ modelName, field, value }) => {
-    return `Tag with name <b>${value}</b> is not registered. Referenced by <b>${modelName}#${field}</b>.`;
+    return `名称为 <b>${value}</b> 的标签未注册。被 <b>${modelName}#${field}</b> 引用。`;
   },
 
   ERR_TAG_NOT_FOUND: ({ modelName, field, value }) => {
-    return `Tag with name <b>${value}</b> does not exist in the config. Referenced by <b>${modelName}#${field}</b>.`;
+    return `配置中不存在名称为 <b>${value}</b> 的标签。被 <b>${modelName}#${field}</b> 引用。`;
   },
 
   ERR_TAG_UNSUPPORTED: ({ modelName, field, value, validType }) => {
-    return `Invalid attribute <b>${field}</b> for <b>${modelName}</b>: referenced tag is <b>${value}</b>, but <b>${modelName}</b> can only control <b>${[]
+    return `标签 <b>${modelName}</b> 的属性 <b>${field}</b> 无效：引用的标签为 <b>${value}</b>，但 <b>${modelName}</b> 只能控制 <b>${[]
       .concat(validType)
       .join(", ")}</b>`;
   },
 
   ERR_PARENT_TAG_UNEXPECTED: ({ validType, value }) => {
-    return `Tag <b>${value}</b> must be a child of one of the tags <b>${[].concat(validType).join(", ")}</b>.`;
+    return `标签 <b>${value}</b> 必须作为 <b>${[].concat(validType).join(", ")}</b> 的子标签。`;
   },
 
   ERR_BAD_TYPE: ({ modelName, field, validType }) => {
-    return `Attribute <b>${field}</b> of tag <b>${modelName}</b> has invalid type. Valid types are: <b>${validType}</b>.`;
+    return `标签 <b>${modelName}</b> 的属性 <b>${field}</b> 类型无效。有效类型为：<b>${validType}</b>。`;
   },
 
   ERR_INTERNAL: ({ value }) => {
-    return `Internal error. See browser console for more info. Try again or contact developers.<br/>${value}`;
+    return `内部错误。请查看浏览器控制台获取更多信息。请重试或联系开发者。<br/>${value}`;
   },
 
   ERR_GENERAL: ({ value }) => {
@@ -54,9 +54,9 @@ export default {
     return (
       <div data-testid="error:audio">
         <p>
-          Error while loading audio. Check <code>{attr}</code> field in task.
+          加载音频时出错。请检查任务中的 <code>{attr}</code> 字段。
         </p>
-        <p>Technical description: {error}</p>
+        <p>技术描述: {error}</p>
         <p>URL: {htmlEscape(url)}</p>
       </div>
     );
@@ -66,9 +66,9 @@ export default {
     return `
     <div>
       <p>
-        There was an issue loading URL from <code>${attr}</code> value.
-        The request parameters are invalid.
-        If you are using S3, make sure you’ve specified the right bucket region name.
+        加载 <code>${attr}</code> 字段的 URL 时出错。
+        请求参数无效。
+        如果你使用 S3，请确保已指定正确的 bucket 区域名。
       </p>
       <p>URL: <code><a href="${encodeURI(url)}" target="_blank" rel="noreferrer">${htmlEscape(url)}</a></code></p>
     </div>`;
@@ -78,15 +78,15 @@ export default {
     return `
     <div>
       <p>
-        There was an issue loading URL from <code>${attr}</code> value.
-        Most likely that's because static server has wide-open CORS.
-        <a href="${this.URL_CORS_DOCS}" target="_blank">Read more on that here.</a>
+        加载 <code>${attr}</code> 字段的 URL 时出错。
+        很可能是静态服务器的 CORS 设置过于宽松。
+        <a href="${this.URL_CORS_DOCS}" target="_blank">点击此处了解详情。</a>
       </p>
       <p>
-        Also check that:
+        还请检查：
         <ul>
-          <li>URL is valid</li>
-          <li>Network is reachable</li>
+          <li>URL 是否有效</li>
+          <li>网络是否可达</li>
         </ul>
       </p>
       <p>URL: <code><a href="${encodeURI(url)}" target="_blank" rel="noreferrer">${htmlEscape(url)}</a></code></p>
@@ -97,21 +97,21 @@ export default {
     return `
     <div data-testid="error:http">
       <p>
-        There was an issue loading URL from <code>${attr}</code> value
+        加载 <code>${attr}</code> 字段的 URL 时出错
       </p>
       <p>
-        Things to look out for:
+        请注意以下事项：
         <ul>
-          <li>URL is valid</li>
-          <li>URL scheme matches the service scheme, i.e. https and https</li>
+          <li>URL 是否有效</li>
+          <li>URL 协议与服务协议是否一致，如 https 与 https</li>
           <li>
-            The static server has wide-open CORS,
-            <a href=${this.URL_CORS_DOCS} target="_blank">more on that here</a>
+            静态服务器的 CORS 设置是否过于宽松，
+            <a href=${this.URL_CORS_DOCS} target="_blank">点击此处了解详情</a>
           </li>
         </ul>
       </p>
       <p>
-        Technical description: <code>${error}</code>
+        技术描述: <code>${error}</code>
         <br />
         URL: <code><a href="${encodeURI(url)}" target="_blank" rel="noreferrer">${htmlEscape(url)}</a></code>
       </p>

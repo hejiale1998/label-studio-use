@@ -81,7 +81,7 @@ export const TemplatesList = ({ selectedGroup, selectedRecipe, onCustomTemplate,
       <footer className="flex items-center justify-center gap-1">
         <IconInfo className={listClass.elem("info-icon")} width="20" height="20" />
         <span>
-          See the documentation to{" "}
+          请参阅文档{" "}
           <a href="https://labelstud.io/guide" target="_blank" rel="noreferrer">查看文档</a>
           .
         </span>

@@ -131,7 +131,7 @@ export const ExportPage = () => {
             <Elem name="recent">{/* {exportHistory} */}</Elem>
             <Elem name="actions">
               <Space>
-                {downloadingMessage && "Files are being prepared. It might take some time."}
+                {downloadingMessage && "正在准备导出文件，可能需要一些时间。"}
                 <Button type="submit" look="primary" style={{ width: 120 }} onClick={proceedExport} waiting={downloading}>
                   导出
                 </Button>
@@ -149,7 +149,7 @@ export const ExportPage = () => {
 const FormatInfo = ({ availableFormats, selected, onClick }) => {
   return (
     <Block name="formats">
-      <Elem name="info">You can export dataset in one of the following formats:</Elem>
+      <Elem name="info">你可以将数据集导出为以下格式之一：</Elem>
       <Elem name="list">
         {availableFormats.map((format) => (
           <Elem
@@ -178,21 +178,22 @@ const FormatInfo = ({ availableFormats, selected, onClick }) => {
         ))}
       </Elem>
       <Elem name="feedback">
-        Can't find an export format?
+        找不到需要的导出格式？
         <br />
-        Please let us know in{" "}
+        请在
         <a className="no-go" href="https://slack.labelstud.io/?source=product-export" target="_blank" rel="noreferrer">
-          加入 Slack 社区获取帮助
-        </a>{" "}
-        or submit an issue to the{" "}
+          Slack 社区
+        </a>
+        反馈，或在
         <a
           className="no-go"
           href="https://github.com/HumanSignal/label-studio-converter/issues"
           target="_blank"
           rel="noreferrer"
         >
-          Repository
+          GitHub 仓库
         </a>
+        提交 issue。
       </Elem>
     </Block>
   );

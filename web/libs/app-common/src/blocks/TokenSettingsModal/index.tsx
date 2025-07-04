@@ -77,7 +77,7 @@ function TokenSettingsModalView({
         </Form.Row>
       )}
       <Form.Actions>
-        <Button type="submit">Save</Button>
+        <Button type="submit">保存</Button>
       </Form.Actions>
     </Form>
   );
