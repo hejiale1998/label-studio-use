@@ -90,7 +90,7 @@
   }
 
   &[data-required] &__text::after {
-    content: "Required";
+    content: "必填";
     font-size: 0.825rem;
     color: var(--color-neutral-content-subtler);
     margin-left: 0.325rem;
