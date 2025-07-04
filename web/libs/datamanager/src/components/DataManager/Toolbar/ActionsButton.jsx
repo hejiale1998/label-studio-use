@@ -171,7 +171,7 @@ export const ActionsButton = injector(
         onToggle={setIsOpen}
       >
         <Button size={size} disabled={!hasSelected} {...rest}>
-          {selectedCount > 0 ? `${selectedCount} ${recordTypeLabel}${selectedCount > 1 ? "s" : ""}` : "行动"}
+          {selectedCount > 0 ? `${selectedCount} ${recordTypeLabel}${selectedCount > 1 ? "s" : ""}` : "动作"}
           <IconChevronDown style={{ marginLeft: 4, marginRight: -7 }} />
         </Button>
       </Dropdown.Trigger>
