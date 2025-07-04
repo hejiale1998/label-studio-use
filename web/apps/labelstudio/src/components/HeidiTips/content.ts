@@ -142,12 +142,12 @@ export const defaultTipsCollection: TipsCollection = {
       },
     },
     {
-      title: "Share knowledge with the community",
+      title: "与社区分享知识",
       content:
-        "Have questions or a tip to share with other Label Studio users? Join the community slack channel for the latest updates. ",
+        "有问题或经验想与其他 Label Studio 用户分享？欢迎加入社区 Slack 频道，获取最新动态。",
       closable: true,
       link: {
-        label: "Join the community",
+        label: "加入社区",
         url: "https://label-studio.slack.com",
         params: {
           experiment: "organization_page_tip",
