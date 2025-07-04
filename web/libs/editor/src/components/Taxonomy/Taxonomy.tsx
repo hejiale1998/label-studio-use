@@ -413,7 +413,7 @@ const TaxonomyDropdown = ({ show, flatten, items, dropdownRef, isEditable }: Tax
         autoComplete="off"
         className={styles.taxonomy__search}
         name="taxonomy__search"
-        placeholder="Search..."
+        placeholder="搜索..."
         onInput={onInput}
         ref={inputRef}
       />

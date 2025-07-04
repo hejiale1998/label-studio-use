@@ -17,7 +17,7 @@ export const Tab = types
   .model("View", {
     id: StringOrNumberID,
 
-    title: "Tasks",
+    title: "任务",
     oldTitle: types.maybeNull(types.string),
 
     key: types.optional(types.string, guidGenerator),

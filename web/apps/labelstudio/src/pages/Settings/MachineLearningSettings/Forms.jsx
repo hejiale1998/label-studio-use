@@ -35,8 +35,8 @@ const CustomBackendForm = ({ action, backend, project, onSubmit }) => {
           name="auth_method"
           label="选择认证方式"
           options={[
-            { label: "No Authentication", value: "NONE" },
-            { label: "Basic Authentication", value: "BASIC_AUTH" },
+            { label: "无认证", value: "NONE" },
+            { label: "基础认证", value: "BASIC_AUTH" },
           ]}
           value={selectedAuthMethod}
           onChange={setAuthMethod}
