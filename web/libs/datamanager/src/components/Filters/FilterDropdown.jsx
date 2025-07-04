@@ -55,6 +55,9 @@ const COLUMN_TITLE_MAP = {
   "Email": "邮箱",
   "Role": "角色",
   "Last Activity": "最近活跃",
+  "And": "且",
+  "Or": "或",
+  "Where": "条件",
 };
 const getColumnTitle = (title) => {
   if (!title) return title;

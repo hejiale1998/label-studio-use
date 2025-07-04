@@ -36,7 +36,7 @@ export const FilterLine = observer(({ filter, availableFilters, index, view, sid
       <GroupWrapper wrap={sidebar}>
         <Elem name="column" mix="conjunction">
           {index === 0 ? (
-            <span style={{ fontSize: 12, paddingRight: 5 }}>Where</span>
+            <span style={{ fontSize: 12, paddingRight: 5 }}>条件</span>
           ) : (
             <Conjunction index={index} view={view} />
           )}
