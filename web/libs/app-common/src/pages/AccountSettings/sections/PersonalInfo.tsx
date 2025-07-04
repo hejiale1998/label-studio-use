@@ -126,7 +126,7 @@ export const PersonalInfo = () => {
           <div className={styles.flexRow}>
             <div className={styles.flex1}>
               <Input
-                label="First Name"
+                label="名字"
                 value={fname}
                 onChange={(e: React.KeyboardEvent<HTMLInputElement>) => setFname(e.currentTarget.value)}
                 name="first_name"
@@ -134,7 +134,7 @@ export const PersonalInfo = () => {
             </div>
             <div className={styles.flex1}>
               <Input
-                label="Last Name"
+                label="姓氏"
                 value={lname}
                 onChange={(e: React.KeyboardEvent<HTMLInputElement>) => setLname(e.currentTarget.value)}
                 name="last_name"
@@ -143,11 +143,11 @@ export const PersonalInfo = () => {
           </div>
           <div className={styles.flexRow}>
             <div className={styles.flex1}>
-              <Input label="E-mail" type="email" readOnly={true} value={user?.email} />
+              <Input label="邮箱" type="email" readOnly={true} value={user?.email} />
             </div>
             <div className={styles.flex1}>
               <Input
-                label="Phone"
+                label="电话"
                 type="phone"
                 onChange={(e: React.KeyboardEvent<HTMLInputElement>) => setPhone(e.currentTarget.value)}
                 value={phone}
@@ -157,7 +157,7 @@ export const PersonalInfo = () => {
           </div>
           <div className={clsx(styles.flexRow, styles.flexEnd)}>
             <Button look="primary" style={{ width: 125 }} waiting={isInProgress}>
-              Save
+              保存
             </Button>
           </div>
         </form>

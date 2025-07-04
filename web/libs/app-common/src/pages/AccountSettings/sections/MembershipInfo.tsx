@@ -39,25 +39,25 @@ export const MembershipInfo = () => {
 
       switch (response.role) {
         case "OW":
-          role = "Owner";
+          role = "拥有者";
           break;
         case "DI":
-          role = "Deactivated";
+          role = "已停用";
           break;
         case "AD":
-          role = "Administrator";
+          role = "管理员";
           break;
         case "MA":
-          role = "Manager";
+          role = "经理";
           break;
         case "AN":
-          role = "Annotator";
+          role = "标注员";
           break;
         case "RE":
-          role = "Reviewer";
+          role = "复核员";
           break;
         case "NO":
-          role = "Pending";
+          role = "待定";
           break;
       }
 
@@ -96,22 +96,22 @@ export const MembershipInfo = () => {
   return (
     <div className={styles.membershipInfo} id="membership-info">
       <div className="flex gap-2 w-full justify-between">
-        <div>User ID</div>
+        <div>用户ID</div>
         <div>{user?.id}</div>
       </div>
 
       <div className="flex gap-2 w-full justify-between">
-        <div>Registration date</div>
+        <div>注册日期</div>
         <div>{dateJoined}</div>
       </div>
 
       <div className="flex gap-2 w-full justify-between">
-        <div>Annotations Submitted</div>
+        <div>已提交标注数</div>
         <div>{membership.data?.annotationCount}</div>
       </div>
 
       <div className="flex gap-2 w-full justify-between">
-        <div>Projects contributed to</div>
+        <div>参与项目数</div>
         <div>{membership.data?.contributions}</div>
       </div>
 
@@ -119,33 +119,33 @@ export const MembershipInfo = () => {
 
       {user?.active_organization_meta && (
         <div className="flex gap-2 w-full justify-between">
-          <div>Organization</div>
+          <div>组织</div>
           <div>{user.active_organization_meta.title}</div>
         </div>
       )}
 
       {membership.data?.role && (
         <div className="flex gap-2 w-full justify-between">
-          <div>My role</div>
+          <div>我的角色</div>
           <div>{membership.data.role}</div>
         </div>
       )}
 
       <div className="flex gap-2 w-full justify-between">
-        <div>Organization ID</div>
+        <div>组织ID</div>
         <div>{user?.active_organization}</div>
       </div>
 
       {user?.active_organization_meta && (
         <div className="flex gap-2 w-full justify-between">
-          <div>Owner</div>
+          <div>拥有者</div>
           <div>{user.active_organization_meta.email}</div>
         </div>
       )}
 
       {organization.data?.createdAt && (
         <div className="flex gap-2 w-full justify-between">
-          <div>Created</div>
+          <div>创建时间</div>
           <div>{organization.data?.createdAt}</div>
         </div>
       )}

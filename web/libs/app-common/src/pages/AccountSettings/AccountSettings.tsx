@@ -59,12 +59,12 @@ const AccountSettingsPage = () => {
   );
 };
 
-AccountSettingsPage.title = "My Account";
+AccountSettingsPage.title = "我的账户";
 AccountSettingsPage.path = "/user/account";
 AccountSettingsPage.exact = true;
 AccountSettingsPage.routes = () => [
   {
-    title: () => "My Account",
+    title: () => "我的账户",
     exact: true,
     component: () => {
       return <Redirect to={AccountSettingsPage.path} />;

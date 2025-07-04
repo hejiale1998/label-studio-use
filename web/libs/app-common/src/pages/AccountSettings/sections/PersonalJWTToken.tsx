@@ -178,7 +178,7 @@ export function PersonalJWTToken() {
       <Tooltip title="You can only have one active token" disabled={!disallowAddingTokens}>
         <div style={{ width: "max-content" }}>
           <Button disabled={disallowAddingTokens || dialogOpened} onClick={openDialog}>
-            Create New Token
+            创建新令牌
           </Button>
         </div>
       </Tooltip>
