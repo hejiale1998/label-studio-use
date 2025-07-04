@@ -14,35 +14,35 @@ const PROJECTS_TO_SHOW = 10;
 
 const resources = [
   {
-    title: "Documentation",
+    title: "文档",
     url: "https://labelstud.io/guide/",
   },
   {
-    title: "API Documentation",
+    title: "API 文档",
     url: "https://api.labelstud.io/api-reference/introduction/getting-started",
   },
   {
-    title: "Release Notes",
+    title: "更新日志",
     url: "https://labelstud.io/learn/categories/release-notes/",
   },
   {
-    title: "LabelStud.io Blog",
+    title: "LabelStud.io 博客",
     url: "https://labelstud.io/blog/",
   },
   {
-    title: "Slack Community",
+    title: "Slack 社区",
     url: "https://slack.labelstud.io",
   },
 ];
 
 const actions = [
   {
-    title: "Create Project",
+    title: "新建项目",
     icon: IconFolderAdd,
     type: "createProject",
   },
   {
-    title: "Invite People",
+    title: "邀请成员",
     icon: IconUserAdd,
     type: "invitePeople",
   },
@@ -82,10 +82,10 @@ export const HomePage: Page = () => {
         <section className="flex flex-col gap-6">
           <div className="flex flex-col gap-1">
             <Typography variant="headline" size="small">
-              Welcome 👋
+              欢迎 👋
             </Typography>
             <Typography size="small" className="text-neutral-content-subtler">
-              Let's get you started.
+              开始您的数据标注之旅。
             </Typography>
           </div>
           <div className="flex justify-start gap-4">
@@ -96,8 +96,7 @@ export const HomePage: Page = () => {
                   rawClassName="flex-grow-0 text-16/24 gap-2 text-primary-content text-left min-w-[250px] [&_svg]:w-6 [&_svg]:h-6 pl-2"
                   onClick={handleActions(action.type)}
                 >
-                  <action.icon className="text-primary-icon" />
-                  {action.title}
+                  {<span><action.icon className="text-primary-icon" />{action.title}</span>}
                 </Button>
               );
             })}
@@ -105,11 +104,11 @@ export const HomePage: Page = () => {
 
           <SimpleCard
             title={
-              data && data?.count > 0 ? (
+              data && data?.count && data.count > 0 ? (
                 <>
-                  Recent Projects{" "}
+                  最近的项目{" "}
                   <a href="/projects" className="text-lg font-normal hover:underline">
-                    View All
+                    查看全部
                   </a>
                 </>
               ) : null
@@ -120,8 +119,8 @@ export const HomePage: Page = () => {
                 <Spinner />
               </div>
             ) : isError ? (
-              <div className="h-64 flex justify-center items-center">can't load projects</div>
-            ) : isSuccess && data.results.length === 0 ? (
+              <div className="h-64 flex justify-center items-center">无法加载项目</div>
+            ) : isSuccess && data && data.results && data.results.length === 0 ? (
               <div className="flex flex-col justify-center items-center border border-primary-border-subtle bg-primary-emphasis-subtle rounded-lg h-64">
                 <div
                   className={
@@ -131,16 +130,16 @@ export const HomePage: Page = () => {
                   <IconFolderOpen />
                 </div>
                 <Typography variant="headline" size="small">
-                  Create your first project
+                  创建您的第一个项目
                 </Typography>
                 <Typography size="small" className="text-neutral-content-subtler">
-                  Import your data and set up the labeling interface to start annotating
+                  导入数据并设置标注界面，开始您的标注之旅
                 </Typography>
                 <Button primary rawClassName="mt-4" onClick={() => setCreationDialogOpen(true)}>
-                  Create Project
+                  {"新建项目"}
                 </Button>
               </div>
-            ) : isSuccess && data.results.length > 0 ? (
+            ) : isSuccess && data && data.results && data.results.length > 0 ? (
               <div className="flex flex-col gap-1">
                 {data.results.map((project) => {
                   return <ProjectSimpleCard key={project.id} project={project} />;
@@ -151,7 +150,7 @@ export const HomePage: Page = () => {
         </section>
         <section className="flex flex-col gap-6">
           <HeidiTips collection="projectSettings" />
-          <SimpleCard title="Resources" description="Learn, explore and get help" data-testid="resources-card">
+          <SimpleCard title="资源" description="学习、探索与获取帮助" data-testid="resources-card">
             <ul>
               {resources.map((link) => {
                 return (
@@ -172,7 +171,7 @@ export const HomePage: Page = () => {
           </SimpleCard>
           <div className="flex gap-2 items-center">
             <IconHumanSignal />
-            <span className="text-neutral-content-subtle">Label Studio Version: Community</span>
+            <span className="text-neutral-content-subtle">Label Studio 版本：社区版</span>
           </div>
         </section>
       </div>
@@ -210,7 +209,7 @@ function ProjectSimpleCard({
         <div className="flex flex-col gap-1">
           <span className="text-neutral-content">{project.title}</span>
           <div className="text-neutral-content-subtler text-sm">
-            {finished} of {total} Tasks ({total > 0 ? Math.round((finished / total) * 100) : 0}%)
+            {finished} / {total} 任务（{total > 0 ? Math.round((finished / total) * 100) : 0}%）
           </div>
         </div>
         <div className="bg-neutral-surface rounded-full overflow-hidden w-full h-2 shadow-neutral-border-subtle shadow-border-1">
