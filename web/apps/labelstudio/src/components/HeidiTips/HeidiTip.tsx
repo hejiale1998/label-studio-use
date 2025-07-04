@@ -38,7 +38,7 @@ export const HeidiTip: FC<HeidiTipProps> = ({ tip, onDismiss, onLinkClick }) => 
           <Elem name="title">{tip.title}</Elem>
           {tip.closable && (
             /* @ts-ignore-next-line */
-            <Tooltip title="Don't show">
+            <Tooltip title="不再展示">
               {/* @ts-ignore-next-line */}
               <Elem name="dismiss" tag={Button} type="text" onClick={handleClick}>
                 <IconCross />

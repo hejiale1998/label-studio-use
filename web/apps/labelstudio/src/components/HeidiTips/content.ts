@@ -68,11 +68,11 @@ export const defaultTipsCollection: TipsCollection = {
       },
     },
     {
-      title: "Labeling for GenAI",
+      title: "GenAI 标注",
       content: "Label Studio 提供了用于监督式 LLM 微调、RAG 检索排序、RLHF、聊天机器人评测等的模板。",
       closable: true,
       link: {
-        label: "Explore templates",
+        label: "探索模板",
         url: "https://labelstud.io/templates/gallery_generative_ai",
         params: {
           experiment: "project_creation_tip",
@@ -83,7 +83,7 @@ export const defaultTipsCollection: TipsCollection = {
   ],
   organizationPage: [
     {
-      title: "It looks like your team is growing!",
+      title: "你的团队正在壮大！",
       content: "在 Label Studio 企业版中为团队成员分配角色，并在项目和工作区级别控制敏感数据的访问权限。",
       closable: true,
       link: {
@@ -122,7 +122,7 @@ export const defaultTipsCollection: TipsCollection = {
       },
     },
     {
-      title: "Want to automate task distribution?",
+      title: "想要自动分配任务吗？",
       content: "创建规则，自动分配任务给标注员，并仅在各自视图中显示分配给他们的任务，实现任务可见性控制。",
       closable: true,
       link: {
