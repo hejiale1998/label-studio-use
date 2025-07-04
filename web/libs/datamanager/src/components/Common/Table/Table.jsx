@@ -63,7 +63,7 @@ export const Table = observer(
           indeterminate={selectedItems.isIndeterminate}
           onChange={() => props.onSelectAll()}
           className="select-all"
-          ariaLabel={`${selectedItems.isAllSelected ? "Unselect" : "Select"} all rows`}
+          ariaLabel={`${selectedItems.isAllSelected ? "取消全选" : "全选"} 所有行`}
         />
       );
     }, [props.onSelectAll, selectedItems]);
@@ -75,7 +75,7 @@ export const Table = observer(
           <TableCheckboxCell
             checked={isChecked}
             onChange={() => props.onSelectRow(data.id)}
-            ariaLabel={`${isChecked ? "Unselect" : "Select"} Task ${data.id}`}
+            ariaLabel={`${isChecked ? "取消选择" : "选择"} 任务 ${data.id}`}
           />
         );
       },
@@ -130,13 +130,13 @@ export const Table = observer(
         };
 
         return (
-          <Tooltip title="Show task source">
+          <Tooltip title="显示任务源数据">
             <Button
               look="string"
               className="w-6 h-6 p-0 text-primary-content hover:text-primary-content-hover"
               onClick={() => {
                 modal({
-                  title: `Source for task ${out?.id}`,
+                  title: `任务 ${out?.id} 的源数据`,
                   style: { width: 800 },
                   body: <TaskSourceView content={out} onTaskLoad={onTaskLoad} sdkType={type} />,
                 });
@@ -295,7 +295,7 @@ export const Table = observer(
                 wrapper={FieldsButton.Checkbox}
                 icon={<IconGearNewUI />}
                 style={{ padding: "0" }}
-                tooltip={"Customize Columns"}
+                tooltip={"自定义列"}
               />
             ) : (
               <FieldsButton
@@ -457,7 +457,7 @@ const TaskSourceView = ({ content, onTaskLoad, sdkType }) => {
       style={{ position: "relative" }}
     >
       <div style={{ padding: "16px", paddingTop: "16px" }}>
-        <Tooltip title={copied ? "Copied!" : "Copy JSON"}>
+        <Tooltip title={copied ? "已复制！" : "复制 JSON"}>
           <Button
             look="string"
             variant="neutral"

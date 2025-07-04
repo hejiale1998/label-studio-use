@@ -140,9 +140,9 @@ export const DataView = injector(
           return (
             <Block name="syncInProgress">
               <Elem name="title" tag="h3">
-                Failed to sync data
+                同步数据失败
               </Elem>
-              <Elem name="text">Check your storage settings. You may need to recreate this dataset</Elem>
+              <Elem name="text">请检查您的存储设置。您可能需要重新创建此数据集</Elem>
             </Block>
           );
         }
@@ -154,9 +154,9 @@ export const DataView = injector(
           return (
             <Block name="syncInProgress">
               <Elem name="title" tag="h3">
-                Nothing found
+                未找到数据
               </Elem>
-              <Elem name="text">Try adjusting the filter or similarity search parameters</Elem>
+              <Elem name="text">请尝试调整筛选或相似度搜索参数</Elem>
             </Block>
           );
         }
@@ -164,16 +164,16 @@ export const DataView = injector(
           return (
             <Block name="syncInProgress">
               <Elem name="title" tag="h3">
-                Hang tight! Records are syncing in the background
+                请稍候！记录正在后台同步
               </Elem>
-              <Elem name="text">Press the button below to see any synced records</Elem>
+              <Elem name="text">点击下方按钮可查看已同步的记录</Elem>
               <Button
                 onClick={async () => {
                   await store.fetchProject({ force: true, interaction: "refresh" });
                   await store.currentView?.reload();
                 }}
               >
-                Refresh
+                刷新
               </Button>
             </Block>
           );
@@ -184,17 +184,17 @@ export const DataView = injector(
               <Elem name="description">
                 {hasData ? (
                   <>
-                    <h3>Nothing found</h3>
-                    Try adjusting the filter
+                    <h3>未找到数据</h3>
+                    请尝试调整筛选条件
                   </>
                 ) : (
-                  "Looks like you have not imported any data yet"
+                  "您还没有导入任何数据"
                 )}
               </Elem>
               {!hasData && !!store.interfaces.get("import") && (
                 <Elem name="navigation">
                   <ImportButton look="primary" href="./import">
-                    Go to import
+                    前往导入
                   </ImportButton>
                 </Elem>
               )}
