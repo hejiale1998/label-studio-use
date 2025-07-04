@@ -61,7 +61,7 @@ export const Pagination: FC<PaginationProps> = forwardRef<any, PaginationProps>(
       return pageSizeOptions.map((obj: number, index: number) => {
         return {
           value: obj,
-          label: `${obj} per page`,
+          label: `每页 ${obj} 条`,
         };
       });
     }, [pageSizeOptions]);
@@ -123,7 +123,7 @@ export const Pagination: FC<PaginationProps> = forwardRef<any, PaginationProps>(
                   setInputMode(true);
                 }}
               >
-                {currentPage} <span>of {totalPages}</span>
+                {currentPage} <span>共 {totalPages} 页</span>
                 <div
                   onClick={() => {
                     /*  */

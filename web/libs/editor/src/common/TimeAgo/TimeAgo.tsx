@@ -56,7 +56,7 @@ export const TimeAgo = ({ date, ...rest }: TimeAgoProps) => {
   // with the date-fns function. If we require an entire overhaul to the messaging for the en-US locale, revisit this and replace with an entire locale override option.
   const text =
     formatDistanceToNow(fromTS, { addSuffix: true }) === "less than a minute ago"
-      ? "seconds ago"
+      ? "几秒前"
       : formatDistanceToNow(fromTS, { addSuffix: true });
 
   return (

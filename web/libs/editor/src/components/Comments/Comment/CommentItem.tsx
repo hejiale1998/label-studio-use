@@ -254,7 +254,7 @@ export const CommentItem: FC<CommentItemProps> = observer(
                             }
                           }}
                         >
-                          {isEditMode ? "Cancel edit" : "Edit"}
+                          {isEditMode ? "取消编辑" : "编辑"}
                         </Menu.Item>
                         <Menu.Item onClick={toggleLink}>{regionRef?.region ? "Unlink" : "Link to..."}</Menu.Item>
                         {!isConfirmDelete && (

@@ -149,7 +149,7 @@ const panelViews = [
   },
   {
     name: "info",
-    title: "Info",
+    title: "信息",
     component: panelComponents.info as FC<PanelProps>,
     active: true,
   },

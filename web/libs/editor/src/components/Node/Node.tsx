@@ -115,7 +115,7 @@ const NodeViews = {
   }),
 
   ChoicesModel: NodeView({
-    name: "Classification",
+            name: "分类",
     icon: ApartmentOutlined,
   }),
 

@@ -186,7 +186,7 @@ export class HtxTextBox extends React.Component {
           <Button
             type="text"
             className={styles.button}
-            tooltip="Edit"
+                          tooltip="编辑"
             tooltipTheme="Dark"
             style={{ padding: 0 }}
             icon={<IconEdit />}
@@ -199,7 +199,7 @@ export class HtxTextBox extends React.Component {
             type="text"
             look="danger"
             className={styles.button}
-            tooltip="Delete"
+                          tooltip="删除"
             tooltipTheme="Dark"
             style={{ padding: 0 }}
             icon={<IconTrashAlt />}

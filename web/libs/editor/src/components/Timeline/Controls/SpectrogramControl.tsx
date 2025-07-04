@@ -545,7 +545,7 @@ export const SpectrogramControl: FC<SpectrogramControlProps> = ({ waveform }) =>
         </Elem>
       </Elem>
       <Elem name="spectrogram-controls">
-        <Elem name="label">Windowing Function</Elem>
+        <Elem name="label">窗函数</Elem>
         <Select
           value={displayWindowFunc}
           onChange={handleChangeWindowingFunction}
@@ -554,7 +554,7 @@ export const SpectrogramControl: FC<SpectrogramControlProps> = ({ waveform }) =>
         />
       </Elem>
       <Elem name="spectrogram-controls">
-        <Elem name="label">Color Scheme</Elem>
+        <Elem name="label">配色方案</Elem>
         <Select
           value={displayColorScheme}
           onChange={handleChangeColorScheme}

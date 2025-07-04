@@ -281,7 +281,7 @@ const ToggleRegionsVisibilityButton = observer<FC<ToggleRegionsVisibilityButton>
       disabled={isDisabled}
       onClick={toggleRegionsVisibility}
       mod={{ hidden: isAllHidden }}
-      aria-label={isAllHidden ? "Show all regions" : "Hide all regions"}
+      aria-label={isAllHidden ? "显示所有区域" : "隐藏所有区域"}
       icon={
         isAllHidden ? (
           <IconOutlinerEyeClosed width={16} height={16} />
@@ -289,7 +289,7 @@ const ToggleRegionsVisibilityButton = observer<FC<ToggleRegionsVisibilityButton>
           <IconOutlinerEyeOpened width={16} height={16} />
         )
       }
-      tooltip={isAllHidden ? "Show all regions" : "Hide all regions"}
+      tooltip={isAllHidden ? "显示所有区域" : "隐藏所有区域"}
       tooltipTheme="dark"
     />
   );

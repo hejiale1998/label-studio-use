@@ -54,7 +54,7 @@ export const confirm = ({ okText, onOk, cancelText, onCancel, buttonLook, ...pro
           size="compact"
           autoFocus
         >
-          {cancelText ?? "Cancel"}
+          {cancelText ?? "取消"}
         </Button>
 
         <Button
@@ -65,7 +65,7 @@ export const confirm = ({ okText, onOk, cancelText, onCancel, buttonLook, ...pro
           size="compact"
           look={buttonLook ?? "primary"}
         >
-          {okText ?? "OK"}
+          {okText ?? "确定"}
         </Button>
       </Space>
     ),
@@ -87,7 +87,7 @@ export const info = ({ okText, onOkPress, ...props }) => {
           look="primary"
           size="compact"
         >
-          {okText ?? "OK"}
+          {okText ?? "确定"}
         </Button>
       </Space>
     ),

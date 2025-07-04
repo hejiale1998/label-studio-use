@@ -50,7 +50,7 @@ export const TimeDurationControl: FC<TimerProps> = ({
         readonly={startTimeReadonly}
         value={_currentTime}
         onChange={handleChangeCurrentTime}
-        label={showLabels ? "Start" : undefined}
+        label={showLabels ? "开始" : undefined}
         data-testid="timebox-current-time"
       />
       <TimeBox

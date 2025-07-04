@@ -208,7 +208,7 @@ const DEFAULT_MODAL_SETTINGS = isFF(FF_DEV_3873)
     }
   : {
       name: "settings-modal-old",
-      title: "Settings",
+              title: "设置",
       bodyStyle: { paddingTop: "0" },
     };
 

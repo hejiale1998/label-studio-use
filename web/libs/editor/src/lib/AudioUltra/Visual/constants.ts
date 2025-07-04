@@ -13,10 +13,10 @@ export const SPECTROGRAM_DEFAULTS = {
 export const FFT_SAMPLE_VALUES = [64, 128, 256, 512, 1024, 2048] as const;
 
 export const WINDOWING_OPTIONS = [
-  { value: "hann", label: "Hann" },
-  { value: "hamming", label: "Hamming" },
-  { value: "blackman", label: "Blackman" },
-  { value: "rectangular", label: "Rectangular" },
+  { value: "hann", label: "汉宁窗" },
+  { value: "hamming", label: "海明窗" },
+  { value: "blackman", label: "布莱克曼窗" },
+  { value: "rectangular", label: "矩形窗" },
 ] as const;
 
 // Performance tuning constants for painting

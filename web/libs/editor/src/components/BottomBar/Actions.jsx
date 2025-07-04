@@ -35,11 +35,11 @@ export const Actions = ({ store }) => {
           />
         </Tooltip>
       )}
-      <Tooltip alignment="top-left" title="Settings">
+              <Tooltip alignment="top-left" title="设置">
         <Button
           icon={<IconSettings />}
           type="text"
-          aria-label="Settings"
+          aria-label="设置"
           onClick={() => store.toggleSettings()}
           style={{
             height: 36,

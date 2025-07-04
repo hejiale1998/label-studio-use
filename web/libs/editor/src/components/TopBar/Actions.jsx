@@ -50,7 +50,7 @@ export const Actions = ({ store }) => {
             icon={<IconTrash />}
             look="danger"
             type="text"
-            aria-label="Delete"
+            aria-label="删除"
             onClick={() => {
               confirm({
                 title: "Delete annotation",
@@ -100,7 +100,7 @@ export const Actions = ({ store }) => {
       <Button
         icon={<IconSettings />}
         type="text"
-        aria-label="Settings"
+        aria-label="设置"
         onClick={() => store.toggleSettings()}
         style={{
           height: 36,

@@ -114,7 +114,7 @@ const Annotation = observer(({ item, store }) => {
    * Title of card
    */
   if (item.userGenerate && !item.sentUserGenerate) {
-    annotationID = <span className={styles.title}>Unsaved Annotation</span>;
+          annotationID = <span className={styles.title}>未保存的标注</span>;
   } else {
     if (item.pk) {
       annotationID = <span className={styles.title}>ID {item.pk}</span>;
@@ -154,9 +154,9 @@ const Annotation = observer(({ item, store }) => {
               placement="bottomLeft"
               title={"Please confirm you want to delete this annotation"}
               onConfirm={confirm}
-              okText="Delete"
+              okText="删除"
               okType="danger"
-              cancelText="Cancel"
+              cancelText="取消"
             >
               <Button size="small" danger style={{ background: "transparent" }}>
                 <DeleteOutlined />
@@ -184,7 +184,7 @@ const Annotation = observer(({ item, store }) => {
             {badge}
             {annotationID}
           </div>
-          {item.pk ? "Created" : "Started"}
+          {item.pk ? "已创建" : "已开始"}
           <i>{item.createdAgo ? ` ${item.createdAgo} ago` : ` ${Utils.UDate.prettyDate(item.createdDate)}`}</i>
           {item.createdBy && item.pk ? ` by ${item.createdBy}` : null}
           <DraftPanel item={item} />
@@ -213,7 +213,7 @@ class Annotations extends Component {
     const title = (
       <div className={`${styles.title} ${styles.titlespace}`}>
         <div style={{ display: "flex", alignItems: "center" }}>
-          <h3>Annotations</h3>
+          <h3>标注</h3>
         </div>
 
         <div style={{ marginRight: "1px" }}>
@@ -254,7 +254,7 @@ class Annotations extends Component {
 
     return (
       <Card title={title} size="small" bodyStyle={{ padding: "0", paddingTop: "1px" }}>
-        <List>{store.annotationStore.annotations ? content : <p>No annotations submitted yet</p>}</List>
+        <List>{store.annotationStore.annotations ? content : <p>暂无标注提交</p>}</List>
       </Card>
     );
   }

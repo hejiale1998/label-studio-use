@@ -153,7 +153,7 @@ export const AnnotationButton = observer(
               </>
             ),
             buttonLook: "destructive",
-            okText: "Delete",
+            okText: "删除",
             onOk: () => {
               entity.list.deleteAnnotation(entity);
             },

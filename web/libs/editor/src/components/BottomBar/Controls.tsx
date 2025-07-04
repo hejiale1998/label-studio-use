@@ -226,13 +226,13 @@ export const Controls = controlsInjector<{ annotation: MSTAnnotation }>(
               onClickMethod();
             }}
           >
-            {`${isUpdate ? "Update" : "Submit"} and exit`}
+            {`${isUpdate ? "更新" : "提交"}并退出`}
           </Button>
         );
       };
 
       if (userGenerate || (store.explore && !userGenerate && store.hasInterface("submit"))) {
-        const title = submitDisabled ? EMPTY_SUBMIT_TOOLTIP : "Save results: [ Ctrl+Enter ]";
+        const title = submitDisabled ? EMPTY_SUBMIT_TOOLTIP : "保存结果: [ Ctrl+Enter ]";
 
         buttons.push(
           <ButtonTooltip key="submit" title={title}>
@@ -264,7 +264,7 @@ export const Controls = controlsInjector<{ annotation: MSTAnnotation }>(
                   ) : undefined
                 }
               >
-                Submit
+                提交
               </Button>
             </Elem>
           </ButtonTooltip>,
@@ -277,7 +277,7 @@ export const Controls = controlsInjector<{ annotation: MSTAnnotation }>(
         const noChanges = isFF(FF_REVIEWER_FLOW) && !history.canUndo && !annotation.draftId;
         const isUpdateDisabled = isDisabled || noChanges;
         const button = (
-          <ButtonTooltip key="update" title={noChanges ? "No changes were made" : "Update this task: [ Ctrl+Enter ]"}>
+          <ButtonTooltip key="update" title={noChanges ? "没有进行任何更改" : "更新此任务: [ Ctrl+Enter ]"}>
             <Button
               aria-label="submit"
               name="submit"
@@ -305,7 +305,7 @@ export const Controls = controlsInjector<{ annotation: MSTAnnotation }>(
                 ) : undefined
               }
             >
-              {isUpdate ? "Update" : "Submit"}
+              {isUpdate ? "更新" : "提交"}
             </Button>
           </ButtonTooltip>
         );
