@@ -1,35 +1,35 @@
 const OBJECTS = {
   Image: {
-    type: "Image",
+    type: "图像", 
     settings: {
       strokeWidth: {
-        title: "Width of region borders",
+        title: "区域边框宽度",
         type: Number,
         param: ($obj, value) => $obj.$controls.forEach(($control) => $control.setAttribute("strokeWidth", value)),
         value: ($obj) => $obj.$controls[0]?.getAttribute("strokeWidth") ?? 1,
       },
       zoom: {
-        title: "Allow image zoom (ctrl+wheel)",
+        title: " 允许图像缩放（ctrl+滚轮）",
         type: Boolean,
         param: "zoom",
       },
       zoomControl: {
-        title: "Show controls to zoom in and out",
+        title: "显示缩放控制按钮",
         type: Boolean,
         param: "zoomControl",
       },
       rotateControl: {
-        title: "Show controls to rotate image",
+        title: "显示旋转控制按钮", 
         type: Boolean,
         param: "rotateControl",
       },
     },
   },
   Text: {
-    type: "Text",
+    type: "文本",
     settings: {
       granularity: {
-        title: "Select text by words",
+        title: "按词选择文本",
         type: Boolean,
         param: ($obj, value) =>
           value ? $obj.setAttribute("granularity", "word") : $obj.removeAttribute("granularity"),
@@ -39,28 +39,28 @@ const OBJECTS = {
     },
   },
   HyperText: {
-    type: "HyperText",
+    type: "超文本", 
   },
   Audio: {
-    type: "Audio",
+    type: "音频",
   },
   AudioPlus: {
-    type: "Audio",
+    type: "音频", 
   },
   List: {
-    type: "List",
+    type: "列表",
   },
   Paragraphs: {
-    type: "Paragraphs",
+    type: "段落",
   },
   Table: {
-    type: "Table",
+    type: "表格",
   },
   TimeSeries: {
-    type: "TimeSeries",
+    type: "时间序列", 
   },
   Video: {
-    type: "Video",
+    type: "视频", 
   },
 };
 

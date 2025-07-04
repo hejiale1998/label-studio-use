@@ -297,10 +297,10 @@ const ConfigureColumn = ({ template, obj, columns }) => {
         isInline={true}
         label={
           <>
-            Use {obj.tagName.toLowerCase()}
-            {template.objects > 1 && ` for ${obj.getAttribute("name")}`}
-            {" from "}
-            {columns?.length > 0 && columns[0] !== DEFAULT_COLUMN && "field "}
+            使用 {obj.tagName.toLowerCase()}
+            {template.objects > 1 && ` 用于 ${obj.getAttribute("name")}`}
+            {" 从 "}
+            {columns?.length > 0 && columns[0] !== DEFAULT_COLUMN && "字段 "}
           </>
         }
         labelProps={{ className: "inline-flex" }}
@@ -316,15 +316,12 @@ const ConfigureColumns = ({ columns, template }) => {
 
   return (
     <div className={configClass.elem("object")}>
-      <h4>Configure data</h4>
+      <h4>配置数据</h4>
       {template.objects.length > 1 && columns?.length > 0 && columns.length < template.objects.length && (
-        <p className={configClass.elem("object-error")}>This template requires more data then you have for now</p>
+        <p className={configClass.elem("object-error")}>该模板需要的数据字段比你当前拥有的更多</p>
       )}
       {columns?.length === 0 && (
-        <p className={configClass.elem("object-error")}>
-          To select which field(s) to label you need to upload the data. Alternatively, you can provide it using Code
-          mode.
-        </p>
+        <p className={configClass.elem("object-error")}>如需选择要标注的字段，请先上传数据。或者可通过代码模式手动提供。</p>
       )}
       {template.objects.map((obj) => (
         <ConfigureColumn key={obj.getAttribute("name")} {...{ obj, template, columns }} />

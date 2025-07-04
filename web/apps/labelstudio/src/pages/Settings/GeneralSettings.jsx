@@ -21,8 +21,8 @@ export const GeneralSettings = () => {
   const colors = ["#FDFDFC", "#FF4C25", "#FF750F", "#ECB800", "#9AC422", "#34988D", "#617ADA", "#CC6FBE"];
 
   const samplings = [
-    { value: "Sequential", label: "Sequential", description: "Tasks are ordered by Task ID" },
-    { value: "Uniform", label: "Random", description: "Tasks are chosen with uniform random" },
+    { value: "Sequential", label: "顺序", description: "任务按任务ID顺序排列" },
+    { value: "Uniform", label: "随机", description: "任务以均匀随机方式选择" },
   ];
 
   return (
@@ -74,7 +74,7 @@ export const GeneralSettings = () => {
                     key={value}
                     value={`${value} sampling`}
                     label={`${label === 'Sequential' ? '顺序' : '随机'}抽样`}
-                    description={description === 'Tasks are ordered by Task ID' ? '任务按ID顺序排列' : '任务随机选择'}
+                    description={description === '任务按任务ID顺序排列' ? '任务按ID顺序排列' : '任务随机选择'}
                   />
                 ))}
                 {isFF(FF_LSDV_E_297) && (
