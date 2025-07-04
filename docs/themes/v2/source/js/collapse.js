@@ -119,15 +119,15 @@ function onDOMReady() {
 
   // Create and configure Collapse/Expand button
   const collapseExpandBtn = document.createElement("button");
-  collapseExpandBtn.textContent = is_collapsed ? "Expand All" : "Collapse All";
+  collapseExpandBtn.textContent = is_collapsed ? "展开全部" : "折叠全部";
   const toc = document.querySelector(".content-grid .toc");
   toc?.appendChild(collapseExpandBtn);
   let allExpanded = !is_collapsed;
   collapseExpandBtn.addEventListener("click", () => {
     if (allExpanded) {
-      collapseExpandBtn.textContent = "Expand All";
+      collapseExpandBtn.textContent = "展开全部";
     } else {
-      collapseExpandBtn.textContent = "Collapse All";
+      collapseExpandBtn.textContent = "折叠全部";
     }
     allExpanded = !allExpanded;
 

@@ -123,9 +123,11 @@ const invokeAction = (action, destructive, store, formRef) => {
     const dialog = Modal[dialogType] ?? Modal.confirm;
 
     dialog({
-      title: title ? title : destructive ? "Destructive action" : "Confirm action",
+      title: title ? title : destructive ? "危险操作" : "确认操作",
       body: buildDialogContent(text, form, formRef),
       buttonLook: destructive ? "destructive" : "primary",
+      cancelText: "取消",
+      okText: "确定",
       onOk() {
         const body = formRef.current?.assembleFormData({ asJSON: true });
 
@@ -159,7 +161,7 @@ export const ActionsButton = injector(
     const actionButtons = actions.map((action) => (
       <ActionButton key={action.id} action={action} parentRef={formRef} store={store} formRef={formRef} />
     ));
-    const recordTypeLabel = isFFLOPSE3 && store.SDK.type === "DE" ? "Record" : "Task";
+    const recordTypeLabel = isFFLOPSE3 && store.SDK.type === "DE" ? "记录" : "任务";
 
     return (
       <Dropdown.Trigger
@@ -171,7 +173,7 @@ export const ActionsButton = injector(
         onToggle={setIsOpen}
       >
         <Button size={size} disabled={!hasSelected} {...rest}>
-          {selectedCount > 0 ? `${selectedCount} ${recordTypeLabel}${selectedCount > 1 ? "s" : ""}` : "动作"}
+          {selectedCount > 0 ? `${selectedCount} ${recordTypeLabel}${selectedCount > 1 ? "s" : ""}` : "任务"}
           <IconChevronDown style={{ marginLeft: 4, marginRight: -7 }} />
         </Button>
       </Dropdown.Trigger>

@@ -87,7 +87,7 @@ export const info = ({ okText, onOkPress, ...props }) => {
           look="primary"
           size="compact"
         >
-          {okText ?? "OK"}
+          {okText ?? "确定"}
         </Button>
       </Space>
     ),

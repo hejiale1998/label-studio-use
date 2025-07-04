@@ -53,10 +53,10 @@ export const Actions = ({ store }) => {
             aria-label="删除"
             onClick={() => {
               confirm({
-                title: "Delete annotation",
-                body: "This action cannot be undone",
+                title: "删除标注",
+                body: "此操作无法撤销",
                 buttonLook: "destructive",
-                okText: "Proceed",
+                okText: "继续",
                 onOk: () => entity.list.deleteAnnotation(entity),
               });
             }}

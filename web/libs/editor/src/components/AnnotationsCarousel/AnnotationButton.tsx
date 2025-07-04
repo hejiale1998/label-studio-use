@@ -137,19 +137,19 @@ export const AnnotationButton = observer(
           copyLink();
           dropdown?.close();
           toast.show({
-            message: "Annotation link copied to clipboard",
+            message: "标注链接已复制到剪贴板",
             type: ToastType.info,
           });
         }, [entity, copyLink]);
         const deleteAnnotation = useCallback(() => {
           clickHandler();
           confirm({
-            title: "Delete annotation?",
+            title: "删除标注？",
             body: (
               <>
-                This will <strong>delete all existing regions</strong>. Are you sure you want to delete them?
+                这将<strong>删除所有现有区域</strong>。您确定要删除它们吗？
                 <br />
-                This action cannot be undone.
+                此操作无法撤销。
               </>
             ),
             buttonLook: "destructive",

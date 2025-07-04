@@ -89,7 +89,7 @@ def predictions_to_annotations_form(user, project):
                 {
                     'type': 'select',
                     'name': 'model_version',
-                    'label': 'Choose predictions',
+                    'label': '选择预测',
                     'options': versions,
                     'value': first,
                 }

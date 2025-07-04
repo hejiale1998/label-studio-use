@@ -401,6 +401,7 @@ export const AppStore = types
           onOk() {
             self.SDK.invoke("settingsClicked");
           },
+          cancelText: "取消",
           okText: "去设置",
         });
         return false;

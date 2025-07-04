@@ -316,12 +316,12 @@ export class LSFWrapper {
 
     if (isFF(FF_DEV_2887) && this.lsf?.commentStore?.hasUnsaved) {
       Modal.confirm({
-        title: "You have unsaved changes",
-        body: "There are comments which are not persisted. Please submit the annotation. Continuing will discard these comments.",
+        title: "您有未保存的更改",
+        body: "有未保存的评论。请提交标注。继续将丢弃这些评论。",
         onOk() {
           nextAction();
         },
-        okText: "Discard and continue",
+        okText: "放弃并继续",
       });
       return;
     }
