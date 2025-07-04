@@ -2,30 +2,30 @@
 title_bucket_prefix: &title_bucket_prefix
   - type: text
     name: title
-    label: Storage Name
+    label: 存储名称
     required: true
   - type: text
     name: bucket
-    label: Bucket Name
+    label: 存储桶名称
     allowEmpty: false
     required: true
   - type: text
     name: prefix
-    label: Bucket Prefix
+    label: 存储桶前缀
 
 # 2x3 grid
 aws_params_import: &aws_params_import
   - type: text
     name: region_name
-    label: Region Name
+    label: 区域名称
     placeholder: us-east-1
   - type: text
     name: s3_endpoint
-    label: S3 Endpoint
+    label: S3 端点
   - null
   - type: password
     name: aws_access_key_id
-    label: Access Key ID
+    label: 访问密钥 ID
     autoComplete: "off"
     skipAutofill: true
     allowEmpty: false
@@ -33,7 +33,7 @@ aws_params_import: &aws_params_import
     tooltip: "Leave blank if already set up as an Environment Variable."
   - type: password
     name: aws_secret_access_key
-    label: Secret Access Key
+    label: 秘密访问密钥
     autoComplete: "new-password"
     skipAutofill: true
     allowEmpty: false
@@ -42,7 +42,7 @@ aws_params_import: &aws_params_import
   - type: password
     name: aws_session_token
     autoComplete: "new-password"
-    label: Session Token
+    label: 会话令牌
     skipAutofill: true
     allowEmpty: true
     protectedValue: true
@@ -51,24 +51,24 @@ aws_params_import: &aws_params_import
 aws_params_export: &aws_params_export
   - type: text
     name: region_name
-    label: Region Name
+    label: 区域名称
     placeholder: us-east-1
   - type: text
     name: s3_endpoint
-    label: S3 Endpoint
+    label: S3 端点
   - type: text
     name: aws_sse_kms_key_id
-    label: SSE KMS Key ID
+    label: SSE KMS 密钥 ID
   - type: password
     name: aws_access_key_id
-    label: Access Key ID
+    label: 访问密钥 ID
     autoComplete: "off"
     skipAutofill: true
     allowEmpty: false
     protectedValue: true
   - type: password
     name: aws_secret_access_key
-    label: Secret Access Key
+    label: 秘密访问密钥
     autoComplete: "new-password"
     skipAutofill: true
     allowEmpty: false
@@ -76,7 +76,7 @@ aws_params_export: &aws_params_export
   - type: password
     name: aws_session_token
     autoComplete: "new-password"
-    label: Session Token
+    label: 会话令牌
     skipAutofill: true
     allowEmpty: true
     protectedValue: true
@@ -91,7 +91,7 @@ ImportStorage:
     fields:
       - type: text
         name: regex_filter
-        label: File Filter Regex
+        label: 文件过滤正则表达式
         placeholder: '.*csv or .*(jpe?g|png|tiff) or .\w+-\d+.text'
         validators:
           - regexp
@@ -104,15 +104,15 @@ ImportStorage:
     fields:
       - type: select
         name: use_blob_urls
-        label: Import method
-        description: Choose how to import your data from storage
-        placeholder: "Select an option"
+        label: 导入方法
+        description: 选择如何从存储导入数据
+        placeholder: "选择一个选项"
         required: true
         options:
           - value: true
-            label: "Files - Automatically creates a task for each storage object (e.g. JPG, MP3, TXT)"
+            label: "文件 - 自动为每个存储对象创建一个任务（例如 JPG、MP3、TXT）"
           - value: false
-            label: "JSON - Treat each JSON or JSONL file as a task definition (one or more tasks per file)"
+            label: "JSON - 将每个 JSON 或 JSONL 文件视为任务定义（每个文件一个或多个任务）"
 
   # 2 column grid
   - columnCount: 2
@@ -121,13 +121,13 @@ ImportStorage:
         fields:
         - type: toggle
           name: presign
-          label: "Use pre-signed URLs (On)\n Proxy through the platform (Off)"
-          description: "When pre-signed URLs are enabled, all data bypasses the platform and user browsers directly read data from storage"
+          label: "使用预签名 URL（开）\n 通过平台代理（关）"
+          description: "当预签名 URL 启用时，所有数据绕过平台，用户浏览器直接从存储读取数据"
           value: true
       - fields:
         - type: counter
           name: presign_ttl
-          label: Expire pre-signed URLs (minutes)
+          label: 过期预签名 URL（分钟）
           min: 1
           value: 15
           dependency: presign
@@ -136,8 +136,8 @@ ImportStorage:
       - fields:
           - type: toggle
             name: recursive_scan
-            label: Scan all sub-folders
-            description: Include files from all nested folders
+            label: 扫描所有子文件夹
+            description: 包含所有嵌套文件夹中的文件
 
 ExportStorage:
   - columnCount: 3
@@ -150,5 +150,5 @@ ExportStorage:
       - fields:
           - type: toggle
             name: can_delete_objects
-            label: Can delete objects from storage
-            description: If unchecked, annotations will not be deleted from storage
+            label: 是否可以删除存储中的对象
+            description: 如果未选中，注

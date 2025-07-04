@@ -2,28 +2,28 @@
 title_container_prefix: &title_container_prefix
   - type: text
     name: title
-    label: Storage Name
+    label: 存储名称
     required: true
   - type: text
     name: container
-    label: Container Name
+    label: 容器名称
     required: true
   - type: text
     name: prefix
-    label: Container Prefix
+    label: 容器前缀
 
 # 1x2 grid
 azure_params: &azure_params
   - type: password
     name: account_name
-    label: Account Name
+    label: 账户名称
     autoComplete: "off"
     skipAutofill: true
     allowEmpty: false
     protectedValue: true
   - type: password
     name: account_key
-    label: Account Key
+    label: 账户密钥
     autoComplete: "new-password"
     skipAutofill: true
     allowEmpty: false
@@ -38,7 +38,7 @@ ImportStorage:
     fields:
       - type: text
         name: regex_filter
-        label: File Filter Regex
+        label: 文件过滤正则表达式
         placeholder: '.*csv or .*(jpe?g|png|tiff) or .\w+-\d+.text'
         validators:
           - regexp
@@ -51,15 +51,15 @@ ImportStorage:
     fields:
       - type: select
         name: use_blob_urls
-        label: Import method
-        description: Choose how to import your data from storage
-        placeholder: "Select an option"
+        label: 导入方法
+        description: 选择如何从存储导入数据
+        placeholder: "选择一个选项"
         required: true
         options:
           - value: true
-            label: "Files - Automatically creates a task for each storage object (e.g. JPG, MP3, TXT)"
+            label: "文件 - 自动为每个存储对象创建一个任务（例如 JPG、MP3、TXT）"
           - value: false
-            label: "JSON - Treat each JSON or JSONL file as a task definition (one or more tasks per file)"
+            label: "JSON - 将每个 JSON 或 JSONL 文件视为任务定义（每个文件一个或多个任务）"
 
   # 2 columns grid
   - columnCount: 2
@@ -68,13 +68,13 @@ ImportStorage:
         fields:
           - type: toggle
             name: presign
-            label: "Use pre-signed URLs (On)\n Proxy through the platform (Off)"
-            description: "When pre-signed URLs are enabled, all data bypasses the platform and user browsers directly read data from storage"
+            label: "使用预签名 URL（开）\n 通过平台代理（关）"
+            description: "当预签名 URL 启用时，所有数据绕过平台，用户浏览器直接从存储读取数据"
             value: true
       - fields:
           - type: counter
             name: presign_ttl
-            label: Expire pre-signed URLs (minutes)
+            label: 过期预签名 URL（分钟）
             min: 1
             value: 15
             dependency: presign
