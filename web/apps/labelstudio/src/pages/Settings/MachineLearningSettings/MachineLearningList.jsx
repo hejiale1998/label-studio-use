@@ -73,12 +73,12 @@ const BackendCard = ({ backend, onStartTrain, onEdit, onDelete, onTestRequest })
             align="right"
             content={
               <Menu size="medium" contextual>
-                <Menu.Item onClick={() => onEdit(backend)}>Edit</Menu.Item>
-                <Menu.Item onClick={() => onTestRequest(backend)}>Send Test Request</Menu.Item>
-                <Menu.Item onClick={() => onStartTrain(backend)}>Start Training</Menu.Item>
+                <Menu.Item onClick={() => onEdit(backend)}>编辑</Menu.Item>
+                <Menu.Item onClick={() => onTestRequest(backend)}>发送测试请求</Menu.Item>
+                <Menu.Item onClick={() => onStartTrain(backend)}>开始训练</Menu.Item>
                 <Menu.Divider />
                 <Menu.Item onClick={() => confirmDelete(backend)} isDangerous>
-                  Delete
+                  删除
                 </Menu.Item>
               </Menu>
             }
@@ -92,7 +92,7 @@ const BackendCard = ({ backend, onStartTrain, onEdit, onDelete, onTestRequest })
         <div className={rootClass.elem("group")}>{truncate(backend.url, 20, 10, "...")}</div>
         <div className={rootClass.elem("group")}>
           <Tooltip title={format(parseISO(backend.created_at), "yyyy-MM-dd HH:mm:ss")}>
-            <span>Created&nbsp;{formatDistanceToNow(parseISO(backend.created_at), { addSuffix: true })}</span>
+            <span>创建于&nbsp;{formatDistanceToNow(parseISO(backend.created_at), { addSuffix: true })}</span>
           </Tooltip>
         </div>
       </div>

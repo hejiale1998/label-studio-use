@@ -102,19 +102,19 @@ export const MachineLearningSettings = () => {
         {loaded && backends.length === 0 && (
           <EmptyState
             icon={<IconModels />}
-            title="Let’s connect your first model"
-            description="Connect a machine learning model to generate predictions. These predictions can be compared side by side, used for efficient pre‒labeling and, to aid in active learning, directing users to the most impactful labeling tasks."
+            title="连接您的第一个模型"
+            description="连接机器学习模型以生成预测结果。这些预测结果可以并排比较，用于高效预标注，并辅助主动学习，引导用户完成最有价值的标注任务。"
             action={
               <Button primary onClick={() => showMLFormModal()}>
-                Connect Model
+                连接模型
               </Button>
             }
             footer={
               <div>
-                Need help?
+                需要帮助？
                 <br />
                 <a href="https://labelstud.io/guide/ml" target="_blank" rel="noreferrer">
-                  Learn more about connecting models in our docs
+                  查看如何连接模型的文档
                 </a>
               </div>
             }
@@ -131,18 +131,16 @@ export const MachineLearningSettings = () => {
         {backends.length > 0 && (
           <>
             <Description>
-              A connected model has been detected! If you wish to fetch predictions from this model, please follow these
-              steps:
+              已检测到已连接的模型！如需从该模型获取预测结果，请按以下步骤操作：
               <br />
               <br />
-              1. Navigate to the <i>Data Manager</i>.<br />
-              2. Select the desired tasks.
+              1. 前往 <i>数据管理</i>。<br />
+              2. 选择所需任务。
               <br />
-              3. Click on <i>Retrieve predictions</i> from the <i>Actions</i> menu.
+              3. 在 <i>操作</i> 菜单中点击 <i>获取预测结果</i>。
             </Description>
             <Description>
-              If you want to use the model predictions for prelabeling, please configure this in the{" "}
-              <NavLink to="annotation">Annotation settings</NavLink>.
+              如需将模型预测用于预标注，请在 <NavLink to="annotation">标注设置</NavLink> 中进行配置。
             </Description>
           </>
         )}
@@ -155,12 +153,12 @@ export const MachineLearningSettings = () => {
         >
           {backends.length > 0 && (
             <Form.Row columnCount={1}>
-              <Label text="Configuration" large />
+              <Label text="配置" large />
 
               <div>
                 <Toggle
-                  label="Start model training on annotation submission"
-                  description="This option will send a request to /train with information about annotations. You can use this to enable an Active Learning loop. You can also manually start training through model menu in its card."
+                  label="在提交标注时启动模型训练"
+                  description="该选项会在提交标注信息时向 /train 发送请求。可用于启用主动学习循环。也可在模型卡片菜单中手动启动训练。"
                   name="start_training_on_annotation_update"
                 />
               </div>
@@ -173,7 +171,7 @@ export const MachineLearningSettings = () => {
                 <span case="success">Saved!</span>
               </Form.Indicator>
               <Button type="submit" look="primary" style={{ width: 120 }}>
-                Save
+                保存
               </Button>
             </Form.Actions>
           )}
@@ -183,5 +181,5 @@ export const MachineLearningSettings = () => {
   );
 };
 
-MachineLearningSettings.title = "Model";
+MachineLearningSettings.title = "模型";
 MachineLearningSettings.path = "/ml";

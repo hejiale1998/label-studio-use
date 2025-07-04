@@ -24,12 +24,10 @@ export const StartModelTraining = ({ backend }) => {
   return (
     <Block name="test-request">
       <Description style={{ marginTop: 0, maxWidth: 680 }}>
-        You're about to manually trigger your model's training process. This action will start the learning phase based
-        on how the train method is implemented in the ML Backend. Proceed to begin this process.
+        您即将手动触发模型的训练过程。此操作将根据 ML 后端中实现的 train 方法启动学习阶段。请继续以开始此过程。
         <br />
         <br />
-        *Note: Currently, there is no built-in feedback loop within this interface for tracking the training progress.
-        You'll need to monitor the model's training steps directly through the model's own tools and environment.
+        *注意：当前界面暂无内置反馈机制用于追踪训练进度。您需要通过模型自身的工具和环境直接监控训练步骤。
       </Description>
 
       {response || (
@@ -38,14 +36,14 @@ export const StartModelTraining = ({ backend }) => {
             onStartTraining(backend);
           }}
         >
-          Start Training
+          开始训练
         </Button>
       )}
 
       {response && (
         <>
-          <pre>Request Sent!</pre>
-          <pre>Response: {JSON.stringify(response, null, 2)}</pre>
+          <pre>请求已发送！</pre>
+          <pre>响应: {JSON.stringify(response, null, 2)}</pre>
         </>
       )}
     </Block>
