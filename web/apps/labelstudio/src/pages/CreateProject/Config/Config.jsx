@@ -23,12 +23,11 @@ const configClass = cn("configure");
 
 const EmptyConfigPlaceholder = () => (
   <div className={configClass.elem("empty-config")}>
-    <p>Your labeling configuration is empty. It is required to label your data.</p>
+    <p>您的标注配置为空。标注数据前必须先配置。</p>
     <p>
-      Start from one of our predefined templates or create your own config on the Code panel. The labeling config is
-      XML-based and you can{" "}
+      可从预设模板开始，或在代码模式下自定义配置。标注配置为 XML 格式，详见
       <a href="https://labelstud.io/tags/" target="_blank" rel="noreferrer">标签文档</a>
-      .
+      。
     </p>
   </div>
 );
@@ -63,7 +62,7 @@ const Label = ({ label, template, color }) => {
           strokeLinecap="square"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <title>Delete label</title>
+          <title>删除标签</title>
           <path d="M2 12L12 2" />
           <path d="M12 12L2 2" />
         </svg>
@@ -94,8 +93,8 @@ const ConfigureControl = ({ control, template }) => {
   return (
     <div className={configClass.elem("labels")}>
       <form className={configClass.elem("add-labels")} action="">
-        <h4>{tagname === "Choices" ? "Add choices" : "Add label names"}</h4>
-        <span>Use new line as a separator to add multiple labels</span>
+        <h4>{tagname === "Choices" ? "添加选项" : "添加标签名称"}</h4>
+        <span>每行一个，可批量添加</span>
         <textarea
           name="labels"
           id=""
@@ -106,12 +105,12 @@ const ConfigureControl = ({ control, template }) => {
           className="lsf-textarea-ls p-2 px-3"
         />
         <Button type="button" size="compact" onClick={onAddLabels}>
-          Add
+          添加
         </Button>
       </form>
       <div className={configClass.elem("current-labels")}>
         <h3>
-          {tagname === "Choices" ? "Choices" : "Labels"} ({control.children.length})
+          {tagname === "Choices" ? "选项" : "标签"}（{control.children.length}）
         </h3>
         <ul>
           {Array.from(control.children).map((label) => (
@@ -217,7 +216,7 @@ const ConfigureSettings = ({ template }) => {
   return (
     <ul className={configClass.elem("settings")}>
       <li>
-        <h4>Configure settings</h4>
+        <h4>配置设置</h4>
         <ul className={configClass.elem("object-settings")}>{items}</ul>
       </li>
     </ul>
@@ -469,10 +468,10 @@ const Configurator = ({
 
   const extra = (
     <p className={configClass.elem("tags-link")}>
-      Configure the labeling interface with tags.
+      使用标签配置标注界面。
       <br />
       <a href="https://labelstud.io/tags/" target="_blank" rel="noreferrer">标签文档</a>
-      .
+      。
     </p>
   );
 

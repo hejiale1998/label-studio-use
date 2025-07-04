@@ -48,34 +48,34 @@ export const ViewControls: FC<ViewControlsProps> = observer(
           return {
             label: (
               <>
-                <IconList /> Group Manually
+                <IconList /> 手动分组
               </>
             ),
-            selectedLabel: isFF(FF_DEV_3873) ? "Manual" : "Manual Grouping",
+            selectedLabel: isFF(FF_DEV_3873) ? "手动" : "手动分组",
             icon: <IconList width={16} height={16} />,
-            tooltip: "Manually Grouped",
+            tooltip: "手动分组",
           };
         case "label":
           return {
             label: (
               <>
-                <IconBoundingBox /> Group by Label
+                <IconBoundingBox /> 按标签分组
               </>
             ),
-            selectedLabel: isFF(FF_DEV_3873) ? "By Label" : "Grouped by Label",
+            selectedLabel: isFF(FF_DEV_3873) ? "按标签" : "按标签分组",
             icon: <IconBoundingBox width={16} height={16} />,
-            tooltip: "Grouped by Label",
+            tooltip: "按标签分组",
           };
         case "type":
           return {
             label: (
               <>
-                <IconCursor /> Group by Tool
+                <IconCursor /> 按工具分组
               </>
             ),
-            selectedLabel: isFF(FF_DEV_3873) ? "By Tool" : "Grouped by Tool",
+            selectedLabel: isFF(FF_DEV_3873) ? "按工具" : "按工具分组",
             icon: <IconCursor width={16} height={16} />,
-            tooltip: "Grouped by Tool",
+            tooltip: "按工具分组",
           };
       }
     }, []);
@@ -86,20 +86,20 @@ export const ViewControls: FC<ViewControlsProps> = observer(
           return {
             label: (
               <>
-                <IconClockTimeFourOutline /> Order by Time
+                <IconClockTimeFourOutline /> 按时间排序
               </>
             ),
-            selectedLabel: "By Time",
+            selectedLabel: "按时间",
             icon: <IconClockTimeFourOutline width={16} height={16} />,
           };
         case "score":
           return {
             label: (
               <>
-                <IconPredictions /> Order by Score
+                <IconPredictions /> 按分数排序
               </>
             ),
-            selectedLabel: "By Score",
+            selectedLabel: "按分数",
             icon: <IconPredictions width={16} height={16} />,
           };
       }

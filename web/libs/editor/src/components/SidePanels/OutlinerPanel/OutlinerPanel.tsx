@@ -61,7 +61,7 @@ const OutlinerPanelComponent: FC<OutlinerPanelProps> = ({ regions, ...props }) =
   regions.setGrouping(group);
 
   return (
-    <PanelBase {...props} name="outliner" mix={OutlinerFFClasses} title="Outliner">
+    <PanelBase {...props} name="outliner" mix={OutlinerFFClasses} title="标注结构树">
       <ViewControls
         ordering={regions.sort}
         regions={regions}
@@ -115,17 +115,15 @@ const OutlinerStandAlone: FC<OutlinerPanelProps> = ({ regions }) => {
 const OutlinerEmptyState = () => (
   <EmptyState
     icon={<IconLsLabeling width={24} height={24} />}
-    header="Labeled regions will appear here"
+    header="标注区域将在此显示"
     description={
       <>
         <span>
-          Start labeling and track your results
-          <br />
-          using this panel
+          开始标注并在此面板跟踪您的结果
         </span>
       </>
     }
-    learnMore={{ href: getDocsUrl("guide/labeling"), text: "Learn more", testId: "regions-panel-learn-more" }}
+    learnMore={{ href: getDocsUrl("guide/labeling"), text: "了解更多", testId: "regions-panel-learn-more" }}
   />
 );
 
@@ -143,8 +141,8 @@ const OutlinerTreeComponent: FC<OutlinerTreeComponentProps> = observer(({ region
       {allRegionsHidden ? (
         <Block name="filters-info">
           <IconInfo width={21} height={20} />
-          <Elem name="filters-title">All regions hidden</Elem>
-          <Elem name="filters-description">Adjust or remove the filters to view</Elem>
+          <Elem name="filters-title">所有区域已隐藏</Elem>
+          <Elem name="filters-description">调整或移除筛选条件以查看</Elem>
         </Block>
       ) : regions?.regions?.length > 0 ? (
         <>
@@ -155,9 +153,9 @@ const OutlinerTreeComponent: FC<OutlinerTreeComponentProps> = observer(({ region
                 <Block name="filters-info">
                   <IconInfo width={21} height={20} />
                   <Elem name="filters-title">
-                    There {hiddenRegions === 1 ? "is" : "are"} {hiddenRegions} hidden region{hiddenRegions > 1 && "s"}
+                    共隐藏了 {hiddenRegions} 个区域
                   </Elem>
-                  <Elem name="filters-description">Adjust or remove filters to view</Elem>
+                  <Elem name="filters-description">调整或移除筛选条件以查看</Elem>
                 </Block>
               )
             }

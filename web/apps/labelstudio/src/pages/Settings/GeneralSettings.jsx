@@ -38,10 +38,10 @@ export const GeneralSettings = () => {
               {isFF(FF_LSDV_E_297) && (
                 <Block name="workspace-placeholder">
                   <Elem name="badge-wrapper">
-                    <Elem name="title">Workspace</Elem>
+                    <Elem name="title">工作区</Elem>
                     <EnterpriseBadge className="ml-2" />
                   </Elem>
-                  <Select placeholder="Select an option" disabled options={[]} />
+                  <Select placeholder="选择一个选项" disabled options={[]} />
                   <Caption>
                     通过将项目组织到工作区，简化项目管理。
                     <a
@@ -83,13 +83,13 @@ export const GeneralSettings = () => {
                     value=""
                     label={
                       <>
-                        Uncertainty sampling <EnterpriseBadge className="ml-2" />
+                        不确定性抽样 <EnterpriseBadge className="ml-2" />
                       </>
                     }
                     disabled
                     description={
                       <>
-                        Tasks are chosen according to model uncertainty score (active learning mode).{" "}
+                        任务将根据模型不确定性得分进行选择（主动学习模式）。
                         <a
                           target="_blank"
                           href={createURL("https://docs.humansignal.com/guide/active_learning", {
@@ -98,7 +98,7 @@ export const GeneralSettings = () => {
                           })}
                           rel="noreferrer"
                         >
-                          Learn more
+                          了解更多
                         </a>
                       </>
                     }
@@ -123,6 +123,6 @@ export const GeneralSettings = () => {
   );
 };
 
-GeneralSettings.menuItem = "General";
+GeneralSettings.menuItem = "一般的";
 GeneralSettings.path = "/";
 GeneralSettings.exact = true;
