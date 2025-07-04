@@ -96,7 +96,7 @@ export const defaultTipsCollection: TipsCollection = {
       },
     },
     {
-      title: "Want to simplify and secure logging in?",
+      title: "想要简化和安全登录吗？",
       content: "在 Label Studio 企业版中，使用 SAML、SCIM2 或 LDAP 启用团队单点登录（SSO）。",
       closable: true,
       link: {
@@ -152,7 +152,7 @@ export const defaultTipsCollection: TipsCollection = {
       content: "通过在 Label Studio 企业版中使用自动化功能，即时标注大规模数据集，同时保证质量。",
       closable: true,
       link: {
-        label: "Check out the integrations directory",
+        label: "查看集成目录",
         url: "https://labelstud.io/integrations/",
         params: {
           experiment: "organization_page_tip",

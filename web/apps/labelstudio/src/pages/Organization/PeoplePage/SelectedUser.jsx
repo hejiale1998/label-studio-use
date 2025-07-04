@@ -54,7 +54,7 @@ export const SelectedUser = ({ user, onClose }) => {
 
       {!!user.created_projects.length && (
         <Elem name="section">
-          <Elem name="section-title">Created Projects</Elem>
+          <Elem name="section-title">创建的项目</Elem>
 
           <UserProjectsLinks projects={user.created_projects} />
         </Elem>
@@ -62,14 +62,14 @@ export const SelectedUser = ({ user, onClose }) => {
 
       {!!user.contributed_to_projects.length && (
         <Elem name="section">
-          <Elem name="section-title">Contributed to</Elem>
+          <Elem name="section-title">参与的项目</Elem>
 
           <UserProjectsLinks projects={user.contributed_to_projects} />
         </Elem>
       )}
 
       <Elem tag="p" name="last-active">
-        Last activity on: {format(new Date(user.last_activity), "dd MMM yyyy, KK:mm a")}
+        最近活跃：{format(new Date(user.last_activity), "dd MMM yyyy, KK:mm a")}
       </Elem>
     </Block>
   );
