@@ -266,19 +266,19 @@ export const Select = forwardRef(
             <Command shouldFilter={false}>
               {searchable && (
                 <CommandInput
-                  placeholder={searchPlaceholder ?? "Search"}
+                  placeholder={searchPlaceholder ?? "搜索"}
                   onChangeCapture={onSearchInputHandler}
                   data-testid="select-search-field"
                   autoFocus
                 />
               )}
               <CommandList
-                label="Select an option"
+                label="选择一个选项"
                 className={
                   searchable ? "shadow-inner shadow-neutral-surface-inset border-t border-neutral-border shadow-" : ""
                 }
               >
-                <CommandEmpty>{searchable ? "No results found." : ""}</CommandEmpty>
+                <CommandEmpty>{searchable ? "没有找到结果。" : ""}</CommandEmpty>
                 <CommandGroup>
                   {props.header ? props.header : null}
                   {_options.map((option, index) => {

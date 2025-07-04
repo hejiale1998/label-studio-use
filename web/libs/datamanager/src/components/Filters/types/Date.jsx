@@ -46,25 +46,25 @@ export const DateFields = (extraProps) => {
   return [
     {
       key: "less",
-      label: "is before",
+      label: "在之前",
       valueType: "single",
       input: (props) => <DateTimeInput {...props} {...(extraProps ?? {})} />,
     },
     {
       key: "greater",
-      label: "is after",
+      label: "在之后",
       valueType: "single",
       input: (props) => <DateTimeInput {...props} {...(extraProps ?? {})} />,
     },
     {
       key: "in",
-      label: "is between",
+      label: "在之间",
       valueType: "range",
       input: (props) => <DateTimeInput range {...props} {...(extraProps ?? {})} />,
     },
     {
       key: "not_in",
-      label: "not between",
+      label: "不在之间",
       valueType: "range",
       input: (props) => <DateTimeInput range {...props} {...(extraProps ?? {})} />,
     },

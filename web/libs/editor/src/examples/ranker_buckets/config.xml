@@ -3,9 +3,9 @@
     .htx-ranker-column { background: cornflowerblue; }
     .htx-ranker-item { background: lightgoldenrodyellow; }
   </Style>
-  <List name="results" value="$items" title="Search Results" />
+  <List name="results" value="$items" title="搜索结果" />
   <Ranker name="rank" toName="results">
-    <Bucket name="best" title="Best results" />
-    <Bucket name="ads" title="Paid results" />
+    <Bucket name="best" title="最佳结果" />
+    <Bucket name="ads" title="付费结果" />
   </Ranker>
 </View>

@@ -255,7 +255,7 @@ const IconCatalog = () => {
       <div className="search-container">
         <input
           type="text"
-          placeholder="Search icons by name or file name..."
+          placeholder="搜索图标..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="p-2 rounded border border-neutral-border bg-neutral-background text-neutral-content focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-focus-outline w-full text-sm mb-4"
@@ -326,7 +326,7 @@ const IconCatalogByCategory = () => {
       <div className="search-container mb-5">
         <input
           type="text"
-          placeholder="Search icons by name, file name, or category..."
+          placeholder="搜索图标..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="p-2 rounded border border-neutral-border bg-neutral-background text-neutral-content focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-focus-outline w-full text-sm mb-4"

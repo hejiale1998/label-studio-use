@@ -308,7 +308,7 @@ const TokenCatalog = () => {
       <div className="mb-6">
         <input
           type="text"
-          placeholder="Search tokens by name or value..."
+          placeholder="搜索设计令牌..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="p-2 rounded border border-neutral-border bg-neutral-background text-neutral-content focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-focus-outline w-full text-sm mb-4"
@@ -327,7 +327,7 @@ const TokenCatalog = () => {
                 : "bg-neutral-surface border-neutral-border"
             }`}
           >
-            All Categories
+            所有类别
           </button>
           {Object.keys(categoryDescriptions).map((category) => (
             <button
@@ -361,7 +361,7 @@ const TokenCatalog = () => {
                   : "bg-neutral-surface border-neutral-border"
               }`}
             >
-              All Colors
+              所有颜色
             </button>
             {Object.keys(colorSubcategoryDescriptions).map((subcategory) => (
               <button
