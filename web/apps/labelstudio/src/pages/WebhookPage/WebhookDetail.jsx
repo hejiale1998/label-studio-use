@@ -10,6 +10,20 @@ import { Space } from "../../components/Space/Space";
 import { useProject } from "../../providers/ProjectProvider";
 import { WebhookDeleteModal } from "./WebhookDeleteModal";
 
+const webhookEventMap = {
+  "Project updated": "项目已更新",
+  "Task created": "任务已创建",
+  "Task deleted": "任务已删除",
+  "Annotation created": "标注已创建",
+  "Annotations created": "多条标注已创建",
+  "Annotation updated": "标注已更新",
+  "Annotation deleted": "标注已删除",
+  "Label link created": "标签关联已创建",
+  "Label link updated": "标签关联已更新",
+  "Label link deleted": "标签关联已删除",
+  // ...如有其它事件请补充...
+};
+
 const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectActive }) => {
   // if webhook === null - create mod
   // else update
@@ -155,14 +169,14 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
                         <Input
                           className={rootClass.elem("headers-input")}
                           skip
-                          placeholder="header"
+                          placeholder="请求头"
                           value={headKey}
                           onChange={(e) => onHeaderChange("key", e, index)}
                         />
                         <Input
                           className={rootClass.elem("headers-input")}
                           skip
-                          placeholder="value"
+                          placeholder="值"
                           value={headValue}
                           onChange={(e) => onHeaderChange("value", e, index)}
                         />
@@ -209,7 +223,7 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
                   {!sendForAllActions ? (
                     <Elem name="content-row-actions">
                       <Elem tag="h4" name="title" mod={{ black: true }}>
-                        Send Payload for
+                        发送负载
                       </Elem>
                       <Elem name="actions">
                         {Object.entries(webhooksInfo).map(([key, value]) => {
@@ -220,7 +234,7 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
                                   skip
                                   name={key}
                                   type="checkbox"
-                                  label={value.name}
+                                  label={webhookEventMap[value.name] || value.name}
                                   onChange={onActionChange}
                                   checked={actions.has(key)}
                                 />

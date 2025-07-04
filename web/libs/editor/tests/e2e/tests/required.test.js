@@ -86,7 +86,7 @@ Scenario("Check required param", async ({ I, LabelStudio, Modals }) => {
   const params = { config: createConfig(), data: { text } };
 
   const waitForError = (name) => {
-    Modals.seeWarning(`Checkbox "${name}" is required`);
+    Modals.seeWarning(`Checkbox "${name}" 是必填项`);
     Modals.closeWarning();
   };
 
@@ -121,7 +121,7 @@ Scenario("Check required param", async ({ I, LabelStudio, Modals }) => {
   I.click("Valid");
   I.submitAnnotation();
   I.see("Warning");
-  I.see('Checkbox "second" is required');
+  I.see('Checkbox "second" 是必填项');
 });
 
 Scenario("Check required param in complex config", async ({ I, LabelStudio, AtOutliner, Modals }) => {
@@ -131,7 +131,7 @@ Scenario("Check required param in complex config", async ({ I, LabelStudio, AtOu
     // Two possible errors:
     // - Checkbox "name" is required.
     // - Input for the textarea "name" is required.
-    Modals.seeWarning(`"${name}" is required`);
+    Modals.seeWarning(`"${name}" 是必填项`);
     Modals.closeWarning();
   };
 
@@ -196,7 +196,7 @@ Scenario("Check required param in complex config", async ({ I, LabelStudio, AtOu
 Scenario("Check required param with visibleWhen='choice-unselected'", async ({ I, LabelStudio, Modals }) => {
   const params = { config: createConfig({ visibleWhen: "choice-unselected" }), data: { text } };
   const waitForError = (name) => {
-    Modals.seeWarning(`Checkbox "${name}" is required`);
+    Modals.seeWarning(`Checkbox "${name}" 是必填项`);
     Modals.closeWarning();
   };
 

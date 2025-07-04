@@ -288,7 +288,7 @@ const Model = types
     },
 
     requiredModal() {
-      InfoModal.warning(self.requiredmessage || `DateTime "${self.name}" is required.`);
+      InfoModal.warning(self.requiredmessage || `DateTime "${self.name}" 是必填项.`);
     },
   }))
   .actions((self) => {

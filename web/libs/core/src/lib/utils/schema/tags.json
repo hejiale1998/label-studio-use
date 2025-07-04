@@ -1,7 +1,7 @@
 {
   "Audio": {
-    "name": "Audio",
-    "description": "The Audio tag plays audio and shows its waveform. Use for audio annotation tasks where you want to label regions of audio, see the waveform, and manipulate audio during annotation.\n\nUse with the following data types: audio",
+    "name": "音频",
+    "description": "Audio 标签用于播放音频并显示其波形。适用于需要对音频片段进行标注、查看波形并在标注过程中操作音频的任务。\n\n可用于以下数据类型：audio",
     "attrs": {
       "name": {
         "name": "name",

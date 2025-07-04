@@ -173,7 +173,7 @@ const Model = types
     },
 
     requiredModal() {
-      InfoModal.warning(self.requiredmessage || `Checkbox "${self.name}" is required.`);
+      InfoModal.warning(self.requiredmessage || `Checkbox "${self.name}" 是必填项.`);
     },
 
     // this is not labels, unselect affects result, so don't unselect on random reason

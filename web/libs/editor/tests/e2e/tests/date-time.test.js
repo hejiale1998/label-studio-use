@@ -69,9 +69,9 @@ Scenario(
     ////// GLOBAL
     I.say("Check validation of required global date control");
     I.updateAnnotation();
-    Modals.seeWarning('DateTime "created" is required');
+    Modals.seeWarning('DateTime "created" 是必填项');
     Modals.closeWarning();
-    Modals.dontSeeWarning('DateTime "created" is required');
+    Modals.dontSeeWarning('DateTime "created" 是必填项');
 
     const checks = {
       incorrect: [
@@ -117,18 +117,18 @@ Scenario(
 
     I.say("Try to submit and observe validation errors about per-regions");
     I.updateAnnotation();
-    Modals.seeWarning('DateTime "date" is required');
+    Modals.seeWarning('DateTime "date" 是必填项');
     Modals.closeWarning();
-    Modals.dontSeeWarning('DateTime "date" is required');
+    Modals.dontSeeWarning('DateTime "date" 是必填项');
 
     // invalid region is selected on validation to reveal per-region control with error
     AtOutliner.seeSelectedRegion(regions[0].label);
     I.fillField("input[name=date-date]", formatDateValue(regions[0].dateValue, format));
     I.updateAnnotation();
     // next region with empty required date is selected and error is shown
-    Modals.seeWarning('DateTime "date" is required');
+    Modals.seeWarning('DateTime "date" 是必填项');
     Modals.closeWarning();
-    Modals.dontSeeWarning('DateTime "date" is required');
+    Modals.dontSeeWarning('DateTime "date" 是必填项');
     AtOutliner.seeSelectedRegion(regions[1].label);
 
     I.say("Fill all per-region date fields and check it's all good");
@@ -155,7 +155,7 @@ Scenario(
     });
 
     I.updateAnnotation();
-    Modals.dontSeeWarning("is required");
+    Modals.dontSeeWarning("是必填项");
 
     regions.forEach((region) => {
       AtOutliner.clickRegion(region.text);

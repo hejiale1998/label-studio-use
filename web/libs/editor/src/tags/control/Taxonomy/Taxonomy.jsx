@@ -471,7 +471,7 @@ const Model = types
     },
 
     requiredModal() {
-      Infomodal.warning(self.requiredmessage || `Taxonomy "${self.name}" is required.`);
+      Infomodal.warning(self.requiredmessage || `Taxonomy "${self.name}" 是必填项.`);
     },
 
     needsUpdate() {

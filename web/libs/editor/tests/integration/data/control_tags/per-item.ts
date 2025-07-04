@@ -839,9 +839,9 @@ export const perItemTextareaResult = [
   },
 ];
 
-export const DATETIME_REQUIRED_WARNING = 'DateTime "datetime" is required.';
-export const CHOICES_REQUIRED_WARNING = 'Checkbox "choices" is required.';
-export const NUMBER_REQUIRED_WARNING = 'Number "number" is required.';
-export const RATING_REQUIRED_WARNING = 'Rating "rating" is required.';
-export const TAXONOMY_REQUIRED_WARNING = 'Taxonomy "taxonomy" is required.';
-export const TEXTAREA_REQUIRED_WARNING = 'Input for the textarea "textarea" is required.';
+export const DATETIME_REQUIRED_WARNING = 'DateTime "datetime" 是必填项.';
+export const CHOICES_REQUIRED_WARNING = 'Checkbox "choices" 是必填项.';
+export const NUMBER_REQUIRED_WARNING = 'Number "number" 是必填项.';
+export const RATING_REQUIRED_WARNING = 'Rating "rating" 是必填项.';
+export const TAXONOMY_REQUIRED_WARNING = 'Taxonomy "taxonomy" 是必填项.';
+export const TEXTAREA_REQUIRED_WARNING = 'Input for the textarea "textarea" 是必填项.';

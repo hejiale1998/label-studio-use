@@ -168,7 +168,7 @@ const Model = types
       },
 
       requiredModal() {
-        InfoModal.warning(self.requiredmessage || `Number "${self.name}" is required.`);
+        InfoModal.warning(self.requiredmessage || `Number "${self.name}" 是必填项.`);
       },
 
       increaseValue() {

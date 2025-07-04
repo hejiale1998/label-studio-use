@@ -182,7 +182,7 @@ const Model = types
       },
 
       requiredModal() {
-        InfoModal.warning(self.requiredmessage || `Input for the textarea "${self.name}" is required.`);
+        InfoModal.warning(self.requiredmessage || `Input for the textarea "${self.name}" 是必填项.`);
       },
 
       uniqueModal() {
