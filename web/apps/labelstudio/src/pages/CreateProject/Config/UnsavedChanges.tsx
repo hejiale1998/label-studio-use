@@ -8,7 +8,7 @@ type SaveAndLeaveButtonProps = {
   onSave: () => void;
   text?: string;
 };
-const SaveAndLeaveButton = ({ onSave, text = "Save and Leave" }: SaveAndLeaveButtonProps) => {
+const SaveAndLeaveButton = ({ onSave, text = "保存并离开" }: SaveAndLeaveButtonProps) => {
   const [saving, setSaving] = useState(false);
   const saveHandler = useCallback(async () => {
     setSaving(true);
@@ -40,8 +40,8 @@ export const unsavedChangesModal = ({
   cancelText,
   discardText,
   okText,
-  title = "You have unsaved changes.",
-  body = "Would you like to save them before leaving?",
+  title = "有未保存的更改。",
+  body = "离开前要保存更改吗？",
   ...props
 }: UnsavedChangesModalProps) => {
   let modalInstance: any = undefined;
@@ -64,7 +64,7 @@ export const unsavedChangesModal = ({
           size="compact"
           autoFocus
         >
-          {cancelText ?? "Cancel"}
+          {cancelText ?? "取消"}
         </Button>
 
         {onDiscard && (
@@ -76,7 +76,7 @@ export const unsavedChangesModal = ({
             size="compact"
             look="danger"
           >
-            {discardText ?? "Discard and leave"}
+            {discardText ?? "放弃更改并离开"}
           </Button>
         )}
 

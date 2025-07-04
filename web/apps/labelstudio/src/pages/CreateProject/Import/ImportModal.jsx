@@ -73,15 +73,15 @@ export const Inner = () => {
     >
       <Modal.Header divided>
         <Elem block="modal" name="title">
-          Import Data
+          导入数据
         </Elem>
 
         <Space>
           <Button waiting={waiting} onClick={onCancel}>
-            Cancel
+            取消
           </Button>
           <Button look="primary" onClick={onFinish} waiting={waiting || uploading} disabled={uploadDisabled}>
-            Import
+            导入
           </Button>
         </Space>
       </Modal.Header>

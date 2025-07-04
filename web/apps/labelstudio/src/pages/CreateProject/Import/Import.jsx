@@ -327,14 +327,14 @@ export const ImportPage = ({
           <Input placeholder="Dataset URL" name="url" ref={urlRef} style={{ height: 40 }} />
           <Button type="submit" look="primary" style={{ width: 120 }}>导入</Button>
         </form>
-        <span>or</span>
+        <span>或</span>
         <Button
           type="button"
           onClick={() => document.getElementById("file-input").click()}
           className={importClass.elem("upload-button")}
         >
           <IconUpload width="16" height="16" className={importClass.elem("upload-icon")} />
-          Upload {files.uploaded.length ? "More " : ""}Files
+          上传{files.uploaded.length ? "更多" : ""}文件
         </Button>
         {ff.isActive(ff.FF_SAMPLE_DATASETS) && (
           <SampleDatasetSelect samples={samples} sample={sample} onSampleApplied={onSampleDatasetSelect} />
@@ -342,16 +342,16 @@ export const ImportPage = ({
         <div
           className={importClass.elem("csv-handling").mod({ highlighted: highlightCsvHandling, hidden: !csvHandling })}
         >
-          <span>Treat CSV/TSV as</span>
+          <span>将 CSV/TSV 视为</span>
           <label>
-            <input {...csvProps} value="tasks" checked={csvHandling === "tasks"} /> List of tasks
+            <input {...csvProps} value="tasks" checked={csvHandling === "tasks"} /> 任务列表
           </label>
           <label>
-            <input {...csvProps} value="ts" checked={csvHandling === "ts"} /> Time Series or Whole Text File
+            <input {...csvProps} value="ts" checked={csvHandling === "ts"} /> 时间序列或整文本文件
           </label>
         </div>
         <div className={importClass.elem("status")}>
-          {files.uploaded.length ? `${files.uploaded.length} files uploaded` : ""}
+          {files.uploaded.length ? `${files.uploaded.length} 个文件已上传` : ""}
         </div>
       </header>
 
@@ -454,7 +454,7 @@ export const ImportPage = ({
 
             {showList && (
               <div className="w-full">
-                <SimpleCard title="Files" className="w-full h-full">
+                <SimpleCard title="文件" className="w-full h-full">
                   <table>
                     <tbody>
                       {sample && (
@@ -537,18 +537,8 @@ export const ImportPage = ({
                         <IconCode className="w-6 h-6 text-primary-icon" />
                       </div>
                       <div className="flex flex-col items-center gap-tighter">
-                        <div className="text-label-small text-neutral-content font-medium">View JSON input format</div>
-                        <div className="text-body-small text-neutral-content-subtler text-center">
-                          Setup your{" "}
-                          <button
-                            type="button"
-                            onClick={openConfig}
-                            className="border-none bg-none p-0 m-0 text-primary-content underline hover:text-primary-content-hover transition-colors"
-                          >
-                            labeling configuration
-                          </button>{" "}
-                          first to preview the expected JSON data format
-                        </div>
+                        <div className="text-label-small text-neutral-content font-medium">查看 JSON 输入格式</div>
+                        <div className="text-body-small text-neutral-content-subtler text-center">请先设置您的 <button type="button" onClick={openConfig} className="border-none bg-none p-0 m-0 text-primary-content underline hover:text-primary-content-hover transition-colors">标注配置</button> 以预览期望的 JSON 数据格式</div>
                       </div>
                     </div>
                   </SimpleCard>

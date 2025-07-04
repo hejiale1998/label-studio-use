@@ -102,9 +102,7 @@ export const StorageSet = ({ title, target, rootClass, buttonLabel }) => {
   return (
     <Columns.Column title={title}>
       <div className={rootClass.elem("controls")}>
-        <Button onClick={() => showStorageFormModal()} disabled={loading}>
-          {buttonLabel}
-        </Button>
+        <Button onClick={() => showStorageFormModal()} disabled={loading}>添加存储</Button>
       </div>
 
       {loading && !loaded ? (

@@ -43,8 +43,8 @@ const VersionCard = ({ version, selected, onSelect, editable, onDelete }) => {
   const confirmDelete = useCallback(
     (version) => {
       confirm({
-        title: "Delete Predictions",
-        body: "This action cannot be undone. Are you sure?",
+        title: "删除预测结果",
+        body: "此操作不可撤销，确定要删除吗？",
         buttonLook: "destructive",
         onOk() {
           onDelete?.(version);
@@ -84,7 +84,7 @@ const VersionCard = ({ version, selected, onSelect, editable, onDelete }) => {
           content={
             <Menu size="medium" contextual>
               <Menu.Item onClick={() => confirmDelete(version)} isDangerous>
-                Delete
+                删除
               </Menu.Item>
             </Menu>
           }

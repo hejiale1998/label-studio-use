@@ -116,9 +116,9 @@ export const CreateProject = ({ onClose }) => {
   const rootClass = cn("create-project");
   const tabClass = rootClass.elem("tab");
   const steps = {
-    name: <span className={tabClass.mod({ disabled: !!error })}>Project Name</span>,
-    import: <span className={tabClass.mod({ disabled: uploadDisabled })}>Data Import</span>,
-    config: "Labeling Setup",
+    name: <span className={tabClass.mod({ disabled: !!error })}>项目名称</span>,
+    import: <span className={tabClass.mod({ disabled: uploadDisabled })}>数据导入</span>,
+    config: "标注设置",
   };
 
   // name intentionally skipped from deps:
@@ -197,22 +197,18 @@ export const CreateProject = ({ onClose }) => {
     <Modal onHide={onDelete} closeOnClickOutside={false} allowToInterceptEscape fullscreen visible bare>
       <div className={rootClass}>
         <Modal.Header>
-          <h1>Create Project</h1>
+          <h1>创建项目</h1>
           <ToggleItems items={steps} active={step} onSelect={setStep} />
 
           <Space>
-            <Button look="danger" size="compact" onClick={onDelete} waiting={waiting}>
-              Delete
-            </Button>
+            <Button look="danger" size="compact" onClick={onDelete} waiting={waiting}>删除</Button>
             <Button
               look="primary"
               size="compact"
               onClick={onCreate}
               waiting={waiting || uploading}
               disabled={!project || uploadDisabled || error}
-            >
-              Save
-            </Button>
+            >保存</Button>
           </Space>
         </Modal.Header>
         <ProjectName

@@ -100,10 +100,10 @@ export const StorageForm = forwardRef(({ onSubmit, target, project, rootClass, s
             <Block name="form-indicator">
               <Oneof value={connectionValid}>
                 <Elem tag="span" mod={{ type: "success" }} name="item" case={true}>
-                  Successfully connected!
+                  连接成功！
                 </Elem>
                 <Elem tag="span" mod={{ type: "fail" }} name="item" case={false}>
-                  Connection failed
+                  连接失败
                 </Elem>
               </Oneof>
             </Block>
@@ -113,10 +113,10 @@ export const StorageForm = forwardRef(({ onSubmit, target, project, rootClass, s
         <Input type="hidden" name="project" value={project} />
         <Button.Group className={rootClass.elem("buttons")}>
           <Button type="button" waiting={checking} onClick={validateStorageConnection}>
-            Check Connection
+            检查连接
           </Button>
           <Button type="submit" look="primary">
-            {storage ? "Save" : "Add Storage"}
+            {storage ? "保存" : "添加存储"}
           </Button>
         </Button.Group>
       </Form.Actions>

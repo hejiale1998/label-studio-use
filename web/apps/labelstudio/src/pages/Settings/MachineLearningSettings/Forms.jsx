@@ -71,9 +71,7 @@ const CustomBackendForm = ({ action, backend, project, onSubmit }) => {
       </Form.Row>
 
       <Form.Actions>
-        <Button type="submit" look="primary" onClick={() => setMLError(null)}>
-          Validate and Save
-        </Button>
+        <Button type="submit" look="primary">保存</Button>
       </Form.Actions>
 
       <Form.ResponseParser>

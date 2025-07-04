@@ -482,7 +482,7 @@ const Configurator = ({
   return (
     <div className={configClass}>
       <div className={configClass.elem("container")}>
-        <h1>Labeling Interface{hasChanges ? " *" : ""}</h1>
+        <h1>标注界面{hasChanges ? " *" : ""}</h1>
         <header>
           <Button
             look="secondary"
@@ -492,9 +492,9 @@ const Configurator = ({
             size="compact"
             style={{ width: 160 }}
           >
-            Browse Templates
+            浏览模板
           </Button>
-          <ToggleItems items={{ code: "Code", visual: "Visual" }} active={configure} onSelect={onSelect} />
+          <ToggleItems items={{ code: "代码", visual: "可视化" }} active={configure} onSelect={onSelect} />
         </header>
         <div className={configClass.elem("editor")}>
           {configure === "code" && (
@@ -548,12 +548,12 @@ const Configurator = ({
             {saved && (
               <Block name="form-indicator">
                 <Elem tag="span" mod={{ type: "success" }} name="item">
-                  Saved!
+                  已保存！
                 </Elem>
               </Block>
             )}
             <Button look="primary" size="compact" style={{ width: 120 }} onClick={onSave} waiting={waiting}>
-              {waiting ? "Saving..." : "Save"}
+              {waiting ? "保存中..." : "保存"}
             </Button>
             {isFF(FF_UNSAVED_CHANGES) && <UnsavedChanges hasChanges={hasChanges} onSave={onSave} />}
           </Form.Actions>

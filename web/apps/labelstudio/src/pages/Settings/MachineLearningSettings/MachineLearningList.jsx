@@ -77,9 +77,7 @@ const BackendCard = ({ backend, onStartTrain, onEdit, onDelete, onTestRequest })
                 <Menu.Item onClick={() => onTestRequest(backend)}>发送测试请求</Menu.Item>
                 <Menu.Item onClick={() => onStartTrain(backend)}>开始训练</Menu.Item>
                 <Menu.Divider />
-                <Menu.Item onClick={() => confirmDelete(backend)} isDangerous>
-                  删除
-                </Menu.Item>
+                <Menu.Item onClick={() => confirmDelete(backend)} isDangerous>删除</Menu.Item>
               </Menu>
             }
           >
