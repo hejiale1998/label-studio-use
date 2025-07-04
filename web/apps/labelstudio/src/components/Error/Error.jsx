@@ -80,25 +80,21 @@ export const ErrorWrapper = ({
         <Elem name="version">
           <Space>
             {version && `Version: ${version}`}
-            {errorId && `Error ID: ${errorId}`}
+            {errorId && `错误编号: ${errorId}`}
           </Space>
         </Elem>
       )}
 
       <Elem name="actions">
         <Space spread>
-          <Elem tag={Button} name="action-slack" target="_blank" icon={<IconSlack />} href={SLACK_INVITE_URL}>
-            Ask on Slack
-          </Elem>
+          <Elem tag={Button} name="action-slack" target="_blank" icon={<IconSlack />} href={SLACK_INVITE_URL}>在 Slack 上提问</Elem>
 
           <Space size="small">
             {preparedStackTrace && (
-              <Button disabled={copied} onClick={copyStacktrace} style={{ width: 180 }}>
-                {copied ? "Copied" : "Copy Stacktrace"}
-              </Button>
+              <Button disabled={copied} onClick={copyStacktrace} style={{ width: 180 }}>{copied ? "已复制" : "复制堆栈"}</Button>
             )}
-            {onGoBack && <Button onClick={onGoBack}>Go Back</Button>}
-            {onReload && <Button onClick={onReload}>Reload</Button>}
+            {onGoBack && <Button onClick={onGoBack}>返回</Button>}
+            {onReload && <Button onClick={onReload}>重新加载</Button>}
           </Space>
         </Space>
       </Elem>
