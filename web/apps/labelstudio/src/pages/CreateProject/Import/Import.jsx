@@ -324,7 +324,7 @@ export const ImportPage = ({
 
       <header className="flex gap-4">
         <form className={`${importClass.elem("url-form")} inline-flex`} method="POST" onSubmit={onLoadURL}>
-          <Input placeholder="Dataset URL" name="url" ref={urlRef} style={{ height: 40 }} />
+          <Input placeholder="数据集 URL" name="url" ref={urlRef} style={{ height: 40 }} />
           <Button type="submit" look="primary" style={{ width: 120 }}>导入</Button>
         </form>
         <span>或</span>
@@ -366,20 +366,20 @@ export const ImportPage = ({
                   <div className={`${dropzoneClass.elem("content")} w-full`}>
                     <IconFileUpload height="64" className={dropzoneClass.elem("icon")} />
                     <header>
-                      Drag & drop files here
+                      拖拽文件到此处
                       <br />
-                      or click to browse
+                      或点击选择文件
                     </header>
 
                     <dl>
-                      <dt>Images</dt>
+                      <dt>图片</dt>
                       <dd>{supportedExtensions.image.join(", ")}</dd>
-                      <dt>Audio</dt>
+                      <dt>音频</dt>
                       <dd>{supportedExtensions.audio.join(", ")}</dd>
                       <dt>
                         <div className="flex items-center gap-1">
-                          Video
-                          <Tooltip title="Video format support depends on your browser. Click to learn more.">
+                          视频
+                          <Tooltip title="视频格式支持取决于您的浏览器。点击了解更多。">
                             <a
                               href="https://labelstud.io/tags/video#Video-format"
                               target="_blank"
@@ -393,57 +393,57 @@ export const ImportPage = ({
                         </div>
                       </dt>
                       <dd>{supportedExtensions.video.join(", ")}</dd>
-                      <dt>HTML / HyperText</dt>
+                      <dt>HTML / 超文本</dt>
                       <dd>{supportedExtensions.html.join(", ")}</dd>
-                      <dt>Text</dt>
+                      <dt>文本</dt>
                       <dd>{supportedExtensions.text.join(", ")}</dd>
-                      <dt>Structured data</dt>
+                      <dt>结构化数据</dt>
                       <dd>{supportedExtensions.structuredData.join(", ")}</dd>
                       <dt>PDF</dt>
                       <dd>{supportedExtensions.pdf.join(", ")}</dd>
                     </dl>
                     <div className="tips">
-                      <b>Important:</b>
+                      <b>重要提示：</b>
                       <ul className="mt-2 ml-4 list-disc font-normal">
                         <li>
-                          We recommend{" "}
+                          推荐优先使用
                           <a
                             href="https://labelstud.io/guide/storage.html"
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="云存储文档（在新标签页打开）"
                           >
-                            Cloud Storage
-                          </a>{" "}
-                          over direct uploads due to{" "}
+                            云存储
+                          </a>
+                          ，避免直接上传，因受
                           <a
                             href="https://labelstud.io/guide/tasks.html#Import-data-from-the-Label-Studio-UI"
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="上传限制文档（在新标签页打开）"
                           >
-                            upload limitations
+                            上传限制
                           </a>
-                          .
+                          影响。
                         </li>
                         <li>
-                          For PDFs, use{" "}
+                          PDF 文件建议使用
                           <a
                             href="https://labelstud.io/templates/multi-page-document-annotation"
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="多图像标注文档（在新标签页打开）"
                           >
-                            multi-image labeling
+                            多图像标注
                           </a>
-                          . JSONL or Parquet (Enterprise only) files require cloud storage.
+                          。JSONL 或 Parquet（仅企业版）文件需使用云存储。
                         </li>
                         <li>
-                          Check the documentation to{" "}
+                          查看文档了解如何
                           <a target="_blank" href="https://labelstud.io/guide/predictions.html" rel="noreferrer">
-                            import preannotated data
+                            导入预标注数据
                           </a>
-                          .
+                          。
                         </li>
                       </ul>
                     </div>
@@ -463,7 +463,7 @@ export const ImportPage = ({
                             <div className="flex items-center gap-2">
                               {sample.title}
                               <Badge variant="info" className="h-5 text-xs rounded-sm">
-                                Sample
+                                示例
                               </Badge>
                             </div>
                           </td>

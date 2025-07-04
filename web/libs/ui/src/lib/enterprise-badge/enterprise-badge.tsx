@@ -14,7 +14,7 @@ export const EnterpriseBadge: FC<EnterpriseBadgeProps> = ({ className, filled })
     <div className={clsx(styles.badge, { [styles.filled]: filled }, className)}>
       <div className={clsx(styles.label)}>
         <IconSpark className={clsx(styles.icon)} />
-        Enterprise
+        企业
       </div>
     </div>
   );

@@ -47,7 +47,7 @@ const ProjectName = ({ name, setName, onSaveName, onSubmit, error, description, 
         <TextArea
           name="description"
           id="project_description"
-          placeholder="Optional description of your project"
+          placeholder="项目描述（可选）"
           rows="4"
           style={{ minHeight: 100 }}
           value={description}
@@ -58,10 +58,10 @@ const ProjectName = ({ name, setName, onSaveName, onSubmit, error, description, 
       {isFF(FF_LSDV_E_297) && (
         <div className="w-full flex flex-col gap-2">
           <label>
-            Workspace
+            工作区
             <EnterpriseBadge className="ml-2" />
           </label>
-          <Select placeholder="Select an option" disabled options={[]} triggerClassName="!flex-1" />
+          <Select placeholder="选择一个选项" disabled options={[]} triggerClassName="!flex-1" />
           <Caption>
             通过将项目组织到工作区，简化项目管理。
             <a
