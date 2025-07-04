@@ -68,21 +68,21 @@ const Labels = {
   type: "Labels",
   settings: {
     placeLabelsLeft: {
-      title: "Display labels:",
-      type: ["bottom", "left", "right", "top"],
+      title: "标签显示位置：",
+      type: ["下方", "左侧", "右侧", "上方"],
       control: true,
       when: ($tag) => $tag.$object.tagName !== "Video",
       param: ($control, value) => {
         let $container = $control.parentNode;
         let $labels = $control;
 
-        if ($container.firstChild?.tagName?.toUpperCase() === "FILTER") {
+        if ($container.firstChild?.tagName?.toUpperCase() === "筛选") {
           $labels = $container;
           $container = $labels.parentNode;
         }
         const $obj = $control.$object;
-        const inline = ["top", "bottom"].includes(value);
-        const reversed = ["top", "left"].includes(value);
+        const inline = ["上方", "下方"].includes(value);
+        const reversed = ["上方", "左侧"].includes(value);
         const direction = (inline ? "column" : "row") + (reversed ? "-reverse" : "");
         const alreadyApplied = $container.getAttribute("style")?.includes("flex");
 
@@ -98,7 +98,7 @@ const Labels = {
       value: ($control) => {
         let $container = $control.parentNode;
 
-        if ($container.firstChild?.tagName?.toUpperCase() === "FILTER") {
+        if ($container.firstChild?.tagName?.toUpperCase() === "筛选") {
           $container = $container.parentNode;
         }
         const style = $container.getAttribute("style");
@@ -107,19 +107,19 @@ const Labels = {
         if (!direction) {
           const position = $control.compareDocumentPosition($control.$object);
 
-          return position & Node.DOCUMENT_POSITION_FOLLOWING ? "top" : "bottom";
+          return position & Node.DOCUMENT_POSITION_FOLLOWING ? "上方" : "下方";
         }
-        if (direction[1] === "column") return direction[2] ? "top" : "bottom";
-        return direction[2] ? "left" : "right";
+        if (direction[1] === "column") return direction[2] ? "上方" : "下方";
+        return direction[2] ? "左侧" : "右侧";
       },
     },
     filter: {
-      title: "Add filter for long list of labels",
+      title: "为标签长列表添加筛选",
       type: Boolean,
       control: true,
       param: ($obj, value) => {
         if (value) {
-          const $filter = $obj.ownerDocument.createElement("Filter");
+          const $filter = $obj.ownerDocument.createElement("筛选");
           const $container = $obj.ownerDocument.createElement("View");
 
           $filter.setAttribute("toName", $obj.getAttribute("name"));
@@ -131,7 +131,7 @@ const Labels = {
         } else {
           const $filter = $obj.previousElementSibling;
 
-          if ($filter.tagName.toUpperCase() === "FILTER") {
+          if ($filter.tagName.toUpperCase() === "筛选") {
             const $container = $obj.parentNode;
 
             $container.parentNode.insertBefore($obj, $container);
@@ -139,7 +139,7 @@ const Labels = {
           }
         }
       },
-      value: ($control) => $control.previousElementSibling?.tagName.toUpperCase() === "FILTER",
+      value: ($control) => $control.previousElementSibling?.tagName.toUpperCase() === "筛选",
     },
   },
 };
