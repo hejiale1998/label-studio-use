@@ -4,7 +4,7 @@ export const defaultTipsCollection: TipsCollection = {
   projectCreation: [
     {
       title: "你知道吗？",
-      content: "It's easier to find the projects when you organize them into workspaces using Label Studio Enterprise.",
+      content: "通过在 Label Studio 企业版中将项目组织到工作区，更容易查找和管理项目。",
       closable: true,
       link: {
         label: "了解更多",
@@ -17,8 +17,7 @@ export const defaultTipsCollection: TipsCollection = {
     },
     {
       title: "解锁更快访问配置",
-      content:
-        "Streamline assigning staff to multiple projects by assigning them to workspaces in Label Studio Enterprise.",
+      content: "通过在 Label Studio 企业版中将成员分配到工作区，可更高效地为多个项目分配人员。",
       closable: true,
       link: {
         label: "了解更多",
@@ -31,8 +30,7 @@ export const defaultTipsCollection: TipsCollection = {
     },
     {
       title: "你知道吗？",
-      content:
-        "In the Enterprise platform, admins can view annotator performance dashboards to optimize resource allocation, improve team management, and inform compensation.",
+      content: "在企业平台中，管理员可查看标注员绩效仪表盘，优化资源分配、提升团队管理并辅助薪酬决策。",
       closable: true,
       link: {
         label: "了解更多",
@@ -45,8 +43,7 @@ export const defaultTipsCollection: TipsCollection = {
     },
     {
       title: "你知道吗？",
-      content:
-        "You can control access to specific projects and workspaces for internal team members and external annotators using Label Studio Enterprise.",
+      content: "在 Label Studio 企业版中，您可以为内部团队成员和外部标注员分配项目和工作区的访问权限。",
       closable: true,
       link: {
         label: "了解更多",
@@ -59,8 +56,7 @@ export const defaultTipsCollection: TipsCollection = {
     },
     {
       title: "你知道吗？",
-      content:
-        "You can use or modify dozens or templates to configure your labeling UI, or create a custom configuration from scratch using simple XML-like tag.",
+      content: "您可以使用或修改数十种模板来配置标注界面，或通过简单的类 XML 标签从零自定义配置。",
       closable: true,
       link: {
         label: "了解更多",
@@ -73,8 +69,7 @@ export const defaultTipsCollection: TipsCollection = {
     },
     {
       title: "Labeling for GenAI",
-      content:
-        "Label Studio has templates available for supervised LLM fine-tuning, RAG retrieval ranking, RLHF, chatbot evaluation, and more.",
+      content: "Label Studio 提供了用于监督式 LLM 微调、RAG 检索排序、RLHF、聊天机器人评测等的模板。",
       closable: true,
       link: {
         label: "Explore templates",
@@ -89,8 +84,7 @@ export const defaultTipsCollection: TipsCollection = {
   organizationPage: [
     {
       title: "It looks like your team is growing!",
-      content:
-        "Assign roles to your team using Label Studio Enterprise and control access to sensitive data at the project and workspace levels.",
+      content: "在 Label Studio 企业版中为团队成员分配角色，并在项目和工作区级别控制敏感数据的访问权限。",
       closable: true,
       link: {
         label: "了解更多",
@@ -103,7 +97,7 @@ export const defaultTipsCollection: TipsCollection = {
     },
     {
       title: "Want to simplify and secure logging in?",
-      content: "Enable Single Sign-On for your team using SAML, SCIM2 or LDAP with Label Studio Enterprise.",
+      content: "在 Label Studio 企业版中，使用 SAML、SCIM2 或 LDAP 启用团队单点登录（SSO）。",
       closable: true,
       link: {
         label: "了解更多",
@@ -116,7 +110,7 @@ export const defaultTipsCollection: TipsCollection = {
     },
     {
       title: "你知道吗？",
-      content: "Try Label Studio Starter Cloud, optimized for small teams and projects.",
+      content: "试试 Label Studio Starter Cloud，为小团队和小型项目量身优化。",
       closable: true,
       link: {
         label: "了解更多",
@@ -129,8 +123,7 @@ export const defaultTipsCollection: TipsCollection = {
     },
     {
       title: "Want to automate task distribution?",
-      content:
-        "Create rules, automate how tasks are distributed to annotators, and only show tasks assigned to each annotator in their view.and control task visibility for each annotator.",
+      content: "创建规则，自动分配任务给标注员，并仅在各自视图中显示分配给他们的任务，实现任务可见性控制。",
       closable: true,
       link: {
         label: "了解更多",
@@ -143,8 +136,7 @@ export const defaultTipsCollection: TipsCollection = {
     },
     {
       title: "与社区分享知识",
-      content:
-        "有问题或经验想与其他 Label Studio 用户分享？欢迎加入社区 Slack 频道，获取最新动态。",
+      content: "Label Studio 支持与云存储、机器学习模型及主流工具的多点集成，助力自动化您的机器学习流程。",
       closable: true,
       link: {
         label: "加入社区",
@@ -157,8 +149,7 @@ export const defaultTipsCollection: TipsCollection = {
     },
     {
       title: "你知道吗？",
-      content:
-        "Label Studio supports multiple points of integration with cloud storage, machine learning models, and popular tools to automate your machine learning pipeline.",
+      content: "通过在 Label Studio 企业版中使用自动化功能，即时标注大规模数据集，同时保证质量。",
       closable: true,
       link: {
         label: "Check out the integrations directory",
@@ -173,8 +164,7 @@ export const defaultTipsCollection: TipsCollection = {
   projectSettings: [
     {
       title: "自动标注节省时间",
-      content:
-        "在企业平台中使用自动化功能，即时标注大规模数据集，同时保证质量。",
+      content: "通过在企业平台中使用自动化功能，即时标注大规模数据集，同时保证质量。",
       closable: true,
       link: {
         label: "了解更多",
@@ -187,8 +177,7 @@ export const defaultTipsCollection: TipsCollection = {
     },
     {
       title: "你知道吗？",
-      content:
-        "通过 Label Studio Enterprise 的审核流程和任务一致性评分，提高标注数据的质量。",
+      content: "通过 Label Studio Enterprise 的审核流程和任务一致性评分，提高标注数据的质量。",
       closable: true,
       link: {
         label: "了解更多",
@@ -201,8 +190,7 @@ export const defaultTipsCollection: TipsCollection = {
     },
     {
       title: "评估 GenAI 模型",
-      content:
-        "结合自动化与人工监督，在企业平台中评估并确保 LLM 质量。",
+      content: "结合自动化与人工监督，在企业平台中评估并确保 LLM 质量。",
       closable: true,
       link: {
         label: "了解更多",
@@ -215,8 +203,7 @@ export const defaultTipsCollection: TipsCollection = {
     },
     {
       title: "你知道吗？",
-      content:
-        "通过使用企业云服务，您可以节省管理基础设施和升级的时间，并获得更多自动化、质量和团队管理功能。",
+      content: "通过使用企业云服务，您可以节省管理基础设施和升级的时间，并获得更多自动化、质量和团队管理功能。",
       closable: true,
       link: {
         label: "了解更多",
@@ -229,7 +216,7 @@ export const defaultTipsCollection: TipsCollection = {
     },
     {
       title: "你知道吗？",
-      content: "Try Label Studio Starter Cloud, optimized for small teams and projects.",
+      content: "试试 Label Studio Starter Cloud，为小团队和小型项目量身优化。",
       link: {
         label: "了解更多",
         url: "https://humansignal.com/pricing/",
@@ -241,7 +228,7 @@ export const defaultTipsCollection: TipsCollection = {
     },
     {
       title: "你知道吗？",
-      content: "You can connect ML models using the backend SDK to save time with pre-labeling or active learning.",
+      content: "通过后端 SDK 连接机器学习模型，实现预标注或主动学习，节省时间。",
       closable: true,
       link: {
         label: "了解更多",

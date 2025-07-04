@@ -43,7 +43,7 @@ export const GeneralSettings = () => {
                   </Elem>
                   <Select placeholder="Select an option" disabled options={[]} />
                   <Caption>
-                    Simplify project management by organizing projects into workspaces.{" "}
+                    通过将项目组织到工作区，简化项目管理。
                     <a
                       target="_blank"
                       href={createURL(
@@ -55,7 +55,7 @@ export const GeneralSettings = () => {
                       )}
                       rel="noreferrer"
                     >
-                      Learn more
+                      了解更多
                     </a>
                   </Caption>
                 </Block>
