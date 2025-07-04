@@ -1,6 +1,6 @@
 <View>
-  <Header>Global date+time, required, stored as dd.mm.yyyy HH:MM</Header>
-  <DateTime name="full" toName="text" required="true" min="2021-11-10" format="%d.%m.%Y %H:%M"/>
+  <Header>全局日期时间，必填，存储为 yyyy-MM-dd HH:mm:ss</Header>
+  <DateTime name="full" toName="text" required="true" min="2021-11-10" format="%Y-%m-%d %H:%M:%S"/>
   <Header>Select text to see related smaller DateTime controls for every region</Header>
   <Labels name="label" toName="text">
     <Label value="birth" background="green"/>
@@ -9,9 +9,9 @@
   </Labels>
   <Text name="text" value="$text"/>
   <View visibleWhen="region-selected">
-    <Header>Date in this fragment, required, stored as ISO date</Header>
+    <Header>此片段的日期，必填，存储为 ISO 日期</Header>
     <DateTime name="date" toName="text" perRegion="true" only="date" required="true" format="%Y-%m-%d"/>
-    <Header>Year this happened, but stored also as ISO date</Header>
+    <Header>此事件的年份，但存储为 ISO 日期</Header>
     <DateTime name="year" toName="text" perRegion="true" only="year" format="%Y-%m-%d"/>
   </View>
 </View>

@@ -7,7 +7,7 @@ import type { WrappedResponse } from "@humansignal/core/lib/api-proxy/types";
 import { useCurrentUserAtom } from "@humansignal/core/lib/hooks/useCurrentUser";
 
 function formatDate(date?: string) {
-  return format(new Date(date ?? ""), "dd MMM yyyy, KK:mm a");
+  return format(new Date(date ?? ""), "yyyy-MM-dd HH:mm:ss");
 }
 
 export const MembershipInfo = () => {
@@ -35,7 +35,7 @@ export const MembershipInfo = () => {
 
       const annotationCount = response?.annotations_count;
       const contributions = response?.contributed_projects_count;
-      let role = "Owner";
+      let role = "拥有者";
 
       switch (response.role) {
         case "OW":

@@ -58,6 +58,7 @@ const COLUMN_TITLE_MAP = {
   "And": "且",
   "Or": "或",
   "Where": "条件",
+  "Tasks": "任务",
 };
 const getColumnTitle = (title) => {
   if (!title) return title;

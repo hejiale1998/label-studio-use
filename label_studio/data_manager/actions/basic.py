@@ -133,7 +133,7 @@ def delete_tasks_annotations_form(user, project):
                         {'value': str(user.id), 'label': user.get_full_name() or user.username or user.email}
                         for user in users
                     ],
-                    'placeholder': 'All',
+                    'placeholder': '全部',
                     'searchable': True,
                 }
             ],

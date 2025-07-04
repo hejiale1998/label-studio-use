@@ -60,7 +60,7 @@ export const TimeAgo = ({ date, ...rest }: TimeAgoProps) => {
       : formatDistanceToNow(fromTS, { addSuffix: true });
 
   return (
-    <time dateTime={format(fromTS, "yyyy-MM-dd'T'HH:mm:ss.SSSxxx")} title={format(fromTS, "PPpp")} {...rest}>
+    <time dateTime={format(fromTS, "yyyy-MM-dd HH:mm:ss")} title={format(fromTS, "PPpp")} {...rest}>
       {text}
     </time>
   );

@@ -47,11 +47,11 @@ const WebhookList = ({ onSelectActive, onAddWebhook, webhooks, fetchWebhooks }) 
                       {obj.url}
                     </Elem>
                   </Elem>
-                  <Elem name="item-date">Created {format(new Date(obj.created_at), "dd MMM yyyy, HH:mm")}</Elem>
+                  <Elem name="item-date">创建时间：{format(new Date(obj.created_at), "yyyy-MM-dd HH:mm:ss")}</Elem>
                 </Elem>
                 <Elem name="item-control">
                   <Button onClick={() => onSelectActive(obj.id)} icon={<IconPencil />}>
-                    Edit
+                    编辑
                   </Button>
                   <Button
                     onClick={() =>
@@ -65,7 +65,7 @@ const WebhookList = ({ onSelectActive, onAddWebhook, webhooks, fetchWebhooks }) 
                     look="danger"
                     icon={<IconCross />}
                   >
-                    Delete
+                    删除
                   </Button>
                 </Elem>
               </Elem>

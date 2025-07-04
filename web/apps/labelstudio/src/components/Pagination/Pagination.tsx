@@ -232,7 +232,7 @@ export const Pagination: FC<PaginationProps> = forwardRef(
                   if (allowInput) setInputMode(true);
                 }}
               >
-                {currentPage} <span>of {totalPages}</span>
+                {currentPage} <span>共 {totalPages} 页</span>
                 <div
                   onClick={() => {
                     /*  */
@@ -262,7 +262,7 @@ export const Pagination: FC<PaginationProps> = forwardRef(
           <Elem name="page-size">
             <Select
               value={pageSize}
-              options={pageSizeOptions.map((v) => ({ label: `${v} per page`, value: v }))}
+              options={pageSizeOptions.map((v) => ({ label: `${v} 每页`, value: v }))}
               onChange={(val: string) => {
                 const newPageSize = Number.parseInt(val);
 
