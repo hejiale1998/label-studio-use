@@ -27,9 +27,7 @@ const EmptyConfigPlaceholder = () => (
     <p>
       Start from one of our predefined templates or create your own config on the Code panel. The labeling config is
       XML-based and you can{" "}
-      <a href="https://labelstud.io/tags/" target="_blank" rel="noreferrer">
-        read about the available tags in our documentation
-      </a>
+      <a href="https://labelstud.io/tags/" target="_blank" rel="noreferrer">标签文档</a>
       .
     </p>
   </div>
@@ -53,7 +51,7 @@ const Label = ({ label, template, color }) => {
         type="button"
         className={configClass.elem("delete-label")}
         onClick={() => template.removeLabel(label)}
-        aria-label="delete label"
+        aria-label="删除标签"
       >
         <svg
           width="14"
@@ -476,9 +474,7 @@ const Configurator = ({
     <p className={configClass.elem("tags-link")}>
       Configure the labeling interface with tags.
       <br />
-      <a href="https://labelstud.io/tags/" target="_blank" rel="noreferrer">
-        See all available tags
-      </a>
+      <a href="https://labelstud.io/tags/" target="_blank" rel="noreferrer">标签文档</a>
       .
     </p>
   );

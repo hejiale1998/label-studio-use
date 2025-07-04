@@ -132,13 +132,15 @@ export const ExportPage = () => {
             <Elem name="actions">
               <Space>
                 {downloadingMessage && "Files are being prepared. It might take some time."}
-                <Elem tag={Button} name="finish" look="primary" onClick={proceedExport} waiting={downloading}>
-                  Export
-                </Elem>
+                <Button type="submit" look="primary" style={{ width: 120 }} onClick={proceedExport} waiting={downloading}>
+                  导出
+                </Button>
               </Space>
             </Elem>
           </Space>
         </Elem>
+
+        <Form.Indicator><span case="success">已导出！</span></Form.Indicator>
       </Block>
     </Modal>
   );

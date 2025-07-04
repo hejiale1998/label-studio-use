@@ -63,7 +63,7 @@ export const Inner = () => {
 
   return (
     <Modal
-      title="Import data"
+      title="导入数据"
       ref={modal}
       onHide={() => backToDM()}
       closeOnClickOutside={false}

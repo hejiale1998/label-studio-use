@@ -161,7 +161,7 @@ ProjectsPage.context = ({ openModal, showButton }) => {
   if (!showButton) return null;
   return (
     <Button onClick={openModal} look="primary" size="compact">
-      Create
+      新建项目
     </Button>
   );
 };

@@ -168,7 +168,7 @@ export const MachineLearningSettings = () => {
           {backends.length > 0 && (
             <Form.Actions>
               <Form.Indicator>
-                <span case="success">Saved!</span>
+                <span case="success">已保存！</span>
               </Form.Indicator>
               <Button type="submit" look="primary" style={{ width: 120 }}>
                 保存

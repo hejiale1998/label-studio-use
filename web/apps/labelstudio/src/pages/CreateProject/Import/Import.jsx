@@ -325,9 +325,7 @@ export const ImportPage = ({
       <header className="flex gap-4">
         <form className={`${importClass.elem("url-form")} inline-flex`} method="POST" onSubmit={onLoadURL}>
           <Input placeholder="Dataset URL" name="url" ref={urlRef} style={{ height: 40 }} />
-          <Button type="submit" look="primary">
-            Add URL
-          </Button>
+          <Button type="submit" look="primary" style={{ width: 120 }}>导入</Button>
         </form>
         <span>or</span>
         <Button

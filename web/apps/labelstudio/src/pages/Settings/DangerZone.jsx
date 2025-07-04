@@ -106,8 +106,8 @@ export const DangerZone = () => {
             return (
               btn.disabled !== true && (
                 <div className={cn("settings-wrapper")} key={btn.type}>
-                  <h3>{btn.label.replace('Delete', '删除').replace('Reset', '重置')}</h3>
-                  {btn.help && <Label description={btn.help} style={{ width: 600, display: "block" }} />}
+                  <h3>{btn.label.replace('Delete', '删除').replace('Reset', '重置').replace('Remove', '移除').replace('Clear', '清空')}</h3>
+                  {btn.help && <Label description={btn.help.replace('This action cannot be undone.', '此操作不可撤销。').replace('Make sure your data is backed up.', '请确保您的数据已备份。').replace('Perform these actions at your own risk.', '请谨慎操作。')} style={{ width: 600, display: "block" }} />}
                   <Button
                     key={btn.type}
                     look="danger"
@@ -116,7 +116,7 @@ export const DangerZone = () => {
                     onClick={handleOnClick(btn.type)}
                     style={{ marginTop: 16 }}
                   >
-                    {btn.label}
+                    {btn.label.replace('Delete', '删除').replace('Reset', '重置').replace('Remove', '移除').replace('Clear', '清空')}
                   </Button>
                 </div>
               )

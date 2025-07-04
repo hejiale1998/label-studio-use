@@ -40,7 +40,7 @@ export const StorageSummary = ({ target, storage, className, storageTypes = [] }
     const targetType = target === "export" ? "Target" : "Source";
 
     modal({
-      title: "Storage error logs",
+      title: "存储错误日志",
       body: (
         <>
           <pre className="bg-neutral-surface-inset text-neutral-content-subtler p-base mb-base rounded-md text-xs overflow-scroll">
@@ -53,14 +53,14 @@ export const StorageSummary = ({ target, storage, className, storageTypes = [] }
                 navigator.clipboard.writeText(msg);
               }}
             >
-              Copy
+              复制
             </Button>
             <a
               target="_blank"
               rel="noreferrer"
               href={`https://labelstud.io/guide/storage.html#${targetType}-storage-permissions`}
             >
-              Check {targetType} Storage documentation
+              查看存储权限文档
             </a>
           </Space>
         </>

@@ -58,11 +58,11 @@ export const StorageSet = ({ title, target, rootClass, buttonLabel }) => {
               href="https://labelstud.io/guide/storage.html"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Learn more (Open in new tab)"
+              aria-label="了解更多（在新标签页打开）"
             >
-              Learn more
+              了解更多
             </a>{" "}
-            about importing data and saving annotations to Cloud Storage.
+            关于导入数据和保存标注到云存储。
           </>
         ),
       });

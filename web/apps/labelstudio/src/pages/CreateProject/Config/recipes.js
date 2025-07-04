@@ -10,8 +10,8 @@ export const recipes = [
     config: `<View>
   <Image name="image" value="$image"/>
   <RectangleLabels name="label" toName="image">
-    <Label value="Airplane" background="green"/>
-    <Label value="Car" background="blue"/>
+    <Label value="飞机" background="green"/>
+    <Label value="汽车" background="blue"/>
   </RectangleLabels>
 </View>`,
   },
@@ -27,8 +27,8 @@ export const recipes = [
   <PolygonLabels name="label" toName="image"
                  strokeWidth="3" pointSize="small"
                  opacity="0.9">
-    <Label value="Airplane" background="red"/>
-    <Label value="Car" background="blue"/>
+    <Label value="飞机" background="red"/>
+    <Label value="汽车" background="blue"/>
   </PolygonLabels>
 </View>
 `,
@@ -40,17 +40,17 @@ export const recipes = [
     image: "text.png",
     config: `<View>
   <Labels name="label" toName="text">
-    <Label value="Person" background="red"/>
-    <Label value="Organization" background="darkorange"/>
-    <Label value="Fact" background="orange"/>
-    <Label value="Money" background="green"/>
-    <Label value="Date" background="darkblue"/>
-    <Label value="Time" background="blue"/>
-    <Label value="Ordinal" background="purple"/>
-    <Label value="Percent" background="#842"/>
-    <Label value="Product" background="#428"/>
-    <Label value="Language" background="#482"/>
-    <Label value="Location" background="rgba(0,0,0,0.8)"/>
+    <Label value="人" background="red"/>
+    <Label value="组织" background="darkorange"/>
+    <Label value="事实" background="orange"/>
+    <Label value="金钱" background="green"/>
+    <Label value="日期" background="darkblue"/>
+    <Label value="时间" background="blue"/>
+    <Label value="序数" background="purple"/>
+    <Label value="百分比" background="#842"/>
+    <Label value="产品" background="#428"/>
+    <Label value="语言" background="#482"/>
+    <Label value="地点" background="rgba(0,0,0,0.8)"/>
   </Labels>
 
   <Text name="text" value="$text"/>

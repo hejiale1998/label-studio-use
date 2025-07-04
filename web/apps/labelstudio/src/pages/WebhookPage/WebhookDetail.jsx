@@ -122,7 +122,7 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
             }}
           >
             <Form.Row columnCount={1}>
-              <Label text="Payload URL" large />
+              <Label text="负载 URL" large />
               <Space className={rootClass.elem("url-space")}>
                 <Input name="url" className={rootClass.elem("url-input")} placeholder="URL" />
                 <Space align="end" className={rootClass.elem("activator")}>
@@ -141,7 +141,7 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
               <div className={rootClass.elem("headers")}>
                 <div className={rootClass.elem("headers-content")}>
                   <Space spread className={rootClass.elem("headers-control")}>
-                    <Label text="Headers" large />
+                    <Label text="请求头" large />
                     <Button
                       type="button"
                       onClick={onAddHeaderClick}
@@ -182,7 +182,7 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
             </Form.Row>
             <Block name="webhook-payload">
               <Elem name="title">
-                <Label text="Payload" large />
+                <Label text="负载" large />
               </Elem>
               <Elem name="content">
                 <Elem name="content-row">
@@ -192,14 +192,14 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
                     onChange={(e) => {
                       setSendPayload(e.target.checked);
                     }}
-                    label="Send payload"
+                    label="发送负载"
                   />
                 </Elem>
                 <Elem name="content-row">
                   <Toggle
                     skip
                     checked={sendForAllActions}
-                    label="Send for all actions"
+                    label="全部动作发送"
                     onChange={(e) => {
                       setSendForAllActions(e.target.checked);
                     }}
