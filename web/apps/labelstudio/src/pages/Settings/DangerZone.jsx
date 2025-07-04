@@ -94,8 +94,8 @@ export const DangerZone = () => {
 
   return (
     <div className={cn("simple-settings")}>
-      <h1>Danger Zone</h1>
-      <Label description="Perform these actions at your own risk. Actions you take on this page can't be reverted. Make sure your data is backed up." />
+      <h1>危险操作区</h1>
+      <Label description="请谨慎操作，本页面的操作不可撤销。请确保您的数据已备份。" />
 
       {project.id ? (
         <div style={{ marginTop: 16 }}>
@@ -106,7 +106,7 @@ export const DangerZone = () => {
             return (
               btn.disabled !== true && (
                 <div className={cn("settings-wrapper")} key={btn.type}>
-                  <h3>{btn.label}</h3>
+                  <h3>{btn.label.replace('Delete', '删除').replace('Reset', '重置')}</h3>
                   {btn.help && <Label description={btn.help} style={{ width: 600, display: "block" }} />}
                   <Button
                     key={btn.type}
@@ -132,5 +132,5 @@ export const DangerZone = () => {
   );
 };
 
-DangerZone.title = "Danger Zone";
+DangerZone.title = "危险操作区";
 DangerZone.path = "/danger-zone";

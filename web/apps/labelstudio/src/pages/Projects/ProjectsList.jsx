@@ -21,7 +21,7 @@ export const ProjectsList = ({ projects, currentPage, totalItems, loadNextPage, 
       <Elem name="pages">
         <Pagination
           name="projects-list"
-          label="Projects"
+          label="项目"
           page={currentPage}
           totalItems={totalItems}
           urlParamName="page"
@@ -39,11 +39,11 @@ export const EmptyProjectsList = ({ openModal }) => {
     <Block name="empty-projects-page">
       <Elem name="heidi" tag="img" src={absoluteURL("/static/images/opossum_looking.png")} />
       <Elem name="header" tag="h1">
-        Heidi doesn’t see any projects here!
+        Heidi 在这里没有看到任何项目！
       </Elem>
-      <p>Create one and start labeling your data.</p>
+      <p>创建一个项目并开始标注您的数据。</p>
       <Elem name="action" tag={Button} onClick={openModal} look="primary">
-        Create Project
+        创建项目
       </Elem>
     </Block>
   );

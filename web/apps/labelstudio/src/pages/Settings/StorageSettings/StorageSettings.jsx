@@ -14,19 +14,18 @@ export const StorageSettings = () => {
   return isAllowCloudStorage ? (
     <Block name="storage-settings">
       <Elem name={"wrapper"}>
-        <h1>Cloud Storage</h1>
+        <h1>云存储</h1>
         <Description style={{ marginTop: 0 }}>
-          Use cloud or database storage as the source for your labeling tasks or the target of your completed
-          annotations.
+          使用云存储或数据库存储作为标注任务的数据源或已完成标注的目标存储。
         </Description>
 
         <Columns count={2} gap="40px" size="320px" className={rootClass}>
-          <StorageSet title="Source Cloud Storage" buttonLabel="Add Source Storage" rootClass={rootClass} />
+          <StorageSet title="源云存储" buttonLabel="添加源存储" rootClass={rootClass} />
 
           <StorageSet
-            title="Target Cloud Storage"
+            title="目标云存储"
             target="export"
-            buttonLabel="Add Target Storage"
+            buttonLabel="添加目标存储"
             rootClass={rootClass}
           />
         </Columns>
@@ -35,5 +34,5 @@ export const StorageSettings = () => {
   ) : null;
 };
 
-StorageSettings.title = "Cloud Storage";
+StorageSettings.title = "云存储";
 StorageSettings.path = "/storage";

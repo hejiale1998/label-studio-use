@@ -28,13 +28,13 @@ export const GeneralSettings = () => {
   return (
     <Block name="general-settings">
       <Elem name={"wrapper"}>
-        <h1>General Settings</h1>
+        <h1>通用设置</h1>
         <Block name="settings-wrapper">
           <Form action="updateProject" formData={{ ...project }} params={{ pk: project.id }} onSubmit={updateProject}>
             <Form.Row columnCount={1} rowGap="16px">
-              <Input name="title" label="Project Name" />
+              <Input name="title" label="项目名称" />
 
-              <TextArea name="description" label="Description" style={{ minHeight: 128 }} />
+              <TextArea name="description" label="项目描述" style={{ minHeight: 128 }} />
               {isFF(FF_LSDV_E_297) && (
                 <Block name="workspace-placeholder">
                   <Elem name="badge-wrapper">
@@ -60,7 +60,7 @@ export const GeneralSettings = () => {
                   </Caption>
                 </Block>
               )}
-              <RadioGroup name="color" label="Color" size="large" labelProps={{ size: "large" }}>
+              <RadioGroup name="color" label="颜色" size="large" labelProps={{ size: "large" }}>
                 {colors.map((color) => (
                   <RadioGroup.Button key={color} value={color}>
                     <Block name="color" style={{ "--background": color }} />
@@ -68,13 +68,13 @@ export const GeneralSettings = () => {
                 ))}
               </RadioGroup>
 
-              <RadioGroup label="Task Sampling" labelProps={{ size: "large" }} name="sampling" simple>
+              <RadioGroup label="任务抽样方式" labelProps={{ size: "large" }} name="sampling" simple>
                 {samplings.map(({ value, label, description }) => (
                   <RadioGroup.Button
                     key={value}
                     value={`${value} sampling`}
-                    label={`${label} sampling`}
-                    description={description}
+                    label={`${label === 'Sequential' ? '顺序' : '随机'}抽样`}
+                    description={description === 'Tasks are ordered by Task ID' ? '任务按ID顺序排列' : '任务随机选择'}
                   />
                 ))}
                 {isFF(FF_LSDV_E_297) && (

@@ -25,7 +25,7 @@ export const AnnotationSettings = () => {
   return (
     <Block name="annotation-settings">
       <Elem name={"wrapper"}>
-        <h1>Annotation Settings</h1>
+        <h1>标注设置</h1>
         <Block name="settings-wrapper">
           <Form
             ref={formRef}
@@ -35,15 +35,15 @@ export const AnnotationSettings = () => {
             onSubmit={updateProject}
           >
             <Form.Row columnCount={1}>
-              <Elem name={"header"}>Labeling Instructions</Elem>
+              <Elem name={"header"}>标注说明</Elem>
               <div class="settings-description">
-                <p style={{ marginBottom: "0" }}>Write instructions to help users complete labeling tasks.</p>
+                <p style={{ marginBottom: "0" }}>请填写说明，帮助用户完成标注任务。</p>
                 <p style={{ marginTop: "8px" }}>
-                  The instruction field supports HTML markup and it allows use of images, iframes (pdf).
+                  说明字段支持 HTML 标记，并允许使用图片、iframe（pdf）。
                 </p>
               </div>
               <div>
-                <Toggle label="Show before labeling" name="show_instruction" />
+                <Toggle label="标注前显示说明" name="show_instruction" />
               </div>
               <TextArea name="expert_instruction" style={{ minHeight: 128, maxWidth: "520px" }} />
             </Form.Row>
@@ -52,11 +52,11 @@ export const AnnotationSettings = () => {
 
             <Form.Row columnCount={1}>
               <br />
-              <Elem name={"header"}>Prelabeling</Elem>
+              <Elem name={"header"}>预标注</Elem>
               <div>
                 <Toggle
-                  label="Use predictions to prelabel tasks"
-                  description={<span>Enable and select which set of predictions to use for prelabeling.</span>}
+                  label="使用预测结果进行预标注"
+                  description={<span>启用后可选择用于预标注的预测结果集。</span>}
                   name="show_collab_predictions"
                   onChange={(e) => {
                     setCollab(e.target.checked);
@@ -69,10 +69,10 @@ export const AnnotationSettings = () => {
 
             <Form.Actions>
               <Form.Indicator>
-                <span case="success">Saved!</span>
+                <span case="success">已保存！</span>
               </Form.Indicator>
               <Button type="submit" look="primary" style={{ width: 120 }}>
-                Save
+                保存
               </Button>
             </Form.Actions>
           </Form>
@@ -82,5 +82,5 @@ export const AnnotationSettings = () => {
   );
 };
 
-AnnotationSettings.title = "Annotation";
+AnnotationSettings.title = "标注";
 AnnotationSettings.path = "/annotation";
