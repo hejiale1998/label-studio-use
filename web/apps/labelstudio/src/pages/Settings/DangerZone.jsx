@@ -16,9 +16,9 @@ export const DangerZone = () => {
 
   const handleOnClick = (type) => () => {
     confirm({
-      title: "Action confirmation",
-      body: "You're about to delete all things. This action cannot be undone.",
-      okText: "Proceed",
+      title: "操作确认",
+      body: "您即将删除所有内容。此操作不可撤销。",
+      okText: "继续",
       buttonLook: "destructive",
       onOk: async () => {
         setProcessing(type);
@@ -58,35 +58,33 @@ export const DangerZone = () => {
       {
         type: "annotations",
         disabled: true, //&& !project.total_annotations_number,
-        label: `Delete ${project.total_annotations_number} Annotations`,
+        label: `删除 ${project.total_annotations_number} 条标注`,
       },
       {
         type: "tasks",
         disabled: true, //&& !project.task_number,
-        label: `Delete ${project.task_number} Tasks`,
+        label: `删除 ${project.task_number} 条任务`,
       },
       {
         type: "predictions",
         disabled: true, //&& !project.total_predictions_number,
-        label: `Delete ${project.total_predictions_number} Predictions`,
+        label: `删除 ${project.total_predictions_number} 条预测`,
       },
       {
         type: "reset_cache",
         help:
-          "Reset Cache may help in cases like if you are unable to modify the labeling configuration due " +
-          "to validation errors concerning existing labels, but you are confident that the labels don't exist. You can " +
-          "use this action to reset the cache and try again.",
-        label: "Reset Cache",
+          "如果由于现有标签的校验错误导致无法修改标注配置，但您确定这些标签已不存在，可以尝试重置缓存后重试。",
+        label: "重置缓存",
       },
       {
         type: "tabs",
-        help: "If the Data Manager is not loading, dropping all Data Manager tabs can help.",
-        label: "Drop All Tabs",
+        help: "如果数据管理器无法加载，清空所有数据管理器标签页可能有助于恢复。",
+        label: "清空所有标签页",
       },
       {
         type: "project",
-        help: "Deleting a project removes all tasks, annotations, and project data from the database.",
-        label: "Delete Project",
+        help: "删除项目会移除所有任务、标注和项目信息，且无法恢复。",
+        label: "删除项目",
       },
     ],
     [project],

@@ -94,7 +94,7 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
           >
             Webhooks
           </Elem>{" "}
-          / {webhook === null ? "New Webhook" : "Edit Webhook"}
+          / {webhook === null ? "新增 Webhook" : "修改 Webhook"}
         </>
       </Elem>
       <Elem name="content">
@@ -126,7 +126,7 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
               <Space className={rootClass.elem("url-space")}>
                 <Input name="url" className={rootClass.elem("url-input")} placeholder="URL" />
                 <Space align="end" className={rootClass.elem("activator")}>
-                  <span className={rootClass.elem("black-text")}>Is Active</span>
+                  <span className={rootClass.elem("black-text")}>活动状态</span>
                   <Toggle
                     skip
                     checked={isActive}
@@ -257,10 +257,10 @@ const WebhookDetail = ({ webhook, webhooksInfo, fetchWebhooks, onBack, onSelectA
                 <Form.Indicator />
               </div>
               <Button type="button" className={rootClass.elem("cancel-button")} onClick={onBack}>
-                Cancel
+                取消
               </Button>
               <Button primary className={rootClass.elem("save-button")}>
-                {webhook === null ? "Add Webhook" : "Save"}
+                {webhook === null ? "添加 Webhook" : "保存"}
               </Button>
             </Elem>
           </Form>

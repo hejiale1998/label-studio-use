@@ -34,7 +34,7 @@ export const StorageForm = forwardRef(({ onSubmit, target, project, rootClass, s
         skip: true,
         type: "select",
         name: "storage_type",
-        label: "Storage Type",
+        label: "存储类型",
         disabled: !!storage,
         options: storageTypes.map(({ name, title }) => ({
           value: name,

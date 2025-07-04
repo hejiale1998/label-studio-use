@@ -63,7 +63,7 @@ export const ModelVersionSelector = ({
     }
 
     if (!modelVersions?.static?.length && !modelVersions?.live?.length) {
-      setPlaceholder("No model or predictions available");
+      setPlaceholder("没有可用的模型或预测");
     }
 
     setLoading(false);
