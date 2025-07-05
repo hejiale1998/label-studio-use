@@ -1,91 +1,91 @@
 {
   "Audio": {
-    "name": "音频",
+    "name": "Audio",
     "description": "Audio 标签用于播放音频并显示其波形。适用于需要对音频片段进行标注、查看波形并在标注过程中操作音频的任务。\n\n可用于以下数据类型：audio",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "value": {
         "name": "value",
-        "description": "Data field containing path or a URL to the audio.",
+        "description": "包含音频路径或 URL 的数据字段",
         "type": "string",
         "required": true
       },
       "defaultspeed": {
         "name": "defaultspeed",
-        "description": "Default speed level (from 0.5 to 2).",
+        "description": "默认速度级别（0.5 到 2）",
         "type": "string",
         "required": false,
         "default": 1
       },
       "defaultscale": {
         "name": "defaultscale",
-        "description": "Audio pane default y-scale for waveform.",
+        "description": "音频波形默认 y 轴缩放级别",
         "type": "string",
         "required": false,
         "default": 1
       },
       "defaultzoom": {
         "name": "defaultzoom",
-        "description": "Default zoom level for waveform. (from 1 to 1500).",
+        "description": "音频波形默认缩放级别（1 到 1500）",
         "type": "string",
         "required": false,
         "default": 1
       },
       "defaultvolume": {
         "name": "defaultvolume",
-        "description": "Default volume level (from 0 to 1).",
+        "description": "默认音量级别（0 到 1）",
         "type": "string",
         "required": false,
         "default": 1
       },
       "hotkey": {
         "name": "hotkey",
-        "description": "Hotkey used to play or pause audio.",
+        "description": "用于播放或暂停音频的热键",
         "type": "string",
         "required": false
       },
       "sync": {
         "name": "sync",
-        "description": "Object name to sync with.",
+        "description": "同步对象名称",
         "type": "string",
         "required": false
       },
       "height": {
         "name": "height",
-        "description": "Total height of the audio player.",
+        "description": "音频播放器总高度",
         "type": "string",
         "required": false,
         "default": 96
       },
       "waveheight": {
         "name": "waveheight",
-        "description": "Minimum height of a waveform when in `splitchannels` mode with multiple channels to display.",
+        "description": "波形最小高度，当在 `splitchannels` 模式下显示多个通道时",
         "type": "string",
         "required": false,
         "default": 32
       },
       "splitchannels": {
         "name": "splitchannels",
-        "description": "Display multiple audio channels separately, if the audio file has more than one channel. (**NOTE: Requires more memory to operate.**)",
+        "description": "如果音频文件有多个通道，则单独显示多个音频通道。（**注意：需要更多内存来操作。**）",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "decoder": {
         "name": "decoder",
-        "description": "Decoder type to use to decode audio data. (`\"webaudio\"` or `\"ffmpeg\"`)",
+        "description": "用于解码音频数据的解码器类型（`\"webaudio\"` 或 `\"ffmpeg\"`）",
         "type": "string",
         "required": false,
         "default": "webaudio"
       },
       "player": {
         "name": "player",
-        "description": "Player type to use to play audio data. (`\"html5\"` or `\"webaudio\"`)",
+        "description": "用于播放音频数据的播放器类型（`\"html5\"` 或 `\"webaudio\"`）",
         "type": "string",
         "required": false,
         "default": "html5"
@@ -94,75 +94,75 @@
   },
   "HyperText": {
     "name": "HyperText",
-    "description": "The `HyperText` tag displays hypertext markup for labeling. Use for labeling HTML-encoded text and webpages for NER and NLP projects.\n\nUse with the following data types: HTML.",
+    "description": "HyperText 标签用于显示带有 HTML 格式的富文本内容。\n\n可用于以下数据类型：HTML",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "value": {
         "name": "value",
-        "description": "Value of the element",
+        "description": "元素值",
         "type": "string",
         "required": true
       },
       "valueType": {
         "name": "valueType",
-        "description": "Whether the text is stored directly in uploaded data or needs to be loaded from a URL",
+        "description": "文本是否直接存储在上传的数据中，还是需要从 URL 加载",
         "type": ["url", "text"],
         "required": false,
         "default": "text"
       },
       "inline": {
         "name": "inline",
-        "description": "Whether to embed HTML directly in Label Studio or use an iframe",
+        "description": "是否将 HTML 直接嵌入 Label Studio 或使用 iframe",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "saveTextResult": {
         "name": "saveTextResult",
-        "description": "Whether to store labeled text along with the results. By default, doesn't store text for `valueType=url`",
+        "description": "是否存储标注的文本结果。默认情况下，不存储 `valueType=url` 的文本",
         "type": ["yes", "no"],
         "required": false
       },
       "encoding": {
         "name": "encoding",
-        "description": "How to decode values from encoded strings",
+        "description": "如何从编码字符串中解码值",
         "type": ["none", "base64", "base64unicode"],
         "required": false
       },
       "selectionEnabled": {
         "name": "selectionEnabled",
-        "description": "Enable or disable selection",
+        "description": "启用或禁用选择",
         "type": ["true", "false"],
         "required": false,
         "default": true
       },
       "clickableLinks": {
         "name": "clickableLinks",
-        "description": "Whether to allow opening resources from links in the hypertext markup.",
+        "description": "是否允许在超文本标记中打开资源链接",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "highlightColor": {
         "name": "highlightColor",
-        "description": "Hex string with highlight color, if not provided uses the labels color",
+        "description": "高亮颜色十六进制字符串，如果未提供，则使用标签颜色",
         "type": "string",
         "required": false
       },
       "showLabels": {
         "name": "showLabels",
-        "description": "Whether or not to show labels next to the region; unset (by default) — use editor settings; true/false — override settings",
+        "description": "是否显示标签旁边的区域；未设置（默认）— 使用编辑器设置；true/false — 覆盖设置",
         "type": ["true", "false"],
         "required": false
       },
       "granularity": {
         "name": "granularity",
-        "description": "Control region selection granularity",
+        "description": "控制区域选择粒度",
         "type": ["symbol", "word", "sentence", "paragraph"],
         "required": false
       }
@@ -170,147 +170,147 @@
   },
   "Image": {
     "name": "Image",
-    "description": "The `Image` tag shows an image on the page. Use for all image annotation tasks to display an image on the labeling interface.\n\nUse with the following data types: images.\n\nWhen you annotate image regions with this tag, the annotations are saved as percentages of the original size of the image, from 0-100.",
+    "description": "Image 标签用于显示图片数据。\n\n可用于以下数据类型：images。\n\n当您使用此标签标注图像区域时，标注结果将保存为图像原始大小的百分比，范围为 0-100。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "value": {
         "name": "value",
-        "description": "Data field containing a path or URL to the image",
+        "description": "包含图像路径或 URL 的数据字段",
         "type": "string",
         "required": true
       },
       "valueList": {
         "name": "valueList",
-        "description": "References a variable that holds a list of image URLs",
+        "description": "引用一个包含图像 URL 列表的变量",
         "type": "string",
         "required": false
       },
       "smoothing": {
         "name": "smoothing",
-        "description": "Enable smoothing, by default it uses user settings",
+        "description": "启用平滑，默认情况下使用用户设置",
         "type": ["true", "false"],
         "required": false
       },
       "width": {
         "name": "width",
-        "description": "Image width",
+        "description": "图像宽度",
         "type": "string",
         "required": false,
         "default": "100%"
       },
       "maxWidth": {
         "name": "maxWidth",
-        "description": "Maximum image width",
+        "description": "最大图像宽度",
         "type": "string",
         "required": false,
         "default": "750px"
       },
       "zoom": {
         "name": "zoom",
-        "description": "Enable zooming an image with the mouse wheel",
+        "description": "启用鼠标滚轮缩放图像",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "negativeZoom": {
         "name": "negativeZoom",
-        "description": "Enable zooming out an image",
+        "description": "启用图像缩小",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "zoomBy": {
         "name": "zoomBy",
-        "description": "Scale factor",
+        "description": "缩放因子",
         "type": "float",
         "required": false,
         "default": 1.1
       },
       "grid": {
         "name": "grid",
-        "description": "Whether to show a grid",
+        "description": "是否显示网格",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "gridSize": {
         "name": "gridSize",
-        "description": "Specify size of the grid",
+        "description": "指定网格大小",
         "type": "number",
         "required": false,
         "default": 30
       },
       "gridColor": {
         "name": "gridColor",
-        "description": "Color of the grid in hex, opacity is 0.15",
+        "description": "网格颜色十六进制字符串，透明度为 0.15",
         "type": "string",
         "required": false,
         "default": "#EEEEF4"
       },
       "zoomControl": {
         "name": "zoomControl",
-        "description": "Show zoom controls in toolbar",
+        "description": "在工具栏中显示缩放控件",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "brightnessControl": {
         "name": "brightnessControl",
-        "description": "Show brightness control in toolbar",
+        "description": "在工具栏中显示亮度控件",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "contrastControl": {
         "name": "contrastControl",
-        "description": "Show contrast control in toolbar",
+        "description": "在工具栏中显示对比度控件",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "rotateControl": {
         "name": "rotateControl",
-        "description": "Show rotate control in toolbar",
+        "description": "在工具栏中显示旋转控件",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "crosshair": {
         "name": "crosshair",
-        "description": "Show crosshair cursor",
+        "description": "显示十字准线光标",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "horizontalAlignment": {
         "name": "horizontalAlignment",
-        "description": "Where to align image horizontally. Can be one of \"left\", \"center\", or \"right\"",
+        "description": "图像水平对齐方式。可以是 \"left\"、\"center\" 或 \"right\"",
         "type": ["left", "center", "right"],
         "required": false,
         "default": "left"
       },
       "verticalAlignment": {
         "name": "verticalAlignment",
-        "description": "Where to align image vertically. Can be one of \"top\", \"center\", or \"bottom\"",
+        "description": "图像垂直对齐方式。可以是 \"top\"、\"center\" 或 \"bottom\"",
         "type": ["top", "center", "bottom"],
         "required": false,
         "default": "top"
       },
       "defaultZoom": {
         "name": "defaultZoom",
-        "description": "Specify the initial zoom of the image within the viewport while preserving its ratio. Can be one of \"auto\", \"original\", or \"fit\"",
+        "description": "指定图像在视口中的初始缩放比例。可以是 \"auto\"、\"original\" 或 \"fit\"",
         "type": ["auto", "original", "fit"],
         "required": false,
         "default": "fit"
       },
       "crossOrigin": {
         "name": "crossOrigin",
-        "description": "Configures CORS cross domain behavior for this image, either \"none\", \"anonymous\", or \"use-credentials\", similar to [DOM `img` crossOrigin property](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/crossOrigin).",
+        "description": "配置此图像的 CORS 跨域行为，可以是 \"none\"、\"anonymous\" 或 \"use-credentials\"，类似于 [DOM `img` crossOrigin 属性](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/crossOrigin)。",
         "type": ["none", "anonymous", "use-credentials"],
         "required": false,
         "default": "none"
@@ -319,23 +319,23 @@
   },
   "List": {
     "name": "List",
-    "description": "The `List` tag is used to display a list of similar items like articles, search results, etc. Task data in the `value` parameter should be an array of objects with `id`, `title`, `body`, and `html` fields.\n\nIt's much more lightweight to use `List` than to group other tags like Text. Also, you can attach classifications to provide additional data about this list.\n\nThe `List` tag can be used with the `Ranker` tag to rank items or pick relevant items from a list.\nItems can be styled in `Style` tag by using `.htx-ranker-item` class.",
+    "description": "List 标签用于显示类似文章、搜索结果等相似项目的列表。`value` 参数中的任务数据应为包含 `id`、`title`、`body` 和 `html` 字段的数组对象。\n\n使用 `List` 比使用其他标签（如 Text）更轻量。您还可以为列表附加分类，以提供有关此列表的额外数据。\n\n`List` 标签可以与 `Ranker` 标签一起使用，以对项目进行排序或从列表中选择相关项目。\n项目可以在 `Style` 标签中使用 `.htx-ranker-item` 类进行样式化。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "value": {
         "name": "value",
-        "description": "Data field containing a JSON with array of objects (id, title, body) to rank",
+        "description": "包含 JSON 数组对象（id、title、body）的数据字段，用于排序",
         "type": "string",
         "required": true
       },
       "title": {
         "name": "title",
-        "description": "Title of the list",
+        "description": "列表标题",
         "type": "string",
         "required": false
       }
@@ -343,77 +343,77 @@
   },
   "Paragraphs": {
     "name": "Paragraphs",
-    "description": "The `Paragraphs` tag displays paragraphs of text on the labeling interface. Use to label dialogue transcripts for NLP and NER projects.\nThe `Paragraphs` tag expects task data formatted as an array of objects like the following:\n[{ $nameKey: \"Author name\", $textKey: \"Text\" }, ... ]\n\nUse with the following data types: text.",
+    "description": "Paragraphs 标签用于显示和标注多段文本。\n`Paragraphs` 标签期望任务数据格式为以下数组对象：\n[{ $nameKey: \"作者名称\", $textKey: \"文本\" }, ... ]\n\n可用于以下数据类型：text",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "value": {
         "name": "value",
-        "description": "Data field containing the paragraph content",
+        "description": "包含段落内容的数据字段",
         "type": "string",
         "required": true
       },
       "valueType": {
         "name": "valueType",
-        "description": "Whether the data is stored directly in uploaded JSON data or needs to be loaded from a URL",
+        "description": "数据是否直接存储在上传的 JSON 数据中，还是需要从 URL 加载",
         "type": ["json", "url"],
         "required": false,
         "default": "json"
       },
       "audioUrl": {
         "name": "audioUrl",
-        "description": "Audio to sync phrases with",
+        "description": "与段落同步的音频",
         "type": "string",
         "required": false
       },
       "sync": {
         "name": "sync",
-        "description": "Object name to sync with",
+        "description": "与段落同步的对象名称",
         "type": "string",
         "required": false
       },
       "showPlayer": {
         "name": "showPlayer",
-        "description": "Whether to show audio player above the paragraphs. Ignored if sync object is audio",
+        "description": "是否显示音频播放器。如果同步对象是音频，则忽略",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "saveTextResult": {
         "name": "saveTextResult",
-        "description": "Whether to store labeled text along with the results. By default, doesn't store text for `valueType=url`",
+        "description": "是否存储标注的文本结果。默认情况下，不存储 `valueType=url` 的文本",
         "type": ["no", "yes"],
         "required": false,
         "default": "yes"
       },
       "layout": {
         "name": "layout",
-        "description": "Whether to use a dialogue-style layout or not",
+        "description": "是否使用对话式布局。默认情况下，不使用对话式布局",
         "type": ["none", "dialogue"],
         "required": false,
         "default": "none"
       },
       "nameKey": {
         "name": "nameKey",
-        "description": "The key field to use for name",
+        "description": "用于名称的字段键",
         "type": "string",
         "required": false,
         "default": "author"
       },
       "textKey": {
         "name": "textKey",
-        "description": "The key field to use for the text",
+        "description": "用于文本的字段键",
         "type": "string",
         "required": false,
         "default": "text"
       },
       "contextScroll": {
         "name": "contextScroll",
-        "description": "Turn on contextual scroll mode",
+        "description": "启用上下文滚动模式",
         "type": ["true", "false"],
         "required": false,
         "default": false
@@ -422,17 +422,17 @@
   },
   "Table": {
     "name": "Table",
-    "description": "The `Table` tag is used to display object keys and values in a table.",
+    "description": "Table 标签用于在表格中显示对象键和值。",
     "attrs": {
       "value": {
         "name": "value",
-        "description": "Data field value containing JSON type for Table",
+        "description": "包含 JSON 类型数据的表格数据字段",
         "type": "string",
         "required": true
       },
       "valueType": {
         "name": "valueType",
-        "description": "Value to define the data type in Table",
+        "description": "定义表格中数据类型的值",
         "type": "string",
         "required": false
       }
@@ -440,61 +440,61 @@
   },
   "Text": {
     "name": "Text",
-    "description": "The `Text` tag shows text that can be labeled. Use to display any type of text on the labeling interface.\nYou can use `<Style>.htx-text{ white-space: pre-wrap; }</Style>` to preserve all spaces in the text, otherwise spaces are trimmed when displayed and saved in the results.\nEvery space in the text sample is counted when calculating result offsets, for example for NER labeling tasks.\n\nUse with the following data types: text.",
+    "description": "Text 标签用于在标注界面中显示普通文本内容。\n您可以使用 `<Style>.htx-text{ white-space: pre-wrap; }</Style>` 保留文本中的所有空格，否则在显示和保存结果时会修剪空格。\n在计算结果偏移量时，文本样本中的每个空格都会被计算在内，例如 NER 标注任务。\n\n可用于以下数据类型：text。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "value": {
         "name": "value",
-        "description": "Data field containing text or a UR",
+        "description": "包含文本或 URL 的数据字段",
         "type": "string",
         "required": true
       },
       "valueType": {
         "name": "valueType",
-        "description": "Whether the text is stored directly in uploaded data or needs to be loaded from a URL",
+        "description": "文本是否直接存储在上传的数据中，还是需要从 URL 加载",
         "type": ["url", "text"],
         "required": false,
         "default": "text"
       },
       "saveTextResult": {
         "name": "saveTextResult",
-        "description": "Whether to store labeled text along with the results. By default, doesn't store text for `valueType=url`",
+        "description": "是否存储标注的文本结果。默认情况下，不存储 `valueType=url` 的文本",
         "type": ["yes", "no"],
         "required": false
       },
       "encoding": {
         "name": "encoding",
-        "description": "How to decode values from encoded strings",
+        "description": "如何从编码字符串中解码值",
         "type": ["none", "base64", "base64unicode"],
         "required": false
       },
       "selectionEnabled": {
         "name": "selectionEnabled",
-        "description": "Enable or disable selection",
+        "description": "启用或禁用选择",
         "type": ["true", "false"],
         "required": false,
         "default": true
       },
       "highlightColor": {
         "name": "highlightColor",
-        "description": "Hex string with highlight color, if not provided uses the labels color",
+        "description": "高亮颜色十六进制字符串，如果未提供，则使用标签颜色",
         "type": "string",
         "required": false
       },
       "showLabels": {
         "name": "showLabels",
-        "description": "Whether or not to show labels next to the region; unset (by default) — use editor settings; true/false — override settings",
+        "description": "是否显示区域旁边的标签；未设置（默认）— 使用编辑器设置；true/false — 覆盖设置",
         "type": ["true", "false"],
         "required": false
       },
       "granularity": {
         "name": "granularity",
-        "description": "Control region selection granularity",
+        "description": "控制区域选择粒度",
         "type": ["symbol", "word", "sentence", "paragraph"],
         "required": false
       }
@@ -502,74 +502,74 @@
   },
   "TimeSeries": {
     "name": "TimeSeries",
-    "description": "The `TimeSeries` tag can be used to label time series data. Read more about Time Series Labeling on [the time series template page](../templates/time_series.html).\n\nNote: The time axis in your data must be sorted, otherwise the TimeSeries tag does not work.\nTo use autogenerated indices as time axes, don't use the `timeColumn` parameter.\n\nUse with the following data types: time series.",
+    "description": "TimeSeries 标签用于标注时间序列数据。更多关于时间序列标注的信息，请参考 [时间序列模板页面](../templates/time_series.html)。\n\n注意：时间轴必须排序，否则 TimeSeries 标签无法工作。\n要使用自动生成的索引作为时间轴，请不要使用 `timeColumn` 参数。\n\n可用于以下数据类型：time series。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "value": {
         "name": "value",
-        "description": "Key used to look up the data, either URLs for your time-series if valueType=url, otherwise expects JSON",
+        "description": "用于查找数据的键，如果 valueType=url，则为时间序列的 URL，否则为 JSON",
         "type": "string",
         "required": true
       },
       "valueType": {
         "name": "valueType",
-        "description": "Format of time series data provided. If set to \"url\" then Label Studio loads value references inside `value` key, otherwise it expects JSON.",
+        "description": "提供的时间序列数据格式。如果设置为 \"url\"，则 Label Studio 加载 `value` 键中的值引用，否则它期望 JSON。",
         "type": ["url", "json"],
         "required": false,
         "default": "url"
       },
       "timeColumn": {
         "name": "timeColumn",
-        "description": "Column name or index that provides temporal values. If your time series data has no temporal column then one is automatically generated.",
+        "description": "提供时间值的列名或索引。如果时间序列数据没有时间列，则自动生成一个。",
         "type": "string",
         "required": false
       },
       "timeFormat": {
         "name": "timeFormat",
-        "description": "Pattern used to parse values inside timeColumn, parsing is provided by d3, and follows `strftime` implementation",
+        "description": "用于解析 timeColumn 中值的格式。解析由 d3 提供，并遵循 `strftime` 实现。",
         "type": "string",
         "required": false
       },
       "timeDisplayFormat": {
         "name": "timeDisplayFormat",
-        "description": "Format used to display temporal value. Can be a number or a date. If a temporal column is a date, use strftime to format it. If it's a number, use [d3 number](https://github.com/d3/d3-format#locale_format) formatting.",
+        "description": "用于显示时间值的格式。可以是数字或日期。如果时间列是日期，使用 strftime 格式化。如果是数字，使用 [d3 数字](https://github.com/d3/d3-format#locale_format) 格式化。",
         "type": "string",
         "required": false
       },
       "durationDisplayFormat": {
         "name": "durationDisplayFormat",
-        "description": "Format used to display temporal duration value for brush range. If the temporal column is a date, use strftime to format it. If it's a number, use [d3 number](https://github.com/d3/d3-format#locale_format) formatting.",
+        "description": "用于显示时间持续值的格式。如果时间列是日期，使用 strftime 格式化。如果是数字，使用 [d3 数字](https://github.com/d3/d3-format#locale_format) 格式化。",
         "type": "string",
         "required": false
       },
       "sep": {
         "name": "sep",
-        "description": "Separator for your CSV file.",
+        "description": "CSV 文件的分隔符",
         "type": "string",
         "required": false,
         "default": ","
       },
       "overviewChannels": {
         "name": "overviewChannels",
-        "description": "Comma-separated list of channel names or indexes displayed in overview.",
+        "description": "逗号分隔的通道名称或索引列表，显示在概览中。",
         "type": "string",
         "required": false
       },
       "overviewWidth": {
         "name": "overviewWidth",
-        "description": "Default width of overview window in percents",
+        "description": "默认概览窗口的宽度百分比",
         "type": "string",
         "required": false,
         "default": "25%"
       },
       "fixedScale": {
         "name": "fixedScale",
-        "description": "Whether to scale y-axis to the maximum to fit all the values. If false, current view scales to fit only the displayed values.",
+        "description": "是否将 y 轴缩放到最大值以适应所有值。如果为 false，当前视图仅缩放显示的值。",
         "type": ["true", "false"],
         "required": false,
         "default": false
@@ -578,94 +578,94 @@
   },
   "Channel": {
     "name": "Channel",
-    "description": "Channel tag can be used to label time series data",
+    "description": "Channel 标签用于标注时间序列数据",
     "attrs": {
       "column": {
         "name": "column",
-        "description": "column name or index",
+        "description": "列名或索引",
         "type": "string",
         "required": true
       },
       "legend": {
         "name": "legend",
-        "description": "display name of the channel",
+        "description": "通道的显示名称",
         "type": "string",
         "required": false
       },
       "units": {
         "name": "units",
-        "description": "display units name",
+        "description": "显示单位名称",
         "type": "string",
         "required": false
       },
       "displayFormat": {
         "name": "displayFormat",
-        "description": "format string for the values, uses d3-format:<br/>\n       `[,][.precision][f\\|%]`<br/>\n       `,` - group thousands with separator (from locale): `,` (12345.6 -> 12,345.6) `,.2f` (12345.6 -> 12,345.60)<br/>\n       `.precision` - precision for `f\\|%` type, significant digits for empty type:<br/>\n                    `.3f` (12.3456 -> 12.345, 1000 -> 1000.000)<br/>\n                    `.3` (12.3456 -> 12.3, 1.2345 -> 1.23, 12345 -> 1.23e+4)<br/>\n       `f` - treat as float, default precision is .6: `f` (12 -> 12.000000) `.2f` (12 -> 12.00) `.0f` (12.34 -> 12)<br/>\n       `%` - treat as percents and format accordingly: `%.0` (0.128 -> 13%) `%.1` (1.2345 -> 123.4%)",
+        "description": "值的格式字符串使用d3格式：<br/>\n `[，][.precision][f\\|%]`<br/>\n `，`-用分隔符将千位分组（来自区域设置）：`，`（12345.6->12345.6）`，.2f`（12345.6->12345.60）<br/]\n `.precision `-`f\\|%`类型的精度，空类型的有效数字：<br>\n'.3f`（12.3456->12.3451000->1000.000）345->1.23，12345->1.23e+4）<br/>\n“f”-视为浮点数，默认精度为.6:'f'（12->12.000000）'.2f'（12->12.00）'.0f'（12.34->12）<br>\n'%'-视为百分比并相应格式化：'%.0'（0.128->13%）'%.1'（1.2345->123.4%）",
         "type": "string",
         "required": false
       },
       "height": {
         "name": "height",
-        "description": "height of the plot",
+        "description": "plot 的高度",
         "type": "number",
         "required": false
       },
       "strokeColor": {
         "name": "strokeColor",
-        "description": "plot stroke color, expects hex value",
+        "description": "plot 的笔划颜色，期望十六进制值",
         "type": "string",
         "required": false,
         "default": "#f48a42"
       },
       "strokeWidth": {
         "name": "strokeWidth",
-        "description": "plot stroke width",
+        "description": "plot 的笔划宽度",
         "type": "number",
         "required": false,
         "default": 1
       },
       "markerColor": {
         "name": "markerColor",
-        "description": "plot stroke color, expects hex value",
+        "description": "plot 的笔划颜色，期望十六进制值",
         "type": "string",
         "required": false,
         "default": "#f48a42"
       },
       "markerSize": {
         "name": "markerSize",
-        "description": "plot stroke width",
+        "description": "plot 的笔划宽度",
         "type": "number",
         "required": false,
         "default": 0
       },
       "markerSymbol": {
         "name": "markerSymbol",
-        "description": "plot stroke width",
+        "description": "plot 的笔划宽度",
         "type": "number",
         "required": false,
         "default": "circle"
       },
       "timeRange": {
         "name": "timeRange",
-        "description": "data range of x-axis / time axis",
+        "description": "x 轴/时间轴的数据范围",
         "type": "string",
         "required": false
       },
       "dataRange": {
         "name": "dataRange",
-        "description": "data range of y-axis / data axis",
+        "description": "y 轴/数据轴的数据范围",
         "type": "string",
         "required": false
       },
       "showAxis": {
         "name": "showAxis",
-        "description": "show or bide both axis",
+        "description": "显示或隐藏轴",
         "type": "string",
         "required": false
       },
       "fixedScale": {
         "name": "fixedScale",
-        "description": "if false current view scales to fit only displayed values; if given overwrites TimeSeries' fixedScale",
+        "description": "如果为 false，当前视图仅缩放显示的值；如果给出，则覆盖 TimeSeries 的 fixedScale",
         "type": ["true", "false"],
         "required": false
       }
@@ -673,50 +673,50 @@
   },
   "Video": {
     "name": "Video",
-    "description": "Video tag plays a simple video file. Use for video annotation tasks such as classification and transcription.\n\nUse with the following data types: video",
+    "description": "Video 标签用于播放简单的视频文件。用于视频标注任务，如分类和转录。\n\n可用于以下数据类型：video",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "value": {
         "name": "value",
-        "description": "URL of the video",
+        "description": "视频的 URL",
         "type": "string",
         "required": true
       },
       "frameRate": {
         "name": "frameRate",
-        "description": "video frame rate per second; default is 24; can use task data like `$fps`",
+        "description": "视频帧率每秒；默认是 24；可以使用任务数据，如 `$fps`",
         "type": "number",
         "required": false,
         "default": 24
       },
       "sync": {
         "name": "sync",
-        "description": "object name to sync with",
+        "description": "与同步的对象名称",
         "type": "string",
         "required": false
       },
       "muted": {
         "name": "muted",
-        "description": "muted video",
+        "description": "静音视频",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "height": {
         "name": "height",
-        "description": "height of the video player",
+        "description": "视频播放器的高度",
         "type": "number",
         "required": false,
         "default": 600
       },
       "timelineHeight": {
         "name": "timelineHeight",
-        "description": "height of the timeline with regions",
+        "description": "带有区域的时序图的高度",
         "type": "number",
         "required": false,
         "default": 64
@@ -725,49 +725,49 @@
   },
   "Brush": {
     "name": "Brush",
-    "description": "The `Brush` tag is used for image segmentation tasks where you want to apply a mask or use a brush to draw a region on the image.\n\nUse with the following data types: image.",
+    "description": "Brush 标签用于图像分割任务，您可以在图像上应用遮罩或使用画笔绘制区域。\n\n可用于以下数据类型：image。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "toName": {
         "name": "toName",
-        "description": "Name of the image to label",
+        "description": "要标注的图像名称",
         "type": "string",
         "required": true
       },
       "choice": {
         "name": "choice",
-        "description": "Configure whether the data labeler can select one or multiple labels",
+        "description": "配置数据标注器是否可以选择一个或多个标签",
         "type": ["single", "multiple"],
         "required": false,
         "default": "single"
       },
       "maxUsages": {
         "name": "maxUsages",
-        "description": "Maximum number of times a label can be used per task",
+        "description": "每个任务中标签的最大使用次数",
         "type": "number",
         "required": false
       },
       "showInline": {
         "name": "showInline",
-        "description": "Show labels in the same visual line",
+        "description": "在同一视觉行中显示标签",
         "type": ["true", "false"],
         "required": false,
         "default": true
       },
       "smart": {
         "name": "smart",
-        "description": "Show smart tool for interactive pre-annotations",
+        "description": "显示智能工具用于交互式预标注",
         "type": ["true", "false"],
         "required": false
       },
       "smartOnly": {
         "name": "smartOnly",
-        "description": "Only show smart tool for interactive pre-annotations",
+        "description": "仅显示智能工具用于交互式预标注",
         "type": ["true", "false"],
         "required": false
       }
@@ -775,36 +775,36 @@
   },
   "BrushLabels": {
     "name": "BrushLabels",
-    "description": "The `BrushLabels` tag for image segmentation tasks is used in the area where you want to apply a mask or use a brush to draw a region on the image.\n\nUse with the following data types: image.",
+    "description": "BrushLabels 标签用于图像分割任务，您可以在图像上应用遮罩或使用画笔绘制区域。\n\n可用于以下数据类型：image。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "toName": {
         "name": "toName",
-        "description": "Name of the image to label",
+        "description": "要标注的图像名称",
         "type": "string",
         "required": true
       },
       "choice": {
         "name": "choice",
-        "description": "Configure whether the data labeler can select one or multiple labels",
+        "description": "配置数据标注器是否可以选择一个或多个标签",
         "type": ["single", "multiple"],
         "required": false,
         "default": "single"
       },
       "maxUsages": {
         "name": "maxUsages",
-        "description": "Maximum number of times a label can be used per task",
+        "description": "每个任务中标签的最大使用次数",
         "type": "number",
         "required": false
       },
       "showInline": {
         "name": "showInline",
-        "description": "Show labels in the same visual line",
+        "description": "在同一视觉行中显示标签",
         "type": ["true", "false"],
         "required": false,
         "default": true
@@ -813,53 +813,53 @@
   },
   "Choice": {
     "name": "Choice",
-    "description": "The `Choice` tag represents a single choice for annotations. Use with the `Choices` tag or `Taxonomy` tag to provide specific choice options.",
+    "description": "Choice 标签表示单个选择用于标注。使用 `Choices` 标签或 `Taxonomy` 标签提供特定选择选项。",
     "attrs": {
       "value": {
         "name": "value",
-        "description": "Choice value",
+        "description": "Choice 值",
         "type": "string",
         "required": true
       },
       "selected": {
         "name": "selected",
-        "description": "Specify whether to preselect this choice on the labeling interface",
+        "description": "指定是否在标注界面中预选此选择",
         "type": ["true", "false"],
         "required": false
       },
       "alias": {
         "name": "alias",
-        "description": "Alias for the choice. If used, the alias replaces the choice value in the annotation results. Alias does not display in the interface.",
+        "description": "Choice 的别名。如果使用，别名将替换标注结果中的 Choice 值。别名在标注界面中不显示。",
         "type": "string",
         "required": false
       },
       "style": {
         "name": "style",
-        "description": "CSS style of the checkbox element",
+        "description": "复选框元素的 CSS 样式",
         "type": "style",
         "required": false
       },
       "hotkey": {
         "name": "hotkey",
-        "description": "Hotkey for the selection",
+        "description": "选择的热键",
         "type": "string",
         "required": false
       },
       "html": {
         "name": "html",
-        "description": "Can be used to show enriched content, it has higher priority than `value`, however `value` will be used in the exported result (should be properly escaped)",
+        "description": "可以用于显示富内容，它比 `value` 具有更高的优先级，然而 `value` 将在导出结果中使用（应该正确转义）",
         "type": "string",
         "required": false
       },
       "hint": {
         "name": "hint",
-        "description": "Hint for choice on hover",
+        "description": "选择悬停时的提示",
         "type": "string",
         "required": false
       },
       "color": {
         "name": "color",
-        "description": "Color for Taxonomy item",
+        "description": "Taxonomy 项目的颜色",
         "type": "string",
         "required": false
       }
@@ -867,92 +867,92 @@
   },
   "Choices": {
     "name": "Choices",
-    "description": "The `Choices` tag is used to create a group of choices, with radio buttons or checkboxes. It can be used for single or multi-class classification. Also, it is used for advanced classification tasks where annotators can choose one or multiple answers.\n\nChoices can have dynamic value to load labels from task. This task data should contain a list of options to create underlying `<Choice>`s. All the parameters from options will be transferred to corresponding tags.\n\nThe `Choices` tag can be used with any data types.",
+    "description": "Choices 标签用于创建一组选择，使用单选按钮或复选框。它可以用于单类或多类分类。此外，它还用于高级分类任务，其中标注者可以选择一个或多个答案。\n\nChoices 可以具有动态值以从任务加载标签。此任务数据应包含一个选项列表，以创建底层 `<Choice>`。所有选项参数将传输到相应的标签。\n\nChoices 标签可以与任何数据类型一起使用。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the group of choices",
+        "description": "选择组的名称",
         "type": "string",
         "required": true
       },
       "toName": {
         "name": "toName",
-        "description": "Name of the data item that you want to label",
+        "description": "要标注的数据项的名称",
         "type": "string",
         "required": true
       },
       "choice": {
         "name": "choice",
-        "description": "Single or multi-class classification",
+        "description": "单类或多类分类",
         "type": ["single", "single-radio", "multiple"],
         "required": false,
         "default": "single"
       },
       "showInline": {
         "name": "showInline",
-        "description": "Show choices in the same visual line",
+        "description": "在同一视觉行中显示选择",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "required": {
         "name": "required",
-        "description": "Validate whether a choice has been selected",
+        "description": "验证是否选择了选择",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "requiredMessage": {
         "name": "requiredMessage",
-        "description": "Show a message if validation fails",
+        "description": "如果验证失败，显示一条消息",
         "type": "string",
         "required": false
       },
       "visibleWhen": {
         "name": "visibleWhen",
-        "description": "Control visibility of the choices. Can also be used with `when*` attributes below to narrow down visibility",
+        "description": "控制选择的可见性。也可以与下面的 `when*` 属性一起使用以缩小可见性",
         "type": ["region-selected", "no-region-selected", "choice-selected", "choice-unselected"],
         "required": false
       },
       "whenTagName": {
         "name": "whenTagName",
-        "description": "Use with visibleWhen. Narrow down visibility by name of the tag. For regions, use the name of the object tag, for choices, use the name of the choices tag",
+        "description": "与 visibleWhen 一起使用。通过标签名称缩小可见性。对于区域，使用对象标签的名称，对于选择，使用选择标签的名称",
         "type": "string",
         "required": false
       },
       "whenLabelValue": {
         "name": "whenLabelValue",
-        "description": "Use with visibleWhen=\"region-selected\". Narrow down visibility by label value",
+        "description": "与 visibleWhen=\"region-selected\" 一起使用。通过标签值缩小可见性",
         "type": "string",
         "required": false
       },
       "whenChoiceValue": {
         "name": "whenChoiceValue",
-        "description": "Use with visibleWhen (\"choice-selected\" or \"choice-unselected\") and whenTagName, both are required. Narrow down visibility by choice value",
+        "description": "与 visibleWhen (\"choice-selected\" 或 \"choice-unselected\") 和 whenTagName 一起使用。通过选择值缩小可见性",
         "type": "string",
         "required": false
       },
       "perRegion": {
         "name": "perRegion",
-        "description": "Use this tag to select a choice for a specific region instead of the entire task",
+        "description": "使用此标签选择特定区域而不是整个任务的选择",
         "type": ["true", "false"],
         "required": false
       },
       "perItem": {
         "name": "perItem",
-        "description": "Use this tag to select a choice for a specific item inside the object instead of the whole object",
+        "description": "使用此标签选择对象内的特定项而不是整个对象的选择",
         "type": ["true", "false"],
         "required": false
       },
       "value": {
         "name": "value",
-        "description": "Task data field containing a list of dynamically loaded choices (see example below)",
+        "description": "任务数据字段包含一个动态加载的选择列表（见下例）",
         "type": "string",
         "required": false
       },
       "allowNested": {
         "name": "allowNested",
-        "description": "Allow to use `children` field in dynamic choices to nest them. Submitted result will contain array of arrays, every item is a list of values from topmost parent choice down to selected one.",
+        "description": "允许使用 `children` 字段在动态选择中嵌套它们。提交的结果将包含数组数组，每个项目都是从最顶层父选择到所选项目的值列表。",
         "type": ["true", "false"],
         "required": false
       }
@@ -960,66 +960,66 @@
   },
   "DateTime": {
     "name": "DateTime",
-    "description": "The DateTime tag adds date and time selection to the labeling interface. Use this tag to add a date, timestamp, month, or year to an annotation.\n\nUse with the following data types: audio, image, HTML, paragraph, text, time series, video",
+    "description": "DateTime 标签添加日期和时间选择到标注界面。使用此标签添加日期、时间戳、月份或年份到标注。\n\n可用于以下数据类型：audio, image, HTML, paragraph, text, time series, video",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "toName": {
         "name": "toName",
-        "description": "Name of the element that you want to label",
+        "description": "要标注的元素名称",
         "type": "string",
         "required": true
       },
       "only": {
         "name": "only",
-        "description": "Comma-separated list of parts to display (date, time, month, year)\n       date and month/year can't be used together. The date option takes precedence",
+        "description": "逗号分隔的显示部分列表（日期、时间、月份、年份）\n      日期和月份/年份不能一起使用。日期选项优先",
         "type": "string",
         "required": true
       },
       "format": {
         "name": "format",
-        "description": "Input/output strftime format for datetime (internally it's always ISO);\n       when both date and time are displayed, by default shows ISO with a \"T\" separator;\n       when only date is displayed, by default shows ISO date;\n       when only time is displayed, by default shows a 24 hour time with leading zero",
+        "description": "datetime 的输入/输出 strftime 格式（内部始终为 ISO）；\n      当同时显示日期和时间时，默认显示 ISO 格式，使用 \"T\" 分隔符；\n      当只显示日期时，默认显示 ISO 日期；\n      当只显示时间时，默认显示 24 小时时间，带前导零",
         "type": "string",
         "required": true
       },
       "min": {
         "name": "min",
-        "description": "Set a minimum datetime value for only=date in ISO format, or minimum year for only=year",
+        "description": "设置 only=date 的 ISO 格式最小日期值，或 only=year 的最小年份",
         "type": "string",
         "required": false
       },
       "max": {
         "name": "max",
-        "description": "Set a maximum datetime value for only=date in ISO format, or maximum year for only=year",
+        "description": "设置 only=date 的 ISO 格式最大日期值，或 only=year 的最大年份",
         "type": "string",
         "required": false
       },
       "required": {
         "name": "required",
-        "description": "Whether datetime is required or not",
+        "description": "datetime 是否必填",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "requiredMessage": {
         "name": "requiredMessage",
-        "description": "Message to show if validation fails",
+        "description": "如果验证失败，显示一条消息",
         "type": "string",
         "required": false
       },
       "perRegion": {
         "name": "perRegion",
-        "description": "Use this option to label regions instead of the whole object",
+        "description": "使用此选项标注区域而不是整个对象",
         "type": ["true", "false"],
         "required": false
       },
       "perItem": {
         "name": "perItem",
-        "description": "Use this option to label items inside the object instead of the whole object",
+        "description": "使用此选项标注对象内的项而不是整个对象",
         "type": ["true", "false"],
         "required": false
       }
@@ -1027,63 +1027,63 @@
   },
   "Ellipse": {
     "name": "Ellipse",
-    "description": "The `Ellipse` tag is used to add an elliptical bounding box to an image. Use for bounding box image segmentation tasks with ellipses.\n\nUse with the following data types: image.",
+    "description": "Ellipse 标签用于在图像上添加椭圆边界框。使用椭圆进行边界框图像分割任务。\n\n可用于以下数据类型：image。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "toName": {
         "name": "toName",
-        "description": "Name of the image to label",
+        "description": "要标注的图像名称",
         "type": "string",
         "required": true
       },
       "opacity": {
         "name": "opacity",
-        "description": "Opacity of ellipse",
+        "description": "椭圆的透明度",
         "type": "float",
         "required": false,
         "default": 0.6
       },
       "fillColor": {
         "name": "fillColor",
-        "description": "Ellipse fill color in hexadecimal",
+        "description": "椭圆填充颜色十六进制",
         "type": "string",
         "required": false
       },
       "strokeColor": {
         "name": "strokeColor",
-        "description": "Stroke color in hexadecimal",
+        "description": "描边颜色十六进制",
         "type": "string",
         "required": false,
         "default": "#f48a42"
       },
       "strokeWidth": {
         "name": "strokeWidth",
-        "description": "Width of the stroke",
+        "description": "描边的宽度",
         "type": "number",
         "required": false,
         "default": 1
       },
       "canRotate": {
         "name": "canRotate",
-        "description": "Show or hide rotation control",
+        "description": "显示或隐藏旋转控制",
         "type": ["true", "false"],
         "required": false,
         "default": true
       },
       "smart": {
         "name": "smart",
-        "description": "Show smart tool for interactive pre-annotations",
+        "description": "显示智能工具用于交互式预标注",
         "type": ["true", "false"],
         "required": false
       },
       "smartOnly": {
         "name": "smartOnly",
-        "description": "Only show smart tool for interactive pre-annotations",
+        "description": "仅显示智能工具用于交互式预标注",
         "type": ["true", "false"],
         "required": false
       }
@@ -1091,69 +1091,69 @@
   },
   "EllipseLabels": {
     "name": "EllipseLabels",
-    "description": "The `EllipseLabels` tag creates labeled ellipses. Use to apply labels to ellipses for semantic segmentation.\n\nUse with the following data types: image.",
+    "description": "EllipseLabels 标签创建带标签的椭圆。用于语义分割任务，将标签应用于椭圆。\n\n可用于以下数据类型：image。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "toName": {
         "name": "toName",
-        "description": "Name of the image to label",
+        "description": "要标注的图像名称",
         "type": "string",
         "required": true
       },
       "choice": {
         "name": "choice",
-        "description": "Configure whether you can select one or multiple labels",
+        "description": "配置是否可以选择一个或多个标签",
         "type": ["single", "multiple"],
         "required": false,
         "default": "single"
       },
       "maxUsages": {
         "name": "maxUsages",
-        "description": "Maximum number of times a label can be used per task",
+        "description": "每个任务中标签的最大使用次数",
         "type": "number",
         "required": false
       },
       "showInline": {
         "name": "showInline",
-        "description": "Show labels in the same visual line",
+        "description": "在同一视觉行中显示标签",
         "type": ["true", "false"],
         "required": false,
         "default": true
       },
       "opacity": {
         "name": "opacity",
-        "description": "Opacity of ellipse",
+        "description": "椭圆的透明度",
         "type": "float",
         "required": false,
         "default": 0.6
       },
       "fillColor": {
         "name": "fillColor",
-        "description": "Ellipse fill color in hexadecimal",
+        "description": "椭圆填充颜色十六进制",
         "type": "string",
         "required": false
       },
       "strokeColor": {
         "name": "strokeColor",
-        "description": "Stroke color in hexadecimal",
+        "description": "描边颜色十六进制",
         "type": "string",
         "required": false
       },
       "strokeWidth": {
         "name": "strokeWidth",
-        "description": "Width of stroke",
+        "description": "描边的宽度",
         "type": "number",
         "required": false,
         "default": 1
       },
       "canRotate": {
         "name": "canRotate",
-        "description": "Show or hide rotation option",
+        "description": "显示或隐藏旋转选项",
         "type": ["true", "false"],
         "required": false,
         "default": true
@@ -1162,36 +1162,36 @@
   },
   "HyperTextLabels": {
     "name": "HyperTextLabels",
-    "description": "The `HyperTextLabels` tag creates labeled hyper text (HTML). Use with the HyperText object tag to annotate HTML text or HTML elements for named entity recognition tasks.\n\nUse with the following data types: HTML.",
+    "description": "HyperTextLabels 标签创建带标签的超文本（HTML）。使用 HyperText 对象标签标注 HTML 文本或 HTML 元素用于命名实体识别任务。\n\n可用于以下数据类型：HTML。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "toName": {
         "name": "toName",
-        "description": "Name of the HTML element to label",
+        "description": "要标注的 HTML 元素名称",
         "type": "string",
         "required": true
       },
       "choice": {
         "name": "choice",
-        "description": "Configure if you can select one or multiple labels",
+        "description": "配置是否可以选择一个或多个标签",
         "type": ["single", "multiple"],
         "required": false,
         "default": "single"
       },
       "maxUsages": {
         "name": "maxUsages",
-        "description": "Maximum number of times a label can be used per task",
+        "description": "每个任务中标签的最大使用次数",
         "type": "number",
         "required": false
       },
       "showInline": {
         "name": "showInline",
-        "description": "Show labels in the same visual line",
+        "description": "在同一视觉行中显示标签",
         "type": ["true", "false"],
         "required": false,
         "default": true
@@ -1200,63 +1200,63 @@
   },
   "KeyPoint": {
     "name": "KeyPoint",
-    "description": "The `KeyPoint` tag is used to add a key point to an image without selecting a label. This can be useful when you have only one label to assign to the key point.\n\nUse with the following data types: image.",
+    "description": "KeyPoint 标签用于在图像上添加关键点，而不选择标签。这在您只有一个标签要分配给关键点时非常有用。\n\n可用于以下数据类型：image。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "toName": {
         "name": "toName",
-        "description": "Name of the image to label",
+        "description": "要标注的图像名称",
         "type": "string",
         "required": true
       },
       "opacity": {
         "name": "opacity",
-        "description": "Opacity of keypoint",
+        "description": "关键点的透明度",
         "type": "float",
         "required": false,
         "default": 0.9
       },
       "fillColor": {
         "name": "fillColor",
-        "description": "Keypoint fill color in hexadecimal",
+        "description": "关键点填充颜色十六进制",
         "type": "string",
         "required": false,
         "default": "#8bad00"
       },
       "strokeWidth": {
         "name": "strokeWidth",
-        "description": "Width of the stroke",
+        "description": "描边的宽度",
         "type": "number",
         "required": false,
         "default": 1
       },
       "strokeColor": {
         "name": "strokeColor",
-        "description": "Keypoint stroke color in hexadecimal",
+        "description": "关键点描边颜色十六进制",
         "type": "string",
         "required": false,
         "default": "#8bad00"
       },
       "smart": {
         "name": "smart",
-        "description": "Show smart tool for interactive pre-annotations",
+        "description": "显示智能工具用于交互式预标注",
         "type": ["true", "false"],
         "required": false
       },
       "smartOnly": {
         "name": "smartOnly",
-        "description": "Only show smart tool for interactive pre-annotations",
+        "description": "仅显示智能工具用于交互式预标注",
         "type": ["true", "false"],
         "required": false
       },
       "snap": {
         "name": "snap",
-        "description": "Snap keypoint to image pixels",
+        "description": "将关键点捕捉到图像像素",
         "type": ["pixel", "none"],
         "required": false,
         "default": "none"
@@ -1265,57 +1265,57 @@
   },
   "KeyPointLabels": {
     "name": "KeyPointLabels",
-    "description": "The `KeyPointLabels` tag creates labeled keypoints. Use to apply labels to identified key points, such as identifying facial features for a facial recognition labeling project.\n\nUse with the following data types: image.",
+    "description": "KeyPointLabels 标签创建带标签的关键点。用于将标签应用于识别的关键点，例如用于面部识别标注项目的人脸特征识别。\n\n可用于以下数据类型：image。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "toName": {
         "name": "toName",
-        "description": "Name of the image to label",
+        "description": "要标注的图像名称",
         "type": "string",
         "required": true
       },
       "choice": {
         "name": "choice",
-        "description": "Configure whether you can select one or multiple labels",
+        "description": "配置是否可以选择一个或多个标签",
         "type": ["single", "multiple"],
         "required": false,
         "default": "single"
       },
       "maxUsages": {
         "name": "maxUsages",
-        "description": "Maximum number of times a label can be used per task",
+        "description": "每个任务中标签的最大使用次数",
         "type": "number",
         "required": false
       },
       "showInline": {
         "name": "showInline",
-        "description": "Show labels in the same visual line",
+        "description": "在同一视觉行中显示标签",
         "type": ["true", "false"],
         "required": false,
         "default": true
       },
       "opacity": {
         "name": "opacity",
-        "description": "Opacity of the keypoint",
+        "description": "关键点的透明度",
         "type": "float",
         "required": false,
         "default": 0.9
       },
       "strokeWidth": {
         "name": "strokeWidth",
-        "description": "Width of the stroke",
+        "description": "描边的宽度",
         "type": "number",
         "required": false,
         "default": 1
       },
       "snap": {
         "name": "snap",
-        "description": "Snap keypoint to image pixels",
+        "description": "将关键点捕捉到图像像素",
         "type": ["pixel", "none"],
         "required": false,
         "default": "none"
@@ -1324,95 +1324,95 @@
   },
   "Label": {
     "name": "Label",
-    "description": "The `Label` tag represents a single label. Use with the `Labels` tag, including `BrushLabels`, `EllipseLabels`, `HyperTextLabels`, `KeyPointLabels`, and other `Labels` tags to specify the value of a specific label.",
+    "description": "Label 标签表示单个标签。使用 `Labels` 标签，包括 `BrushLabels`、`EllipseLabels`、`HyperTextLabels`、`KeyPointLabels` 和其他 `Labels` 标签来指定特定标签的值。",
     "attrs": {
       "value": {
         "name": "value",
-        "description": "Value of the label",
+        "description": "标签的值",
         "type": "string",
         "required": true
       },
       "selected": {
         "name": "selected",
-        "description": "Whether to preselect this label",
+        "description": "是否预选此标签",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "maxUsages": {
         "name": "maxUsages",
-        "description": "Maximum number of times this label can be used per task",
+        "description": "每个任务中标签的最大使用次数",
         "type": "number",
         "required": false
       },
       "hint": {
         "name": "hint",
-        "description": "Hint for label on hover",
+        "description": "标签悬停时的提示",
         "type": "string",
         "required": false
       },
       "hotkey": {
         "name": "hotkey",
-        "description": "Hotkey to use for the label. Automatically generated if not specified",
+        "description": "用于标签的热键。如果未指定，则自动生成",
         "type": "string",
         "required": false
       },
       "alias": {
         "name": "alias",
-        "description": "Label alias",
+        "description": "标签别名",
         "type": "string",
         "required": false
       },
       "showAlias": {
         "name": "showAlias",
-        "description": "Whether to show alias inside label text",
+        "description": "是否显示标签文本中的别名",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "aliasStyle": {
         "name": "aliasStyle",
-        "description": "CSS style for the alias",
+        "description": "别名的 CSS 样式",
         "type": "string",
         "required": false,
         "default": "opacity:0.6"
       },
       "size": {
         "name": "size",
-        "description": "Size of text in the label",
+        "description": "标签中文本的大小",
         "type": "string",
         "required": false,
         "default": "medium"
       },
       "background": {
         "name": "background",
-        "description": "Background color of an active label in hexadecimal",
+        "description": "活动标签的背景颜色十六进制",
         "type": "string",
         "required": false,
         "default": "#36B37E"
       },
       "selectedColor": {
         "name": "selectedColor",
-        "description": "Color of text in an active label in hexadecimal",
+        "description": "活动标签中文本的颜色十六进制",
         "type": "string",
         "required": false,
         "default": "#ffffff"
       },
       "granularity": {
         "name": "granularity",
-        "description": "Set control based on symbol or word selection (only for Text)",
+        "description": "设置基于符号或单词选择（仅用于 Text）",
         "type": ["symbol", "word"],
         "required": false
       },
       "html": {
         "name": "html",
-        "description": "HTML code is used to display label button instead of raw text provided by `value` (should be properly escaped)",
+        "description": "HTML 代码用于显示标签按钮而不是 `value` 提供的原始文本（应正确转义）",
         "type": "string",
         "required": false
       },
       "category": {
         "name": "category",
-        "description": "Category is used in the export (in label-studio-converter lib) to make an order of labels for YOLO and COCO",
+        "description": "Category 用于导出（在 label-studio-converter 库中）以对 YOLO 和 COCO 的标签进行排序",
         "type": "int",
         "required": false
       }
@@ -1420,70 +1420,70 @@
   },
   "Labels": {
     "name": "Labels",
-    "description": "The `Labels` tag provides a set of labels for labeling regions in tasks for machine learning and data science projects. Use the `Labels` tag to create a set of labels that can be assigned to identified region and specify the values of labels to assign to regions.\n\nAll types of Labels can have dynamic value to load labels from task. This task data should contain a list of options to create underlying `<Label>`s. All the parameters from options will be transferred to corresponding tags.\n\nThe Labels tag can be used with audio and text data types. Other data types have type-specific Labels tags.",
+    "description": "Labels 标签提供一组标签，用于标注机器学习和数据科学项目中的区域。使用 `Labels` 标签创建一组标签，可以分配给识别的区域，并指定要分配给区域的标签值。\n\n所有类型的 Labels 可以具有动态值以从任务加载标签。此任务数据应包含一个选项列表，以创建底层 `<Label>`。所有选项参数将传输到相应的标签。\n\nLabels 标签可用于音频和文本数据类型。其他数据类型具有特定类型的 Labels 标签。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "toName": {
         "name": "toName",
-        "description": "Name of the element that you want to label",
+        "description": "要标注的元素名称",
         "type": "string",
         "required": true
       },
       "choice": {
         "name": "choice",
-        "description": "Configure whether you can select one or multiple labels for a region",
+        "description": "配置是否可以选择一个或多个标签用于区域",
         "type": ["single", "multiple"],
         "required": false,
         "default": "single"
       },
       "maxUsages": {
         "name": "maxUsages",
-        "description": "Maximum number of times a label can be used per task",
+        "description": "每个任务中标签的最大使用次数",
         "type": "number",
         "required": false
       },
       "showInline": {
         "name": "showInline",
-        "description": "Whether to show labels in the same visual line",
+        "description": "是否在同一视觉行中显示标签",
         "type": ["true", "false"],
         "required": false,
         "default": true
       },
       "opacity": {
         "name": "opacity",
-        "description": "Opacity of rectangle highlighting the label",
+        "description": "矩形突出显示标签的透明度",
         "type": "float",
         "required": false,
         "default": 0.6
       },
       "fillColor": {
         "name": "fillColor",
-        "description": "Rectangle fill color in hexadecimal",
+        "description": "矩形填充颜色十六进制",
         "type": "string",
         "required": false
       },
       "strokeColor": {
         "name": "strokeColor",
-        "description": "Stroke color in hexadecimal",
+        "description": "描边颜色十六进制",
         "type": "string",
         "required": false,
         "default": "#f48a42"
       },
       "strokeWidth": {
         "name": "strokeWidth",
-        "description": "Width of the stroke",
+        "description": "描边的宽度",
         "type": "number",
         "required": false,
         "default": 1
       },
       "value": {
         "name": "value",
-        "description": "Task data field containing a list of dynamically loaded labels (see example below)",
+        "description": "任务数据字段包含一个动态加载的标签列表（见下例）",
         "type": "string",
         "required": false
       }
@@ -1491,37 +1491,37 @@
   },
   "Magicwand": {
     "name": "Magicwand",
-    "description": "The `Magicwand` tag makes it possible to click in a region of an image a user is doing segmentation\nlabeling on, drag the mouse to dynamically change flood filling tolerance, then release the mouse button\nto get a new labeled area. It is particularly effective at segmentation labeling broad, diffuse, complex\nedged objects, such as clouds, cloud shadows, snow, etc. in earth observation applications or organic\nshapes in biomedical applications.\n\nUse with the following data types: image.\n\nZooming is supported for the Magic Wand, but it will not work on rotated images.\n\nExample of the Magic Wand in use:\n\n![Animated GIF showing Magic Wand clicking on cloud and dragging, automatically segmenting and selecting\npixels to create a mask](../images/magicwand_example.gif)\n\n### CORS Configuration\n\nThe Magic Wand requires pixel-level access to images that are being labelled in order to do its\nthresholding and flood filling. If you are hosting your images to label on a third-party domain,\nyou will need to enable CORS headers for the Magic Wand to work with cross domain HTTP `GET`\nrequests in order for the Magic Wand to be able to threshold the actual image pixel data. See the\n[Label Studio storage guide](../guide/storage.html#Troubleshoot-CORS-and-access-problems) for more\ndetails on configuring CORS.\n\n### `Image` Tag Configuration\n\nThe `Magicwand` tag is configured to work with an `Image` tag that it will operate on for labeling.\nIf you are storing an image cross-domain that the `Image` tag will reference, you will have to\ncorrectly setup the `crossOrigin` on the `Image` attribute. This attribute mimics the same\n`crossOrigin` attribute that a normal DOM `img` tag would\nhave ([reference])(https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/crossOrigin).\n\nIf the image is on a public server or Google/AWS/Azure bucket that is publicly readable\nwithout any authentication, you should set `crossOrigin` to `anonymous`.\n\nIf the image is on a server or a private cloud bucket that requires authentication of any\nkind (i.e. the request must have HTTP headers that prove authentication set along with the\nthird party request), then you should set `crossOrigin` to `use-credentials`. Note that Google's\ncloud buckets [do not support authenticated requests for CORS requests](https://cloud.google.com/storage/docs/cross-origin#additional_considerations),\nwhich  means you either need to make that Google bucket world readable to work with the Magic Wand, or\nuse Label Studio's signed URL support ([AWS](../guide/storage.html#Set-up-connection-in-the-Label-Studio-UI),\n[GCP](../guide/storage.html#Set-up-connection-in-the-Label-Studio-UI-1), and\n[Azure](../guide/storage.html#Set-up-connection-in-the-Label-Studio-UI-2)).\n\nIf the image is on the same host as your Label Studio instance, you can simply leave off the\n`crossOrigin` attribute or set it to `none`.",
+    "description": "“Magicwand”标签可以在用户正在进行分割的图像区域中单击\n标记，拖动鼠标以动态更改洪水填充容忍度，然后松开鼠标按钮\n以获得新的标记区域。它在分割标记宽的、漫的、复杂的\nedging对象时特别有效，例如地球观测应用中的云、云影、雪等或生物医学应用中的有机\n形状。\n\n与以下数据类型一起使用：图像。\n\n魔杖支持缩放，但它不适用于旋转的图像。\n\n使用中的魔杖示例：\n\n！[动画GIF显示魔杖点击云和拖动，自动分割和选择\n像素以创建蒙版]（…/image/magicwand_example. gif）\n\n###CORS配置\n\n魔杖需要对正在标记的图像进行像素级访问，以便进行阈值化和洪水填充。如果您将图像托管到第三方域上进行标记，\n您需要为魔杖启用CORS标头以处理跨域HTTP'GET'\n请求，以便魔杖能够对实际图像像素数据进行阈值化。有关配置CORS的更多详细信息，请参阅\n[Label Studio存储指南]（…/Guide/store. html#Troubleshoot-CORS-and-access-problems）。\n\n###'Image'Tag Configuration\n\n'Magicwand'标签配置为与'Image'标签一起使用，它将对其进行标记操作。\n如果您存储的图像跨域，'Image'标签将引用，您必须\n在'Image'属性上正确设置'Cross Origin'。\n\n如果映像位于公共服务器或Google/AWS/Azure存储桶上，且无需任何身份验证即可公开读取，那么您应该将“CrossOrigin”设置为“匿名”。\n\n如果映像位于需要任何类型身份验证的服务器或私有云存储桶上（即请求必须具有与\n第三方请求一起设置的证明身份验证的HTTP标头），那么您应该将“CrossOrigin”设置为“use-凭据”。请注意，Google的\n云存储桶[不支持对CORS请求的经过身份验证的请求]（https://cloud.google.com/storage/docs/cross-origin#additional_considerations），这意味着您要么需要使Google存储桶世界可读才能与Magic Wand一起使用，要么\n使用Label Studio的签名URL支持（[AWS]（…/指南/存储. html#Set-up-connection-in-the-Label-Studio-UI）、\n[GCP]（…/指南/存储.html#Set-up-connection-in-the-Label-Studio-UI-1）和\n[Azure]（…/指南/存储.html#Set-up-connection-in-the-Label-Studio-UI-2））。\n\n如果图像与您的Label Studio实例位于同一主机上，您可以简单地省略\n'CrossOrigin'属性或将其设置为“无”。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "toName": {
         "name": "toName",
-        "description": "Name of the image to label",
+        "description": "要标注的图像名称",
         "type": "string",
         "required": true
       },
       "opacity": {
         "name": "opacity",
-        "description": "Opacity of the Magic Wand region during use",
+        "description": "使用魔杖时魔杖区域的透明度",
         "type": "float",
         "required": false,
         "default": 0.6
       },
       "blurradius": {
         "name": "blurradius",
-        "description": "The edges of a Magic Wand region are blurred and simplified, this is the radius of the blur kernel",
+        "description": "魔杖区域的边缘被模糊和简化，这是模糊内核的半径",
         "type": "number",
         "required": false,
         "default": 5
       },
       "defaultthreshold": {
         "name": "defaultthreshold",
-        "description": "When the user initially clicks without dragging, how far a color has to be from the initial selected pixel to also be selected",
+        "description": "当用户最初点击但不拖动时，颜色必须离初始选定的像素多远才能也被选中",
         "type": "number",
         "required": false,
         "default": 15
@@ -1530,79 +1530,79 @@
   },
   "Number": {
     "name": "Number",
-    "description": "The Number tag supports numeric classification. Use to classify tasks using numbers.\n\nUse with the following data types: audio, image, HTML, paragraphs, text, time series, video",
+    "description": "Number 标签用于支持数字分类。使用数字对任务进行分类。\n\n可用于以下数据类型：audio, image, HTML, paragraphs, text, time series, video",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "toName": {
         "name": "toName",
-        "description": "Name of the element that you want to label",
+        "description": "要标注的元素名称",
         "type": "string",
         "required": true
       },
       "min": {
         "name": "min",
-        "description": "Minimum number value",
+        "description": "最小数字值",
         "type": "number",
         "required": false
       },
       "max": {
         "name": "max",
-        "description": "Maximum number value",
+        "description": "最大数字值",
         "type": "number",
         "required": false
       },
       "step": {
         "name": "step",
-        "description": "Step for value increment/decrement",
+        "description": "值递增/递减的步长",
         "type": "number",
         "required": false,
         "default": 1
       },
       "defaultValue": {
         "name": "defaultValue",
-        "description": "Default number value; will be added automatically to result for required fields",
+        "description": "默认数字值；将自动添加到结果中以满足必填字段",
         "type": "number",
         "required": false
       },
       "hotkey": {
         "name": "hotkey",
-        "description": "Hotkey for increasing number value",
+        "description": "用于增加数字值的热键",
         "type": "string",
         "required": false
       },
       "required": {
         "name": "required",
-        "description": "Whether number is required or not",
+        "description": "数字是否必填",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "requiredMessage": {
         "name": "requiredMessage",
-        "description": "Message to show if validation fails",
+        "description": "如果验证失败，显示的消息",
         "type": "string",
         "required": false
       },
       "perRegion": {
         "name": "perRegion",
-        "description": "Use this tag to classify specific regions instead of the whole object",
+        "description": "使用此标签对特定区域进行分类，而不是整个对象",
         "type": ["true", "false"],
         "required": false
       },
       "perItem": {
         "name": "perItem",
-        "description": "Use this tag to classify specific items inside the object instead of the whole object",
+        "description": "使用此标签对对象内部的特定项目进行分类，而不是整个对象",
         "type": ["true", "false"],
         "required": false
       },
       "slider": {
         "name": "slider",
-        "description": "Use slider look instead of input; use min and max to add your constraints",
+        "description": "使用滑块而不是输入；使用 min 和 max 添加约束",
         "type": ["true", "false"],
         "required": false,
         "default": false
@@ -1611,23 +1611,23 @@
   },
   "Pairwise": {
     "name": "Pairwise",
-    "description": "The `Pairwise` tag is used to compare two different objects and select one item from the list. If you want annotators to compare two objects and determine whether they are similar or not, use the `Choices` tag.\n\nUse with the following data types: audio, image, HTML, paragraphs, text, time series, video.",
+    "description": "Pairwise 标签用于比较两个不同的对象并从列表中选择一个项目。如果您希望标注者比较两个对象并确定它们是否相似，请使用 Choices 标签。\n\n可用于以下数据类型：audio, image, HTML, paragraphs, text, time series, video。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "toName": {
         "name": "toName",
-        "description": "Comma-separated names of the elements you want to compare",
+        "description": "要比较的元素名称，用逗号分隔",
         "type": "string",
         "required": true
       },
       "selectionStyle": {
         "name": "selectionStyle",
-        "description": "Style for the selection",
+        "description": "选择样式",
         "type": "string",
         "required": false
       }
@@ -1635,36 +1635,36 @@
   },
   "ParagraphLabels": {
     "name": "ParagraphLabels",
-    "description": "The `ParagraphLabels` tag creates labeled paragraphs. Use with the `Paragraphs` tag to label a paragraph of text.\n\nUse with the following data types: paragraphs.",
+    "description": "ParagraphLabels 标签用于创建带标签的段落。使用 Paragraphs 标签标注文本段落。\n\n可用于以下数据类型：paragraphs。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "toName": {
         "name": "toName",
-        "description": "Name of the paragraph element to label",
+        "description": "要标注的段落元素名称",
         "type": "string",
         "required": true
       },
       "choice": {
         "name": "choice",
-        "description": "Configure whether you can select one or multiple labels",
+        "description": "配置是否可以选择一个或多个标签",
         "type": ["single", "multiple"],
         "required": false,
         "default": "single"
       },
       "maxUsages": {
         "name": "maxUsages",
-        "description": "Maximum number of times a label can be used per task",
+        "description": "每个任务中标签的最大使用次数",
         "type": "number",
         "required": false
       },
       "showInline": {
         "name": "showInline",
-        "description": "Show labels in the same visual line",
+        "description": "在同一视觉行中显示标签",
         "type": ["true", "false"],
         "required": false,
         "default": true
@@ -1673,77 +1673,77 @@
   },
   "Polygon": {
     "name": "Polygon",
-    "description": "The `Polygon` tag is used to add polygons to an image without selecting a label. This can be useful when you have only one label to assign to the polygon. Use for image segmentation tasks.\n\nUse with the following data types: image.",
+    "description": "Polygon 标签用于在图像上添加多边形，而不选择标签。这在您只有一个标签要分配给多边形时特别有用。用于图像分割任务。\n\n可用于以下数据类型：image。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of tag",
+        "description": "标签名称",
         "type": "string",
         "required": true
       },
       "toname": {
         "name": "toname",
-        "description": "Name of image to label",
+        "description": "要标注的图像名称",
         "type": "string",
         "required": true
       },
       "opacity": {
         "name": "opacity",
-        "description": "Opacity of polygon",
+        "description": "多边形透明度",
         "type": "number",
         "required": false,
         "default": 0.6
       },
       "fillColor": {
         "name": "fillColor",
-        "description": "Polygon fill color in hexadecimal or HTML color name",
+        "description": "多边形填充颜色，十六进制或HTML颜色名称",
         "type": "string",
         "required": false,
         "default": "transparent"
       },
       "strokeColor": {
         "name": "strokeColor",
-        "description": "Stroke color in hexadecimal",
+        "description": "描边颜色，十六进制",
         "type": "string",
         "required": false,
         "default": "#f48a42"
       },
       "strokeWidth": {
         "name": "strokeWidth",
-        "description": "Width of stroke",
+        "description": "描边宽度",
         "type": "number",
         "required": false,
         "default": 3
       },
       "pointSize": {
         "name": "pointSize",
-        "description": "Size of polygon handle points",
+        "description": "多边形手柄点的大小",
         "type": ["small", "medium", "large"],
         "required": false,
         "default": "small"
       },
       "pointStyle": {
         "name": "pointStyle",
-        "description": "Style of points",
+        "description": "点样式",
         "type": ["rectangle", "circle"],
         "required": false,
         "default": "circle"
       },
       "smart": {
         "name": "smart",
-        "description": "Show smart tool for interactive pre-annotations",
+        "description": "显示智能工具以进行交互式预标注",
         "type": ["true", "false"],
         "required": false
       },
       "smartOnly": {
         "name": "smartOnly",
-        "description": "Only show smart tool for interactive pre-annotations",
+        "description": "仅显示智能工具以进行交互式预标注",
         "type": ["true", "false"],
         "required": false
       },
       "snap": {
         "name": "snap",
-        "description": "Snap polygon to image pixels",
+        "description": "将多边形捕捉到图像像素",
         "type": ["pixel", "none"],
         "required": false,
         "default": "none"
@@ -1752,83 +1752,83 @@
   },
   "PolygonLabels": {
     "name": "PolygonLabels",
-    "description": "The `PolygonLabels` tag is used to create labeled polygons. Use to apply labels to polygons in semantic segmentation tasks.\n\nUse with the following data types: image.",
+    "description": "PolygonLabels 标签用于创建带标签的多边形。用于在语义分割任务中将标签应用于多边形。\n\n可用于以下数据类型：image。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of tag",
+        "description": "标签名称",
         "type": "string",
         "required": true
       },
       "toName": {
         "name": "toName",
-        "description": "Name of image to label",
+        "description": "要标注的图像名称",
         "type": "string",
         "required": true
       },
       "choice": {
         "name": "choice",
-        "description": "Configure whether you can select one or multiple labels",
+        "description": "配置是否可以选择一个或多个标签",
         "type": ["single", "multiple"],
         "required": false,
         "default": "single"
       },
       "maxUsages": {
         "name": "maxUsages",
-        "description": "Maximum number of times a label can be used per task",
+        "description": "每个任务中标签的最大使用次数",
         "type": "number",
         "required": false
       },
       "showInline": {
         "name": "showInline",
-        "description": "Show labels in the same visual line",
+        "description": "在同一视觉行中显示标签",
         "type": ["true", "false"],
         "required": false,
         "default": true
       },
       "opacity": {
         "name": "opacity",
-        "description": "Opacity of polygon",
+        "description": "多边形透明度",
         "type": "number",
         "required": false,
         "default": 0.2
       },
       "fillColor": {
         "name": "fillColor",
-        "description": "Polygon fill color in hexadecimal",
+        "description": "多边形填充颜色，十六进制",
         "type": "string",
         "required": false
       },
       "strokeColor": {
         "name": "strokeColor",
-        "description": "Stroke color in hexadecimal",
+        "description": "描边颜色，十六进制",
         "type": "string",
         "required": false
       },
       "strokeWidth": {
         "name": "strokeWidth",
-        "description": "Width of stroke",
+        "description": "描边宽度",
         "type": "number",
         "required": false,
         "default": 1
       },
       "pointSize": {
         "name": "pointSize",
-        "description": "Size of polygon handle points",
+        "description": "多边形手柄点的大小",
         "type": ["small", "medium", "large"],
         "required": false,
         "default": "medium"
       },
       "pointStyle": {
         "name": "pointStyle",
-        "description": "Style of points",
+        "description": "点样式",
         "type": ["rectangle", "circle"],
         "required": false,
         "default": "rectangle"
       },
       "snap": {
         "name": "snap",
-        "description": "Snap polygon to image pixels",
+        "description": "将多边形捕捉到图像像素",
         "type": ["pixel", "none"],
         "required": false,
         "default": "none"
@@ -1837,17 +1837,17 @@
   },
   "Ranker": {
     "name": "Ranker",
-    "description": "The `Ranker` tag is used to rank items in a `List` tag or pick relevant items from a `List`, depending on using nested `Bucket` tags.\nIn simple case of `List` + `Ranker` tags the first one becomes interactive and saved result is a dict with the only key of tag's name and with value of array of ids in new order.\nWith `Bucket`s any items from the `List` can be moved to these buckets, and resulting groups will be exported as a dict `{ bucket-name-1: [array of ids in this bucket], ... }`\nBy default all items will sit in `List` and will not be exported, unless they are moved to a bucket. But with `default=\"true\"` parameter you can specify a bucket where all items will be placed by default, so exported result will always have all items from the list, grouped by buckets.\nColumns and items can be styled in `Style` tag by using respective `.htx-ranker-column` and `.htx-ranker-item` classes. Titles of columns are defined in `title` parameter of `Bucket` tag.\nNote: When `Bucket`s used without `default` param, the original list will also be stored as \"_\" named column in results, but that's internal value and this may be changed later.",
+    "description": "Ranker 标签用于对列表中的项目进行排序，或从列表中选择相关项目，具体取决于使用嵌套的 Bucket 标签。\n在简单的 List + Ranker 标签的情况下，第一个标签变为交互式，保存的结果是一个字典，其中只有标签名称的键和值为新顺序的 ID 数组。\n使用 Bucket 时，List 中的任何项目都可以移动到这些桶中，结果组将作为字典导出 `{ bucket-name-1: [array of ids in this bucket], ... }`\n默认情况下，所有项目都将位于 List 中，除非它们被移动到桶中，否则不会导出。但使用 `default=\"true\"` 参数，您可以指定一个默认放置所有项目的桶，因此导出的结果将始终包含列表中的所有项目，按桶分组。\n列和项目可以在 Style 标签中使用相应的 `.htx-ranker-column` 和 `.htx-ranker-item` 类进行样式化。列的标题在 Bucket 标签的 `title` 参数中定义。\n注意：当 Bucket 标签不使用 `default` 参数时，原始列表也将作为名为 \"_\" 的列存储在结果中，但这是内部值，以后可能会发生变化。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "toName": {
         "name": "toName",
-        "description": "List tag name to connect to",
+        "description": "要连接的列表标签名称",
         "type": "string",
         "required": true
       }
@@ -1855,76 +1855,76 @@
   },
   "Rating": {
     "name": "Rating",
-    "description": "The `Rating` tag adds a rating selection to the labeling interface. Use for labeling tasks involving ratings.\n\nUse with the following data types: audio, image, HTML, paragraphs, text, time series, video.",
+    "description": "Rating 标签用于在标注界面中添加评分选择。用于标注涉及评分的任务。\n\n可用于以下数据类型：audio, image, HTML, paragraphs, text, time series, video。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "toName": {
         "name": "toName",
-        "description": "Name of the element that you want to label",
+        "description": "要标注的元素名称",
         "type": "string",
         "required": true
       },
       "maxRating": {
         "name": "maxRating",
-        "description": "Maximum rating value",
+        "description": "最大评分值",
         "type": "number",
         "required": false,
         "default": 5
       },
       "defaultValue": {
         "name": "defaultValue",
-        "description": "Default rating value",
+        "description": "默认评分值",
         "type": "number",
         "required": false,
         "default": 0
       },
       "size": {
         "name": "size",
-        "description": "Rating icon size",
+        "description": "评分图标大小",
         "type": ["small", "medium", "large"],
         "required": false,
         "default": "medium"
       },
       "icon": {
         "name": "icon",
-        "description": "Rating icon",
+        "description": "评分图标",
         "type": ["star", "heart", "fire", "smile"],
         "required": false,
         "default": "star"
       },
       "hotkey": {
         "name": "hotkey",
-        "description": "HotKey for changing rating value",
+        "description": "用于更改评分值的热键",
         "type": "string",
         "required": true
       },
       "required": {
         "name": "required",
-        "description": "Whether rating validation is required",
+        "description": "评分验证是否必填",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "requiredMessage": {
         "name": "requiredMessage",
-        "description": "Message to show if validation fails",
+        "description": "如果验证失败，显示的消息",
         "type": "string",
         "required": false
       },
       "perRegion": {
         "name": "perRegion",
-        "description": "Use this tag to rate regions instead of the whole object",
+        "description": "使用此标签对区域进行评分，而不是整个对象",
         "type": ["true", "false"],
         "required": false
       },
       "perItem": {
         "name": "perItem",
-        "description": "Use this tag to rate items inside the object instead of the whole object",
+        "description": "使用此标签对对象内部的物品进行评分，而不是整个对象",
         "type": ["true", "false"],
         "required": false
       }
@@ -1932,63 +1932,63 @@
   },
   "Rectangle": {
     "name": "Rectangle",
-    "description": "The `Rectangle` tag is used to add a rectangle (Bounding Box) to an image without selecting a label. This can be useful when you have only one label to assign to a rectangle.\n\nUse with the following data types: image.",
+    "description": "Rectangle 标签用于在图像上添加矩形（边界框），而不选择标签。这在您只有一个标签要分配给矩形时特别有用。\n\n可用于以下数据类型：image。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "toName": {
         "name": "toName",
-        "description": "Name of the image to label",
+        "description": "要标注的图像名称",
         "type": "string",
         "required": true
       },
       "opacity": {
         "name": "opacity",
-        "description": "Opacity of rectangle",
+        "description": "矩形透明度",
         "type": "float",
         "required": false,
         "default": 0.6
       },
       "fillColor": {
         "name": "fillColor",
-        "description": "Rectangle fill color in hexadecimal",
+        "description": "矩形填充颜色，十六进制",
         "type": "string",
         "required": false
       },
       "strokeColor": {
         "name": "strokeColor",
-        "description": "Stroke color in hexadecimal",
+        "description": "描边颜色，十六进制",
         "type": "string",
         "required": false,
         "default": "#f48a42"
       },
       "strokeWidth": {
         "name": "strokeWidth",
-        "description": "Width of the stroke",
+        "description": "描边宽度",
         "type": "number",
         "required": false,
         "default": 1
       },
       "canRotate": {
         "name": "canRotate",
-        "description": "Whether to show or hide rotation control. Note that the anchor point in the results is different than the anchor point used when rotating with the rotation tool. For more information, see [Rotation](/templates/image_bbox#Rotation).",
+        "description": "是否显示旋转控制。请注意，结果中的锚点与使用旋转工具旋转时的锚点不同。有关更多信息，请参阅 [Rotation](/templates/image_bbox#Rotation)。",
         "type": ["true", "false"],
         "required": false,
         "default": true
       },
       "smart": {
         "name": "smart",
-        "description": "Show smart tool for interactive pre-annotations",
+        "description": "显示智能工具以进行交互式预标注",
         "type": ["true", "false"],
         "required": false
       },
       "smartOnly": {
         "name": "smartOnly",
-        "description": "Only show smart tool for interactive pre-annotations",
+        "description": "仅显示智能工具以进行交互式预标注",
         "type": ["true", "false"],
         "required": false
       }
@@ -1996,69 +1996,69 @@
   },
   "RectangleLabels": {
     "name": "RectangleLabels",
-    "description": "The `RectangleLabels` tag creates labeled rectangles. Use to apply labels to bounding box semantic segmentation tasks.\n\nUse with the following data types: image.",
+    "description": "RectangleLabels 标签用于为矩形标注工具定义可选标签。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "toName": {
         "name": "toName",
-        "description": "Name of the image to label",
+        "description": "要标注的图像名称",
         "type": "string",
         "required": true
       },
       "choice": {
         "name": "choice",
-        "description": "Configure whether you can select one or multiple labels",
+        "description": "配置是否可以选择一个或多个标签",
         "type": ["single", "multiple"],
         "required": false,
         "default": "single"
       },
       "maxUsages": {
         "name": "maxUsages",
-        "description": "Maximum number of times a label can be used per task",
+        "description": "每个任务中标签的最大使用次数",
         "type": "number",
         "required": false
       },
       "showInline": {
         "name": "showInline",
-        "description": "Show labels in the same visual line",
+        "description": "在同一视觉行中显示标签",
         "type": ["true", "false"],
         "required": false,
         "default": true
       },
       "opacity": {
         "name": "opacity",
-        "description": "Opacity of rectangle",
+        "description": "矩形透明度",
         "type": "float",
         "required": false,
         "default": 0.6
       },
       "fillColor": {
         "name": "fillColor",
-        "description": "Rectangle fill color in hexadecimal",
+        "description": "矩形填充颜色，十六进制",
         "type": "string",
         "required": false
       },
       "strokeColor": {
         "name": "strokeColor",
-        "description": "Stroke color in hexadecimal",
+        "description": "描边颜色，十六进制",
         "type": "string",
         "required": false
       },
       "strokeWidth": {
         "name": "strokeWidth",
-        "description": "Width of stroke",
+        "description": "描边宽度",
         "type": "number",
         "required": false,
         "default": 1
       },
       "canRotate": {
         "name": "canRotate",
-        "description": "Show or hide rotation control. Note that the anchor point in the results is different than the anchor point used when rotating with the rotation tool. For more information, see [Rotation](/templates/image_bbox#Rotation).",
+        "description": "是否显示旋转控制。请注意，结果中的锚点与使用旋转工具旋转时的锚点不同。有关更多信息，请参阅 [Rotation](/templates/image_bbox#Rotation)。",
         "type": ["true", "false"],
         "required": false,
         "default": true
@@ -2067,17 +2067,17 @@
   },
   "Relation": {
     "name": "Relation",
-    "description": "The `Relation` tag represents a single relation label. Use with the `Relations` tag to specify the value of a label to apply to a relation between regions.",
+    "description": "Relation 标签表示单个关系标签。使用 Relations 标签指定应用于区域之间关系的标签值。",
     "attrs": {
       "value": {
         "name": "value",
-        "description": "Value of the relation",
+        "description": "关系值",
         "type": "string",
         "required": true
       },
       "background": {
         "name": "background",
-        "description": "Background color of the active label in hexadecimal",
+        "description": "活动标签的背景颜色，十六进制",
         "type": "string",
         "required": false
       }
@@ -2085,11 +2085,11 @@
   },
   "Relations": {
     "name": "Relations",
-    "description": "The `Relations` tag is used to create label relations between regions. Use to provide many values to apply to the relationship between two labeled regions.\n\nUse with the following data types: audio, image, HTML, paragraphs, text, time series, video.",
+    "description": "Relations 标签用于创建区域之间的标签关系。用于提供多个值以应用于两个标注区域之间的关系。\n\n可用于以下数据类型：audio, image, HTML, paragraphs, text, time series, video。",
     "attrs": {
       "choice": {
         "name": "choice",
-        "description": "Configure whether you can select one or multiple labels",
+        "description": "配置是否可以选择一个或多个标签",
         "type": ["single", "multiple"],
         "required": false,
         "default": "single"
@@ -2098,29 +2098,29 @@
   },
   "Shortcut": {
     "name": "Shortcut",
-    "description": "The `Shortcut` tag to define a shortcut that annotators can use to add a predefined object, such as a specific label value, with a hotkey or keyboard shortcut.\n\nUse with the following data types:\n- Audio\n- Image\n- HTML\n- Paragraphs\n- Text\n- Time series\n- Video",
+    "description": "Shortcut 标签用于定义标注者可以使用热键或键盘快捷键添加预定义对象的快捷方式，例如特定标签值。\n\n可用于以下数据类型：\n- Audio\n- Image\n- HTML\n- Paragraphs\n- Text\n- Time series\n- Video",
     "attrs": {
       "value": {
         "name": "value",
-        "description": "The value of the shortcut",
+        "description": "快捷方式值",
         "type": "string",
         "required": true
       },
       "alias": {
         "name": "alias",
-        "description": "Shortcut alias",
+        "description": "快捷方式别名",
         "type": "string",
         "required": false
       },
       "hotkey": {
         "name": "hotkey",
-        "description": "Hotkey",
+        "description": "热键",
         "type": "string",
         "required": false
       },
       "background": {
         "name": "background",
-        "description": "Background color in hexadecimal",
+        "description": "背景颜色，十六进制",
         "type": "string",
         "required": false,
         "default": "#333333"
@@ -2129,99 +2129,99 @@
   },
   "Taxonomy": {
     "name": "Taxonomy",
-    "description": "The `Taxonomy` tag is used to create one or more hierarchical classifications, storing both choice selections and their ancestors in the results. Use for nested classification tasks with the `Choice` tag.\n\nYou can define nested classifications using the `Choice` tag, or retrieve external classifications using the `apiUrl` parameter. For more information on these options, see the [Taxonomy template page](/templates/taxonomy).\n\nUse with the following data types: audio, image, HTML, paragraphs, text, time series, video.",
+      "description": "Taxonomy 标签用于创建一个或多个层次分类，在结果中存储选择和它们的祖先。用于嵌套分类任务与 Choice 标签。\n\n您可以使用 Choice 标签定义嵌套分类，或使用 apiUrl 参数检索外部分类。有关这些选项的更多信息，请参阅 [Taxonomy 模板页面](/templates/taxonomy)。\n\n可用于以下数据类型：audio, image, HTML, paragraphs, text, time series, video。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "toName": {
         "name": "toName",
-        "description": "Name of the element that you want to classify",
+        "description": "要分类的元素名称",
         "type": "string",
         "required": true
       },
       "apiUrl": {
         "name": "apiUrl",
-        "description": "**Beta** -- Retrieve the taxonomy from a remote source. This can be a JSON-formatted file or a hierarchical data source read as an API. For more information, see the [Taxonomy template page](/templates/taxonomy)",
+        "description": "**Beta** -- 从远程源检索分类。这可以是 JSON 格式文件或作为 API 读取的分层数据源。有关更多信息，请参阅 [Taxonomy 模板页面](/templates/taxonomy)",
         "type": "string",
         "required": false
       },
       "leafsOnly": {
         "name": "leafsOnly",
-        "description": "Allow annotators to select only leaf nodes of taxonomy",
+        "description": "允许标注者仅选择分类的叶子节点",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "showFullPath": {
         "name": "showFullPath",
-        "description": "Whether to show the full path of selected items",
+        "description": "是否显示所选项目的完整路径",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "pathSeparator": {
         "name": "pathSeparator",
-        "description": "Separator to show in the full path (default is \" / \"). To avoid errors, ensure that your data does not include this separator",
+        "description": "要在完整路径中显示的分隔符（默认是 \" / \"）。为避免错误，请确保您的数据不包含此分隔符",
         "type": "string",
         "required": false,
         "default": "/"
       },
       "maxUsages": {
         "name": "maxUsages",
-        "description": "Maximum number of times a choice can be selected per task or per region",
+        "description": "每个任务或每个区域中可以选择的最大次数",
         "type": "number",
         "required": false
       },
       "maxWidth": {
         "name": "maxWidth",
-        "description": "Maximum width for dropdown",
+        "description": "下拉菜单的最大宽度",
         "type": "number",
         "required": false
       },
       "minWidth": {
         "name": "minWidth",
-        "description": "Minimum width for dropdown",
+        "description": "下拉菜单的最小宽度",
         "type": "number",
         "required": false
       },
       "required": {
         "name": "required",
-        "description": "Whether taxonomy validation is required",
+        "description": "分类验证是否必填",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "requiredMessage": {
         "name": "requiredMessage",
-        "description": "Message to show if validation fails",
+        "description": "如果验证失败，显示的消息",
         "type": "string",
         "required": false
       },
       "placeholder=": {
         "name": "placeholder=",
-        "description": "What to display as prompt on the input",
+        "description": "输入时显示的提示",
         "type": "string",
         "required": false
       },
       "perRegion": {
         "name": "perRegion",
-        "description": "Use this tag to classify specific regions instead of the whole object",
+        "description": "使用此标签对特定区域进行分类，而不是整个对象",
         "type": ["true", "false"],
         "required": false
       },
       "perItem": {
         "name": "perItem",
-        "description": "Use this tag to classify specific items inside the object instead of the whole object",
+        "description": "使用此标签对对象内部的特定物品进行分类，而不是整个对象",
         "type": ["true", "false"],
         "required": false
       },
       "legacy": {
         "name": "legacy",
-        "description": "Use this tag to enable the legacy version of the Taxonomy tag. The legacy version supports the ability for annotators to add labels as needed. However, when true, the `apiUrl` parameter is not usable.",
+        "description": "使用此标签启用 Taxonomy 标签的旧版本。旧版本支持标注者根据需要添加标签。但是，当为 true 时，`apiUrl` 参数不可用。",
         "type": ["true", "false"],
         "required": false
       }
@@ -2229,106 +2229,106 @@
   },
   "TextArea": {
     "name": "TextArea",
-    "description": "The `TextArea` tag is used to display a text area for user input. Use for transcription, paraphrasing, or captioning tasks.\n\nUse with the following data types: audio, image, HTML, paragraphs, text, time series, video.",
+    "description": "TextArea 标签用于显示用户输入的文本区域。用于转录、改写或字幕任务。\n\n可用于以下数据类型：audio, image, HTML, paragraphs, text, time series, video。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "toName": {
         "name": "toName",
-        "description": "Name of the element that you want to label",
+        "description": "要标注的元素名称",
         "type": "string",
         "required": true
       },
       "value": {
         "name": "value",
-        "description": "Pre-filled value",
+        "description": "预填值",
         "type": "string",
         "required": true
       },
       "label": {
         "name": "label",
-        "description": "Label text",
+        "description": "标签文本",
         "type": "string",
         "required": false
       },
       "placeholder": {
         "name": "placeholder",
-        "description": "Placeholder text",
+        "description": "占位符文本",
         "type": "string",
         "required": false
       },
       "maxSubmissions": {
         "name": "maxSubmissions",
-        "description": "Maximum number of submissions",
+        "description": "最大提交次数",
         "type": "string",
         "required": false
       },
       "editable": {
         "name": "editable",
-        "description": "Whether to display an editable textarea",
+        "description": "是否显示可编辑的文本区域",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "skipDuplicates": {
         "name": "skipDuplicates",
-        "description": "Prevent duplicates in textarea inputs",
+        "description": "防止文本区域输入中的重复",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "transcription": {
         "name": "transcription",
-        "description": "If false, always show editor",
+        "description": "如果为 false，则始终显示编辑器",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "displayMode": {
         "name": "displayMode",
-        "description": "Display mode for the textarea; region-list shows it for every region in regions list",
+        "description": "文本区域显示模式；region-list 显示每个区域在区域列表中",
         "type": ["tag", "region-list"],
         "required": false,
         "default": "tag"
       },
       "rows": {
         "name": "rows",
-        "description": "Number of rows in the textarea",
+        "description": "文本区域中的行数",
         "type": "number",
         "required": false
       },
       "required": {
         "name": "required",
-        "description": "Validate whether content in textarea is required",
+        "description": "验证文本区域中的内容是否必填",
         "type": ["true", "false"],
         "required": false,
         "default": false
       },
       "requiredMessage": {
         "name": "requiredMessage",
-        "description": "Message to show if validation fails",
+        "description": "如果验证失败，显示的消息",
         "type": "string",
         "required": false
       },
       "showSubmitButton": {
         "name": "showSubmitButton",
-        "description": "Whether to show or hide the submit button. By default it shows when there are more than one rows of text, such as in textarea mode.",
+        "description": "是否显示或隐藏提交按钮。默认情况下，当文本区域中有多行时显示，例如在 textarea 模式下。",
         "type": ["true", "false"],
         "required": false
       },
       "perRegion": {
         "name": "perRegion",
-        "description": "Use this tag to label regions instead of whole objects",
+        "description": "使用此标签对区域进行标注，而不是整个对象",
         "type": ["true", "false"],
         "required": false
       },
       "perItem": {
         "name": "perItem",
-        "description": "Use this tag to label items inside objects instead of whole objects",
+        "description": "使用此标签对对象内部的物品进行标注，而不是整个对象",
         "type": ["true", "false"],
         "required": false
       }
@@ -2336,64 +2336,64 @@
   },
   "TimeSeriesLabels": {
     "name": "TimeSeriesLabels",
-    "description": "The `TimeSeriesLabels` tag is used to create a labeled time range.\n\nUse with the following data types: time series.",
+    "description": "TimeSeriesLabels 标签用于创建一个标注的时间范围。\n\n可用于以下数据类型：time series。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "toname": {
         "name": "toname",
-        "description": "Name of the timeseries to label",
+        "description": "要标注的时间序列名称",
         "type": "string",
         "required": true
       },
       "choice": {
         "name": "choice",
-        "description": "Configure whether you can select one or multiple labels",
+        "description": "配置是否可以选择一个或多个标签",
         "type": ["single", "multiple"],
         "required": false,
         "default": "single"
       },
       "maxUsages": {
         "name": "maxUsages",
-        "description": "Maximum number of times a label can be used per task",
+        "description": "每个任务中标签的最大使用次数",
         "type": "number",
         "required": false
       },
       "showInline": {
         "name": "showInline",
-        "description": "Show labels in the same visual line",
+        "description": "在同一视觉行中显示标签",
         "type": ["true", "false"],
         "required": false,
         "default": true
       },
       "opacity": {
         "name": "opacity",
-        "description": "Opacity of the range",
+        "description": "范围的透明度",
         "type": "float",
         "required": false,
         "default": 0.9
       },
       "fillColor": {
         "name": "fillColor",
-        "description": "Range fill color in hexadecimal or HTML color name",
+        "description": "范围填充颜色，十六进制或 HTML 颜色名称",
         "type": "string",
         "required": false,
         "default": "transparent"
       },
       "strokeColor": {
         "name": "strokeColor",
-        "description": "Stroke color in hexadecimal",
+        "description": "描边颜色，十六进制",
         "type": "string",
         "required": false,
         "default": "#f48a42"
       },
       "strokeWidth": {
         "name": "strokeWidth",
-        "description": "Width of the stroke",
+        "description": "描边宽度",
         "type": "number",
         "required": false,
         "default": 1
@@ -2402,17 +2402,17 @@
   },
   "TimelineLabels": {
     "name": "TimelineLabels",
-    "description": "Use the TimelineLabels tag to classify video frames. This can be a single frame or a span of frames.\n\nFirst, select a label and then click once to annotate a single frame. Click and drag to annotate multiple frames.\n\n![Screenshot of video with frame classification](../images/timelinelabels.png)\n\nUse with the `<Video>` control tag.\n\n!!! info Tip\n    You can increase the height of the timeline using the `timelineHeight` parameter on the `<Video>` tag.",
+    "description": "TimelineLabels 标签用于对视频帧进行分类。这可以是单个帧或多个帧的跨度。\n\n首先，选择一个标签，然后单击一次以标注单个帧。单击并拖动以标注多个帧。\n\n![视频帧分类截图](../images/timelinelabels.png)\n\n使用 `<Video>` 控制标签。\n\n!!! info Tip\n    您可以使用 `<Video>` 标签上的 `timelineHeight` 参数增加时间轴的高度。",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "toName": {
         "name": "toName",
-        "description": "Name of the video element",
+        "description": "视频元素名称",
         "type": "string",
         "required": true
       }
@@ -2420,17 +2420,17 @@
   },
   "VideoRectangle": {
     "name": "VideoRectangle",
-    "description": "VideoRectangle tag brings Object Tracking capabilities to videos. It works in combination with the `<Video/>` and the `<Labels/>` tags.\n\nUse with the following data types: video",
+    "description": "VideoRectangle 标签为视频带来对象跟踪功能。它与 `<Video/>` 和 `<Labels/>` 标签结合使用。\n\n可用于以下数据类型：video",
     "attrs": {
       "name": {
         "name": "name",
-        "description": "Name of the element",
+        "description": "元素名称",
         "type": "string",
         "required": true
       },
       "toName": {
         "name": "toName",
-        "description": "Name of the element to control (video)",
+        "description": "要控制的元素名称（视频）",
         "type": "string",
         "required": true
       }
@@ -2438,18 +2438,18 @@
   },
   "Collapse": {
     "name": "Collapse",
-    "description": "Collapse tag, a content area which can be collapsed and expanded.",
+    "description": "Collapse 标签，一个可以折叠和展开的内容区域。",
     "attrs": {
       "accordion": {
         "name": "accordion",
-        "description": "Works as an accordion",
+        "description": "作为手风琴工作",
         "type": ["true", "false"],
         "required": false,
         "default": true
       },
       "bordered": {
         "name": "bordered",
-        "description": "Shows border",
+        "description": "显示边框",
         "type": "string",
         "required": false,
         "default": false
@@ -2458,31 +2458,31 @@
   },
   "Filter": {
     "name": "Filter",
-    "description": "Use the Filter tag to add a filter search for a large number of labels or choices. Use with the Labels tag or Choices tag.",
+    "description": "Filter 标签用于添加一个过滤器搜索大量标签或选择。使用 Labels 标签或 Choices 标签。",
     "attrs": {
       "placeholder": {
         "name": "placeholder",
-        "description": "Placeholder text for filter",
+        "description": "过滤器占位符文本",
         "type": "string",
         "required": false,
         "default": "\"Quick Filter\""
       },
       "minlength": {
         "name": "minlength",
-        "description": "Size of the filter",
+        "description": "过滤器大小",
         "type": "number",
         "required": false,
         "default": 3
       },
       "style": {
         "name": "style",
-        "description": "CSS style of the string",
+        "description": "字符串的 CSS 样式",
         "type": "string",
         "required": false
       },
       "hotkey": {
         "name": "hotkey",
-        "description": "Hotkey to use to focus on the filter text area",
+        "description": "用于聚焦过滤器文本区域的快捷键",
         "type": "string",
         "required": false
       }
@@ -2490,30 +2490,30 @@
   },
   "Header": {
     "name": "Header",
-    "description": "The `Header` tag is used to show a header on the labeling interface.",
+    "description": "Header 标签用于在标注界面中显示标题文本。",
     "attrs": {
       "value": {
         "name": "value",
-        "description": "Text of header, either static text or the field name in data to use for the header",
+        "description": "标题文本，可以是静态文本或数据中的字段名称",
         "type": "string",
         "required": true
       },
       "size": {
         "name": "size",
-        "description": "Level of header on a page, used to control size of the text",
+        "description": "页面中标题的级别，用于控制文本的大小",
         "type": "number",
         "required": false,
         "default": 4
       },
       "style": {
         "name": "style",
-        "description": "CSS style for the header",
+        "description": "标题的 CSS 样式",
         "type": "string",
         "required": false
       },
       "underline": {
         "name": "underline",
-        "description": "Whether to underline the header",
+        "description": "是否下划线标题",
         "type": ["true", "false"],
         "required": false,
         "default": false
@@ -2522,17 +2522,17 @@
   },
   "Style": {
     "name": "Style",
-    "description": "The `Style` tag is used in combination with the View tag to apply custom CSS properties to the labeling interface. See the [CSS Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference) on the MDN page for a full list of available properties that you can reference. You can also adjust default Label Studio CSS classes. Use the browser developer tools to inspect the element on the UI and locate the class name, then specify that class name in the `Style` tag.",
+    "description": "Style 标签与 View 标签结合使用，以应用自定义 CSS 属性到标注界面。请参阅 MDN 页面上的 [CSS 参考](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference) 以获取完整列表。您还可以调整默认的 Label Studio CSS 类。使用浏览器开发工具检查 UI 上的元素并找到类名，然后在 `Style` 标签中指定该类名。",
     "attrs": {
       "`.<className>`": {
         "name": "`.<className>`",
-        "description": "Reference the className specified in the View tag to apply to a section of the labeling configuration.",
+        "description": "引用 View 标签中指定的 className 以应用于标注配置的一部分。",
         "type": "string",
         "required": true
       },
       "CSS property": {
         "name": "CSS property",
-        "description": "CSS property and value to apply.",
+        "description": "要应用的 CSS 属性和值。",
         "type": "string",
         "required": false
       }
@@ -2540,7 +2540,7 @@
   },
   "View": {
     "name": "View",
-    "description": "The `View` element is used to configure the display of blocks, similar to the div tag in HTML.",
+    "description": "View 标签用于定义标注界面的整体布局容器。",
     "attrs": {
       "display": {
         "name": "display",
@@ -2549,43 +2549,43 @@
       },
       "style": {
         "name": "style",
-        "description": "CSS style string",
+        "description": "CSS 样式字符串",
         "type": "string",
         "required": false
       },
       "className": {
         "name": "className",
-        "description": "Class name of the CSS style to apply. Use with the Style tag",
+        "description": "要应用的 CSS 样式的类名。使用 Style 标签",
         "type": "string",
         "required": false
       },
       "idAttr": {
         "name": "idAttr",
-        "description": "Unique ID attribute to use in CSS",
+        "description": "在 CSS 中使用的唯一 ID 属性",
         "type": "string",
         "required": false
       },
       "visibleWhen": {
         "name": "visibleWhen",
-        "description": "Control visibility of the content. Can also be used with `when*` attributes below to narrow down visibility",
+        "description": "控制内容的可见性。也可以与下面的 `when*` 属性一起使用以缩小可见性",
         "type": ["region-selected", "choice-selected", "no-region-selected", "choice-unselected"],
         "required": false
       },
       "whenTagName": {
         "name": "whenTagName",
-        "description": "Use with visibleWhen. Narrow down visibility by tag name. For regions, use the name of the object tag, for choices, use the name of the choices tag",
+        "description": "使用 visibleWhen。通过标签名称缩小可见性。对于区域，使用对象标签的名称，对于选择，使用选择标签的名称",
         "type": "string",
         "required": false
       },
       "whenLabelValue": {
         "name": "whenLabelValue",
-        "description": "Use with visibleWhen=\"region-selected\". Narrow down visibility by label value",
+        "description": "使用 visibleWhen=\"region-selected\"。通过标签值缩小可见性",
         "type": "string",
         "required": false
       },
       "whenChoiceValue": {
         "name": "whenChoiceValue",
-        "description": "Use with visibleWhen (\"choice-selected\" or \"choice-unselected\") and whenTagName, both are required. Narrow down visibility by choice value",
+        "description": "使用 visibleWhen (\"choice-selected\" 或 \"choice-unselected\") 和 whenTagName，两者都必需。通过选择值缩小可见性",
         "type": "string",
         "required": false
       }
