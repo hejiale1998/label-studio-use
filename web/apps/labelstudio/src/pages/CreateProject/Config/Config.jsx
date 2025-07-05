@@ -21,11 +21,115 @@ import { toSnakeCase } from "strman";
 const wizardClass = cn("wizard");
 const configClass = cn("configure");
 
+// 英文到中文的标签映射
+const EN_TO_CN_LABELS = {
+  'Car': '汽车',
+  'Airplane': '飞机',
+  'Person': '人',
+  'Planet': '行星',
+  'Moonwalker': '月球漫步者',
+  'Face': '人脸',
+  'Nose': '鼻子',
+  'Select label and click the image to start': '选择标签并点击图像开始',
+  'Adult content': '成人内容',
+  'Weapons': '武器',
+  'Violence': '暴力',
+  'Text': '文本',
+  'Handwriting': '手写',
+  "attribute identification": "属性识别",
+  "counting": "计数",
+  "comparison": "比较",
+  "multiple attention": "多重关注",
+  "logical operations": "逻辑运算",
+  'Benign': '良性',
+  'Malignant': '恶性',
+  'Normal': '正常',
+  'Tumor': '肿瘤',
+  'Title': '标题',
+  'Date': '日期',
+  'Author': '作者',
+  'Organization': '组织',
+  'Amount': '金额',
+  'Answer': '答案',
+  'Please read the passage': '请阅读下列短文',
+  'Select a text span answering the following question:': '请选择能回答下列问题的文本片段：',
+  'Positive': '正面',
+  'Negative': '负面',
+  'Neutral': '中性',
+  'PER': '人名',
+  'ORG': '组织',
+  'LOC': '地点',
+  'MISC': '其他',
+  'Choose text sentiment': '选择文本情感',
+  "Datetime": '日期时间',
+  // 新增的映射
+  'Regions': '区域',
+  'Attributes': '属性',
+  'Relationships': '关系',
+  // Choice values 映射
+  'Toxic': '有毒',
+  'Severely Toxic': '严重有毒',
+  'Obscene': '淫秽',
+  'Threat': '威胁',
+  'Insult': '侮辱',
+  'Hate': '仇恨',
+  // Header values 映射
+  'Please provide additional comments': '请提供额外评论',
+  'Read the sentence in English': '阅读英文句子',
+  'Provide translation in Spanish': '提供西班牙语翻译',
+  'Please read the text': '请阅读文本',
+  'Provide one sentence summary': '提供一句话总结',
+  'Provide Transcription': '提供转录',
+  // Label values 映射
+  'Event A': '事件A',
+  'Event B': '事件B',
+  'Speech': '语音',
+  'Noise': '噪音',
+  'Speaker one': '说话者一',
+  'Speaker two': '说话者二',
+  'Segment': '片段',
+  // Choice values 映射
+  'Question': '问题',
+  'Request': '请求',
+  'Satisfied': '满意',
+  'Interested': '感兴趣',
+  'Unsatisfied': '不满意',
+  // Header values 映射
+  'Transcript': '转录',
+  'Sentiment Labels': '情感标签',
+  // Label values 映射
+  'Positive1': '正面',
+  'Location': '地点',
+  'Quantity': '数量',
+  // Choice values 映射
+  'Greeting': '问候',
+  'Customer request': '客户请求',
+  'Small talk': '闲聊',
+  "Provide response": "请作答",
+   // Header
+   "Choose response": "选择回复",
+   // Choices
+   "One": "一",
+   "Two": "二",
+  "Noun": "名词",
+  "Pronoun": "代词",
+  "Three": "三",
+  "Select one of two items": "从两个项目中选择一个",
+  "Set how likely it is that these images represent the same thing:": "设置这些图片代表同一事物的可能性：",
+  "Select document related to the query:": "选择与查询相关的文档：",
+  "Choose similar images:": "选择相似图片：",
+  "Search Quality": "搜索质量",
+  "Labeling Confidence": "标注置信度",
+  "Low": "低",
+  "High": "高",
+  "Body": "正文",
+};
+
 const EmptyConfigPlaceholder = () => (
   <div className={configClass.elem("empty-config")}>
     <p>您的标注配置为空。标注数据前必须先配置。</p>
     <p>
-      可从预设模板开始，或在代码模式下自定义配置。标注配置为 XML 格式，详见
+    可从预设模板开始，或在代码模式下自定义配置。标注配置为 XML 格式，详见
       <a href="https://labelstud.io/tags/" target="_blank" rel="noreferrer">标签文档</a>
       。
     </p>
@@ -45,7 +149,7 @@ const Label = ({ label, template, color }) => {
           onChange={(e) => template.changeLabel(label, { background: e.target.value })}
         />
       </label>
-      <span>{value}</span>
+      <span>{EN_TO_CN_LABELS[value] || value}</span>
       <button
         type="button"
         className={configClass.elem("delete-label")}
@@ -277,13 +381,13 @@ const ConfigureColumn = ({ template, obj, columns }) => {
     const cols = (columns ?? []).map((col) => {
       return {
         value: col,
-        label: col === DEFAULT_COLUMN ? "<imported file>" : `$${col}`,
+        label: col === DEFAULT_COLUMN ? "<导入的文件>" : `$${col}`,
       };
     });
     if (!columns?.length) {
-      cols.push({ value, label: "<imported file>" });
+      cols.push({ value, label: "<导入的文件>" });
     }
-    cols.push({ value: "-", label: "<set manually>" });
+    cols.push({ value: "-", label: "<手动设置>" });
     return cols;
   }, [columns, DEFAULT_COLUMN, value]);
 
@@ -421,7 +525,7 @@ const Configurator = ({
         setTemplate(config);
       } catch (e) {
         setParserError({
-          detail: "Parser error",
+          detail: "解析错误",
           validation_errors: [e.message],
         });
       }
@@ -475,6 +579,56 @@ const Configurator = ({
     </p>
   );
 
+  // 在传递给Preview前做config内容的中英文映射
+  function localizeConfig(config) {
+    // 解析 XML
+    const parser = new window.DOMParser();
+    const xmlDoc = parser.parseFromString(config, 'text/xml');
+
+    // 递归处理所有节点
+    function traverse(node) {
+      if (node.nodeType === 1) { // 元素节点
+        // 处理 value 属性
+        if (node.hasAttribute('value')) {
+          const value = node.getAttribute('value');
+          const translated = EN_TO_CN_LABELS[(value || '').trim()] || value;
+          node.setAttribute('value', translated);
+          // 如果没有label属性，则同步设置label属性为翻译后的value
+          if (!node.hasAttribute('label')) {
+            node.setAttribute('label', translated);
+          }
+        }
+        // 处理 label 属性（如有）
+        if (node.hasAttribute('label')) {
+          const label = node.getAttribute('label');
+          const translated = EN_TO_CN_LABELS[(label || '').trim()] || label;
+          node.setAttribute('label', translated);
+        }
+        // 处理 children 是纯文本的情况（如 <Header>xxx</Header>）
+        if (
+          node.childNodes.length === 1 &&
+          node.childNodes[0].nodeType === 3 // TEXT_NODE
+        ) {
+          const text = node.childNodes[0].nodeValue.trim();
+          const translated = EN_TO_CN_LABELS[text] || text;
+          if (translated !== text) {
+            node.childNodes[0].nodeValue = translated;
+          }
+        }
+        // 递归处理子节点
+        for (let i = 0; i < node.childNodes.length; i++) {
+          traverse(node.childNodes[i]);
+        }
+      }
+    }
+
+    traverse(xmlDoc.documentElement);
+
+    // 序列化回字符串
+    const serializer = new window.XMLSerializer();
+    return serializer.serializeToString(xmlDoc);
+  }
+
   return (
     <div className={configClass}>
       <div className={configClass.elem("container")}>
@@ -506,14 +660,14 @@ const Configurator = ({
                 extensions={["hint", "xml-hint"]}
                 options={{
                   mode: "xml",
-                  theme: "default",
+                  theme: "默认",
                   lineNumbers: true,
                   extraKeys: {
                     "'<'": completeAfter,
                     // "'/'": completeIfAfterLt,
                     "' '": completeIfInTag,
                     "'='": completeIfInTag,
-                    "Ctrl-Space": "autocomplete",
+                    "Ctrl-Space": "自动完成",
                   },
                   hintOptions: { schemaInfo: tags },
                 }}
@@ -556,7 +710,7 @@ const Configurator = ({
         )}
       </div>
       <Preview
-        config={configToDisplay}
+        config={localizeConfig(configToDisplay)}
         data={data}
         project={project}
         loading={loading}
