@@ -159,14 +159,36 @@ const EN_TO_CN_VALUES = {
   "Ride": "骑行",
   "Velocity": "速度",
   "Acceleration": "加速度",
-  // config结构映射
   "Region": "区域",
   "Good": "好",
   "Medium": "中等",
   "Poor": "差",
   "Signal 1": "信号1",
   "Signal 2": "信号2",
-  // ...如有其它config结构常用label/value请继续补充...
+  "Change": "变化",
+  "Outlier": "离群值",
+  "Anomaly": "异常",
+  // config结构映射
+  "Man": "男性",
+  "Woman": "女性",
+  "Other": "其他",
+  "blank": "空白",
+  "Blank": "空白",
+  "Movement": "运动",
+  "Still": "静止",
+  "Slow Motion": "慢动作",
+  "Blurry": "模糊",
+  "Sharp": "清晰",
+  "Video timeline segmentation via Audio sync trick": "通过音频同步技巧进行视频时间线分割",
+  "Kickflip": "踢翻",
+  "360 Flip": "360度翻转",
+  "Trick": "技巧",
+  "You must provide the response to the prompt": "您必须提供对提示的回复",
+  "Type your answer here...": "在此输入您的答案...",
+  "Generate a Python function that takes a list of integers as input and returns the sum of all even numbers in the list.": "生成一个Python函数，该函数接受整数列表作为输入并返回列表中所有偶数的和。",
+  "Rate this article": "评价这篇文章",
+  "Important article": "重要文章",
+  "Yellow press": "黄色新闻",
 };
 
 // 去除HTML标签的辅助函数
