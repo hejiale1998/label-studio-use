@@ -8,7 +8,7 @@ import { useAPI } from "../../../providers/ApiProvider";
 
 const configClass = cn("configure");
 
-// 英文到中文的短语映射表
+// 英文到中文的短语映射表（补充对话内容）
 const EN_TO_CN_VALUES = {
   "hole ON log": "树洞在木头上",
   "tree BEHIND bear": "树在熊后面",
@@ -128,6 +128,45 @@ const EN_TO_CN_VALUES = {
   "Jules: No no, Mr. Wolfe, it's not like that. Your help is definitely appreciated.": "朱尔斯：不不，沃尔夫先生，不是那样的。您的帮助我们真的很感激。",
   "Vincent: Look, Mr. Wolfe, I respect you. I just don't like people barking orders at me, that's all.": "文森特：听着，沃尔夫先生，我很尊重您。我只是不喜欢别人对我大声发号施令，仅此而已。",
   "The Wolf: If I'm curt with you, it's because time is a factor. I think fast, I talk fast, and I need you two guys to act fast if you want to get out of this. So pretty please, with sugar on top, clean the car.": "沃尔夫：如果我对你们说话简短，那是因为时间紧迫。我思考快，说话快，如果你们想脱身，也需要动作快。所以，拜托了，麻烦你们把车清理干净。",
+  // ==== config结构相关映射 ====
+  "Table with {key: value} pairs": "包含 {键:值} 对的表格",
+  "Correct": "正确",
+  "Incorrect": "错误",
+  // data字段映射
+  "Card number": "卡号",
+  "First name": "名",
+  "Last name": "姓",
+  "Sample": "示例",
+  "Text": "文本",
+  // config结构映射
+  "Select predictable region spans in time series:": "选择时间序列中可预测的区域区间：",
+  "Forecast next trend:": "预测下一个趋势：",
+  "Up": "上升",
+  "Down": "下降",
+  "Steady": "持平",
+  "Stock Value": "股票数值",
+  "legend": "图例",
+  "TimeSeries": "时间序列",
+  "Channel": "通道",
+  "Choices": "选项",
+  "Choice": "选项",
+  "Label": "标签",
+  "Header": "标题",
+  "Run": "奔跑",
+  "Walk": "步行",
+  "Fly": "飞行",
+  "Swim": "游泳",
+  "Ride": "骑行",
+  "Velocity": "速度",
+  "Acceleration": "加速度",
+  // config结构映射
+  "Region": "区域",
+  "Good": "好",
+  "Medium": "中等",
+  "Poor": "差",
+  "Signal 1": "信号1",
+  "Signal 2": "信号2",
+  // ...如有其它config结构常用label/value请继续补充...
 };
 
 // 去除HTML标签的辅助函数
@@ -136,10 +175,19 @@ function stripHtmlTags(str) {
   return str.replace(/<[^>]+>/g, '').trim();
 }
 
-// 递归翻译html字符串中的h2、p、a标签内的英文为中文
+// 优化：支持 <b>人名</b>: 句子 结构的翻译
 function translateHtmlText(html) {
   if (typeof html !== 'string') return html;
-  // 替换h2、p、a标签内的文本
+  // 先处理 <p><b>人名</b>：句子</p>
+  html = html.replace(/<p><b>([^<]+)<\/b>:\s*([\s\S]*?)<\/p>/gi, (match, name, sentence) => {
+    const en = `${name}: ${sentence}`.trim();
+    const cn = EN_TO_CN_VALUES[en];
+    if (cn) {
+      return `<p>${cn}</p>`;
+    }
+    return match;
+  });
+  // 再处理其它 h2、p、a 标签内的英文
   return html.replace(/(<(h2|p|a)[^>]*>)([\s\S]*?)(<\/\2>)/gi, (match, start, tag, text, end) => {
     let replaced = text;
     Object.entries(EN_TO_CN_VALUES).forEach(([en, cn]) => {
@@ -151,25 +199,28 @@ function translateHtmlText(html) {
   });
 }
 
-// 递归翻译所有对象/数组中的value字段
+// 递归翻译所有对象/数组中的value字段和键名
 function translateDataValues(obj) {
   if (Array.isArray(obj)) {
     return obj.map(translateDataValues);
   } else if (obj && typeof obj === 'object') {
     const newObj = {};
     for (const key in obj) {
+      // 翻译键名
+      const translatedKey = EN_TO_CN_VALUES[key] || key;
+
       if (typeof obj[key] === 'string') {
         const trimmed = obj[key].trim();
         // 如果是html字段，递归翻译标签内文本
         if (key === 'html') {
-          newObj[key] = translateHtmlText(trimmed);
+          newObj[translatedKey] = translateHtmlText(trimmed);
         } else {
-          newObj[key] = EN_TO_CN_VALUES[trimmed]
+          newObj[translatedKey] = EN_TO_CN_VALUES[trimmed]
             || EN_TO_CN_VALUES[stripHtmlTags(trimmed)]
             || obj[key];
         }
       } else {
-        newObj[key] = translateDataValues(obj[key]);
+        newObj[translatedKey] = translateDataValues(obj[key]);
       }
     }
     return newObj;
@@ -177,8 +228,34 @@ function translateDataValues(obj) {
   return obj;
 }
 
-// Lazy load Label Studio with a single promise to avoid multiple loads
-// and enable as early as possible to load the dependencies once this component is mounted for the first time
+// 递归翻译 config 结构中的 value/label 字段
+function translateConfigValues(obj) {
+  if (Array.isArray(obj)) {
+    return obj.map(translateConfigValues);
+  } else if (obj && typeof obj === 'object') {
+    const newObj = {};
+    for (const key in obj) {
+      if (
+        (key === 'value' || key === 'label') &&
+        typeof obj[key] === 'string'
+      ) {
+        const trimmed = obj[key].trim();
+        newObj[key] =
+          EN_TO_CN_VALUES[trimmed] ||
+          EN_TO_CN_VALUES[stripHtmlTags(trimmed)] ||
+          obj[key];
+      } else {
+        // 撤销此行，恢复为:
+        // newObj[key] = obj[key];
+        newObj[key] = obj[key];
+      }
+    }
+    return newObj;
+  }
+  return obj;
+}
+
+// Lazy load Label Studio with a single promise
 let dependencies;
 const loadDependencies = async () => {
   if (!dependencies) {
@@ -200,10 +277,13 @@ export const Preview = ({ config, data, error, loading, project }) => {
   const projectRef = useRef(project);
   projectRef.current = project;
 
+  // 翻译数据
   const translatedData = useMemo(() => {
     const translated = translateDataValues(data);
+    console.log('translated data:', translated);
     return translated;
   }, [data]);
+
   const currentTask = useMemo(() => {
     return {
       id: 1,
@@ -225,24 +305,40 @@ export const Preview = ({ config, data, error, loading, project }) => {
     if (["http:", "https:"].includes(parsedUrl.protocol)) return url;
 
     const projectId = projectRef.current.id;
-
     const fileuri = btoa(url);
-
     return api.api.createUrl(API_CONFIG.endpoints.presignUrlForProject, { projectId, fileuri }).url;
   };
 
   const currentConfig = useMemo(() => {
     // empty string causes error in LSF
-    return config ?? EMPTY_CONFIG;
+    const rawConfig = config ?? EMPTY_CONFIG;
+    // 尝试解析为对象并翻译
+    let parsedConfig = rawConfig;
+    try {
+      // 如果是字符串（如XML），尝试翻译XML中的文本
+      if (typeof rawConfig === 'string') {
+        // 翻译XML中的value和label属性
+        parsedConfig = rawConfig.replace(/value="([^"]+)"/g, (match, value) => {
+          const translated = EN_TO_CN_VALUES[value] || value;
+          return `value="${translated}"`;
+        }).replace(/label="([^"]+)"/g, (match, label) => {
+          const translated = EN_TO_CN_VALUES[label] || label;
+          return `label="${translated}"`;
+        });
+      } else if (typeof rawConfig === 'object') {
+        parsedConfig = translateConfigValues(rawConfig);
+      }
+    } catch (e) {
+      // ignore parse error
+    }
+    return parsedConfig;
   }, [config]);
 
   const initLabelStudio = useCallback(async (config, task) => {
     // wait for dependencies to load, the promise is resolved only once
     // and is started when the component is mounted for the first time
     await loadDependencies();
-
     if (lsf.current || !task.data) return;
-
     try {
       lsf.current = new window.LabelStudio(rootRef.current, {
         config,
@@ -251,11 +347,9 @@ export const Preview = ({ config, data, error, loading, project }) => {
         // with SharedStore we should use more late event
         onStorageInitialized(LS) {
           LS.settings.bottomSidePanel = true;
-
           const initAnnotation = () => {
             const as = LS.annotationStore;
             const c = as.createAnnotation();
-
             as.selectAnnotation(c.id);
             setStoreReady(true);
           };
@@ -264,7 +358,6 @@ export const Preview = ({ config, data, error, loading, project }) => {
           setTimeout(initAnnotation);
         },
       });
-
       lsf.current.on("presignUrlForProject", onPresignUrlForProject);
     } catch (err) {
       console.error(err);
@@ -282,16 +375,13 @@ export const Preview = ({ config, data, error, loading, project }) => {
     initLabelStudio(currentConfig, currentTask).then(() => {
       if (storeReady && lsf.current?.store) {
         const store = lsf.current.store;
-
         store.resetState();
         store.assignTask(currentTask);
         store.assignConfig(currentConfig);
         store.initializeStore(currentTask);
-
         const c = store.annotationStore.addAnnotation({
           userGenerate: true,
         });
-
         store.annotationStore.selectAnnotation(c.id);
         console.log("LSF updated");
       }
